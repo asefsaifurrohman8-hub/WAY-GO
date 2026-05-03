@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAY GO - Wealth And Yield: Green Oil | Ubah Minyak Jelantah Jadi Bernilai</title>
+    <meta name="description" content="WAY GO melayani penjemputan minyak jelantah bekas goreng untuk rumah tangga dan industri di Kabupaten Brebes. Ubah limbah menjadi nilai ekonomi.">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#15803d', // Tailwind green-700
+                            dark: '#14532d', // Tailwind green-900
+                            light: '#dcfce7', // Tailwind green-100
+                            gold: '#d4af37', // Premium Gold
+                            goldhover: '#c5a028',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Animations */
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Floating WhatsApp Pulse Animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .wa-float-btn {
+            animation: pulse-ring 2s infinite;
+        }
+
+        /* Connecting line for How it Works */
+        @media (min-width: 768px) {
+            .step-connector::after {
+                content: '';
+                position: absolute;
+                top: 35px;
+                left: 60%;
+                width: 80%;
+                height: 2px;
+                background-color: #dcfce7;
+                z-index: 0;
+            }
+            .step-connector:last-child::after {
+                display: none;
+            }
+        }
+        
+        .blob-shape {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* Utility for handling broken images nicely */
+        img.fallback-logo {
+            background-color: #fff; /* fallback background if image doesn't load */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden selection:bg-brand-green selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- Menggunakan logo.png untuk Navbar -->
+                    <img src="logo.png" alt="WAY GO Logo" class="h-10 w-auto object-contain fallback-logo rounded-md" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'white\'><path d=\'M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7 8 17 8 17 8Z\'/></svg>';">
+                    <div>
+                        <span class="font-bold text-2xl text-brand-dark tracking-tight">WAY GO</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#tentang" class="text-slate-600 hover:text-brand-green font-medium transition-colors">Tentang Kami</a>
+                    <a href="#layanan" class="text-slate-600 hover:text-brand-green font-medium transition-colors">Layanan</a>
+                    <a href="#keunggulan" class="text-slate-600 hover:text-brand-green font-medium transition-colors">Keunggulan</a>
+                    <a href="#carakerja" class="text-slate-600 hover:text-brand-green font-medium transition-colors">Cara Kerja</a>
+                    <a href="https://wa.me/6285892767032" target="_blank" class="bg-brand-gold hover:bg-brand-goldhover text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-brand-dark text-white">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                <defs><pattern id="heropattern" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 40L40 0H20L0 20M40 40V20L20 40" fill="currentColor" opacity="0.3"/></pattern></defs>
+                <rect width="100%" height="100%" fill="url(#heropattern)"/>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-brand-gold font-medium mb-6">
+                        <i class="fa-solid fa-droplet"></i> Wealth And Yield: Green Oil
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                        Ubah Minyak Jelantah Menjadi <span class="text-brand-gold">Bernilai</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-lg leading-relaxed">
+                        Kami menerima minyak bekas goreng dari rumah tangga, warung, restoran, UMKM, dan industri kecil. Jaga lingkungan, dapatkan penghasilan tambahan.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/6285892767032" target="_blank" class="bg-brand-gold hover:bg-brand-goldhover text-white text-center px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Hubungi WhatsApp Sekarang
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Illustration -->
+                <div class="relative hidden lg:block" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="relative w-full h-[500px] flex items-center justify-center">
+                        <div class="absolute w-96 h-96 bg-brand-green blob-shape opacity-80 mix-blend-multiply blur-xl"></div>
+                        <div class="absolute w-96 h-96 bg-brand-gold blob-shape opacity-60 mix-blend-multiply blur-xl right-10 top-20" style="animation-delay: 2s;"></div>
+                        
+                        <!-- Main Graphic inside hero -->
+                        <div class="relative bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-3xl shadow-2xl w-full max-w-md">
+                            <div class="bg-white rounded-2xl p-6 text-center">
+                                <i class="fa-solid fa-recycle text-6xl text-brand-green mb-4"></i>
+                                <div class="flex justify-center items-center gap-4 mb-4">
+                                    <i class="fa-solid fa-bottle-water text-4xl text-slate-400"></i>
+                                    <i class="fa-solid fa-arrow-right text-brand-gold"></i>
+                                    <i class="fa-solid fa-sack-dollar text-4xl text-brand-gold"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark">Limbah Jadi Rupiah</h3>
+                                <p class="text-sm text-slate-500 mt-2">Daur ulang minyak bekas Anda untuk masa depan yang lebih hijau.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Tentang Kami -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-brand-dark mb-6">Tentang <span class="text-brand-green">WAY GO</span></h2>
+            <div class="w-24 h-1 bg-brand-gold mx-auto mb-8 rounded-full"></div>
+            <p class="text-lg md:text-xl text-slate-600 leading-relaxed font-light">
+                <strong class="font-semibold text-brand-dark">WAY GO</strong> (Wealth And Yield: Green Oil) adalah layanan penjemputan minyak jelantah terpercaya yang hadir untuk membantu masyarakat mengubah limbah menjadi nilai ekonomi, sekaligus berkontribusi aktif dalam menjaga kelestarian lingkungan kita.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. Layanan Kami -->
+    <section id="layanan" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-gold font-bold tracking-wider uppercase text-sm">Layanan Kami</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mt-2">Solusi Lengkap Untuk Minyak Jelantah Anda</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-brand-light rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-truck text-2xl text-brand-green group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Penjemputan ke Lokasi</h3>
+                    <p class="text-slate-600">Anda tidak perlu repot keluar rumah. Tim kami akan datang langsung ke alamat Anda untuk mengambil minyak jelantah.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-brand-light rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-money-bill-wave text-2xl text-brand-green group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Dibayar Cash / Transfer</h3>
+                    <p class="text-slate-600">Minyak Anda kami hargai dengan pantas. Pembayaran bisa langsung tunai di tempat atau via transfer bank/e-wallet.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-brand-light rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-handshake text-2xl text-brand-green group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Kerja Sama Rutin</h3>
+                    <p class="text-slate-600">Kami melayani sistem pengambilan terjadwal (mingguan/bulanan) yang sangat cocok untuk usaha kuliner agar limbah tidak menumpuk.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-slate-100 group lg:col-start-2 lg:col-span-1 md:col-span-1" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-brand-light rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-box-open text-2xl text-brand-green group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Menyediakan Wadah</h3>
+                    <p class="text-slate-600">Tidak punya jerigen? Tenang, kami pinjamkan wadah penampungan khusus secara gratis untuk mitra rutin kami.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-slate-100 group md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-brand-light rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-shop text-2xl text-brand-green group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Rumah Tangga & Usaha</h3>
+                    <p class="text-slate-600">Berapapun jumlahnya, kami layani. Mulai dari skala kecil perumahan, warung tenda, hingga industri/restoran besar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Kenapa Pilih Kami -->
+    <section id="keunggulan" class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Side -->
+                <div class="relative order-2 lg:order-1" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-brand-green rounded-[2rem] transform rotate-3 opacity-10"></div>
+                    <img src="https://images.unsplash.com/photo-1611270418597-a6c77f4b7271?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Eco Friendly Concept" class="rounded-[2rem] shadow-2xl relative z-10 w-full object-cover h-[500px]" loading="lazy">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl z-20 hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-gold text-white flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-slate-800 text-lg">Terpercaya</div>
+                                <div class="text-sm text-slate-500">100+ Mitra Usaha</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="order-1 lg:order-2" data-aos="fade-left">
+                    <span class="text-brand-gold font-bold tracking-wider uppercase text-sm">Keunggulan Kami</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mt-2 mb-8">Mengapa WAY GO Pilihan Terbaik?</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-green flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-slate-800">Cepat Respon</h4>
+                                <p class="text-slate-600 mt-1">Hubungi kami via WhatsApp, tim admin kami akan membalas dengan sigap dan menjadwalkan penjemputan.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-green flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-tags"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-slate-800">Harga Kompetitif</h4>
+                                <p class="text-slate-600 mt-1">Kami menawarkan harga beli minyak jelantah yang bersaing dan transparan sesuai harga pasar.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-green flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-slate-800">Amanah & Terpercaya</h4>
+                                <p class="text-slate-600 mt-1">Timbangan yang akurat dan pembayaran yang langsung lunas, menjamin keamanan transaksi Anda.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-green flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-slate-800">Ramah Lingkungan</h4>
+                                <p class="text-slate-600 mt-1">Minyak disalurkan ke pabrik pengolahan biodiesel resmi, mencegah pencemaran air dan tanah.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Area Layanan -->
+    <section class="py-12 bg-brand-green text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6" data-aos="zoom-in">
+                <i class="fa-solid fa-map-location-dot text-5xl text-brand-gold"></i>
+                <div class="text-left">
+                    <h3 class="text-2xl font-bold mb-1">Area Layanan Utama</h3>
+                    <p class="text-brand-light text-xl">Kabupaten Brebes dan Sekitarnya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Cara Kerja -->
+    <section id="carakerja" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Cara Kerja yang Mudah</h2>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Hanya dengan 3 langkah sederhana, limbah dapur Anda berubah menjadi cuan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <!-- Step 1 -->
+                <div class="text-center step-connector relative z-10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto bg-white border-4 border-brand-green rounded-full flex items-center justify-center shadow-lg mb-6 relative">
+                        <i class="fa-brands fa-whatsapp text-3xl text-brand-green"></i>
+                        <span class="absolute -top-3 -right-3 w-8 h-8 bg-brand-gold text-white font-bold rounded-full flex items-center justify-center border-2 border-white">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Hubungi WhatsApp</h3>
+                    <p class="text-slate-600">Chat admin kami untuk mengatur jadwal dan menginformasikan perkiraan jumlah minyak.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center step-connector relative z-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto bg-brand-green border-4 border-brand-green text-white rounded-full flex items-center justify-center shadow-lg mb-6 relative">
+                        <i class="fa-solid fa-truck-fast text-2xl"></i>
+                        <span class="absolute -top-3 -right-3 w-8 h-8 bg-brand-gold text-white font-bold rounded-full flex items-center justify-center border-2 border-white">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Kami Datang Menjemput</h3>
+                    <p class="text-slate-600">Tim lapangan kami akan meluncur ke lokasi Anda sesuai jadwal yang disepakati.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center step-connector relative z-10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 mx-auto bg-brand-gold border-4 border-brand-gold text-white rounded-full flex items-center justify-center shadow-lg mb-6 relative">
+                        <i class="fa-solid fa-scale-balanced text-2xl"></i>
+                        <span class="absolute -top-3 -right-3 w-8 h-8 bg-brand-dark text-white font-bold rounded-full flex items-center justify-center border-2 border-white">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Ditimbang & Dibayar</h3>
+                    <p class="text-slate-600">Minyak ditimbang secara transparan di tempat, lalu pembayaran langsung diserahkan kepada Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Testimoni Pelanggan -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-gold font-bold tracking-wider uppercase text-sm">Testimoni</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mt-2">Apa Kata Mitra Kami?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl relative" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-quote-right text-4xl text-brand-light absolute top-6 right-6"></i>
+                    <div class="flex text-brand-gold mb-4 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">"Sangat membantu! Minyak jelantah yang biasanya bingung mau dibuang ke mana, sekarang malah jadi uang jajan tambahan. Penjemputannya juga on time."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center text-white font-bold">I</div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark">Ibu Siti</h4>
+                            <p class="text-sm text-slate-500">Ibu Rumah Tangga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl relative" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-quote-right text-4xl text-brand-light absolute top-6 right-6"></i>
+                    <div class="flex text-brand-gold mb-4 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">"Kerja sama dengan WAY GO sangat profesional. Jerigen disediakan, rutin diambil tiap minggu, pembayarannya lancar. Recomended buat pengusaha kuliner!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center text-white font-bold">B</div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark">Budi Santoso</h4>
+                            <p class="text-sm text-slate-500">Pemilik Warung Makan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl relative" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-quote-right text-4xl text-brand-light absolute top-6 right-6"></i>
+                    <div class="flex text-brand-gold mb-4 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">"Adminnya ramah dan fast respon. Nggak nyangka limbah bisa jadi cuan. Mantap WAY GO, sukses selalu program peduli lingkungannya."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center text-white font-bold">R</div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark">Rina</h4>
+                            <p class="text-sm text-slate-500">Pemilik UMKM Katering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA Penutup -->
+    <section class="py-24 bg-brand-dark text-white relative overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-green rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Punya Minyak Jelantah? <span class="text-brand-gold border-b-4 border-brand-green pb-1">Jangan Dibuang!</span></h2>
+            <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+                Hubungi WAY GO sekarang dan ubah limbah jadi cuan. Mari bersama-sama wujudkan lingkungan yang lebih bersih.
+            </p>
+            <a href="https://wa.me/6285892767032" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebd5b] text-white px-10 py-5 rounded-full font-bold text-xl transition-all shadow-[0_10px_25px_rgba(37,211,102,0.4)] transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-3xl"></i> Chat WhatsApp Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- 9. Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
+                        <!-- Menggunakan logo.png untuk Footer -->
+                        <img src="logo.png" alt="WAY GO Logo" class="h-8 w-auto object-contain fallback-logo rounded" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%2315803d\'><path d=\'M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7 8 17 8 17 8Z\'/></svg>';">
+                        <span class="text-white text-2xl font-bold tracking-wider">WAY GO</span>
+                    </div>
+                    <p class="text-sm">Wealth And Yield: Green Oil</p>
+                </div>
+                
+                <div class="flex items-center gap-6">
+                    <a href="https://wa.me/6285892767032" target="_blank" class="text-white hover:text-brand-gold transition-colors flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> 0858-9276-7032
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; <span id="year"></span> WAY GO. All rights reserved. <br class="md:hidden">Daur ulang untuk masa depan yang lebih baik.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Floating Button -->
+    <a href="https://wa.me/6285892767032" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl wa-float-btn hover:bg-[#1ebd5b] transition-colors tooltip" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-white/90', 'bg-white');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-white', 'bg-white/90');
+            }
+        });
+    </script>
+</body>
+</html>
