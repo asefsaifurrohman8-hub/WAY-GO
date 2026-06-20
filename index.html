@@ -3,1136 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT WAYGO SINERGI NUSANTARA | Pelopor Rantai Pasok Energi Terbarukan</title>
-    
-    <!-- Google Fonts: Inter (Body) & Poppins (Headings) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
+    <title>PT WAYGO SINERGI NUSANTARA | Holding & Corporate Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind Configuration -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d', // Corporate Green Main
-                            800: '#166534',
-                            900: '#14532d', // Deep Green
-                            950: '#052e16',
-                        },
-                        dark: {
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            950: '#020617', // Very Dark for contrast
-                        }
-                    },
-                    boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
-                        'floating': '0 20px 40px -10px rgba(0,0,0,0.15)',
-                        'inner-glow': 'inset 0 0 20px rgba(21, 128, 61, 0.1)',
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { brand: { green: '#1b4332', wood: '#8b5a2b', dark: '#111827' } } } } }
     </script>
-
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
-        h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Poppins', sans-serif; }
-
-        /* Solid & Clear Glassmorphism for Navbar */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Hero Slider Fade */
-        .hero-slide {
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out, transform 10s linear;
-            transform: scale(1.05);
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-        }
-        .hero-slide.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* High Contrast Premium Inputs */
-        .input-field {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            color: #0f172a; /* Text color inside input */
-            transition: all 0.3s ease;
-        }
-        .input-field::placeholder {
-            color: #94a3b8;
-        }
-        .input-field:focus {
-            border-color: #15803d;
-            box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.15);
-            outline: none;
-            background: #fdfdfd;
-        }
-
-        /* Specific Input for Dark Backgrounds */
-        .input-field-dark {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            transition: all 0.3s ease;
-        }
-        .input-field-dark::placeholder {
-            color: #94a3b8;
-        }
-        .input-field-dark:focus {
-            border-color: #22c55e;
-            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
-            outline: none;
-            background: rgba(15, 23, 42, 0.9);
-        }
-
-        /* FAQ Accordion Smoothness */
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
-        @keyframes sweep {
-            0%    {opacity: 0; transform: translateY(-10px)}
-            100%  {opacity: 1; transform: translateY(0)}
-        }
-
-        /* Modals */
-        .modal-overlay {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(4px);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .modal-content {
-            transform: scale(0.95) translateY(20px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .modal-overlay.active .modal-content {
-            transform: scale(1) translateY(0);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+        .hero-overlay { background: linear-gradient(to right, rgba(17, 24, 39, 0.95), rgba(27, 67, 50, 0.8)); }
+        .lang-switch { position: relative; width: 50px; height: 26px; background-color: #cbd5e1; border-radius: 15px; cursor: pointer; transition: 0.3s; }
+        .lang-switch::after { content: ''; position: absolute; width: 20px; height: 20px; background-color: white; border-radius: 50%; top: 3px; left: 3px; transition: transform 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .lang-switch.en { background-color: #1b4332; }
+        .lang-switch.en::after { transform: translateX(24px); }
+        .modal { display: none; } .modal.active { display: flex; }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-600 selection:text-white">
+<body class="font-sans text-gray-800 bg-gray-50 antialiased">
 
-    <!-- ELEGANT NAVBAR (HIGH CONTRAST) -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                
-                <!-- Logo Korporat -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <!-- Menggunakan logo.png -->
-                    <img src="logo.png" alt="Logo WAYGO" class="h-10 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105" onerror="this.src='https://placehold.co/100x100/15803d/ffffff?text=W'">
-                    <div class="flex flex-col">
-                        <span class="font-heading font-bold text-xl leading-none text-dark-900 tracking-tight">WAYGO</span>
-                        <span class="text-[0.6rem] font-bold text-brand-700 tracking-widest uppercase">Sinergi Nusantara</span>
-                    </div>
+    <!-- Navbar -->
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <img src="logo.png" alt="PT WAYGO" class="h-12 object-contain" onerror="this.src='https://via.placeholder.com/150x50/ffffff/1b4332?text=WAYGO';">
+            
+            <nav class="hidden md:flex space-x-8 items-center font-semibold">
+                <a href="#about" class="text-gray-700 hover:text-brand-green transition">
+                    <span class="lang-id">Tentang Korporasi</span><span class="lang-en hidden">Corporate Profile</span>
+                </a>
+                <a href="#divisions" class="text-gray-700 hover:text-brand-green transition">
+                    <span class="lang-id">Divisi Bisnis</span><span class="lang-en hidden">Business Divisions</span>
                 </a>
                 
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="#tentang" class="text-sm font-semibold text-slate-700 hover:text-brand-700 transition">Profil Korporat</a>
-                    <a href="#layanan" class="text-sm font-semibold text-slate-700 hover:text-brand-700 transition">Unit Bisnis</a>
-                    <a href="#area" class="text-sm font-semibold text-slate-700 hover:text-brand-700 transition">Jaringan Logistik</a>
-                    <a href="#faq" class="text-sm font-semibold text-slate-700 hover:text-brand-700 transition">FAQ</a>
-                    
-                    <div class="w-px h-6 bg-slate-300"></div> <!-- Divider -->
-
-                    <div class="flex space-x-3">
-                        <a href="#form-jual" class="bg-brand-700 hover:bg-brand-800 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition shadow-[0_4px_14px_0_rgba(21,128,61,0.39)]">Portal Akuisisi</a>
-                        <a href="#form-mitra" class="bg-white border-2 border-slate-300 text-slate-700 hover:border-dark-900 hover:text-dark-900 px-6 py-2.5 rounded-xl text-sm font-bold transition">Kemitraan B2B</a>
-                    </div>
+                <!-- Language Toggle -->
+                <div class="flex items-center ml-4 border-l pl-4 border-gray-300">
+                    <span class="mr-2 text-xs font-bold text-gray-500">ID</span>
+                    <div id="langToggleBtn" class="lang-switch"></div>
+                    <span class="ml-2 text-xs font-bold text-gray-500">EN</span>
                 </div>
-
-                <!-- Mobile Button -->
-                <button class="lg:hidden text-dark-900 text-2xl focus:outline-none p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+            </nav>
         </div>
-        
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl pb-6 pt-2 px-6 flex flex-col space-y-2">
-            <a href="#tentang" class="font-semibold text-slate-700 py-3 border-b border-slate-100">Profil Korporat</a>
-            <a href="#layanan" class="font-semibold text-slate-700 py-3 border-b border-slate-100">Unit Bisnis</a>
-            <a href="#area" class="font-semibold text-slate-700 py-3 border-b border-slate-100">Jaringan Logistik</a>
-            <a href="#faq" class="font-semibold text-slate-700 py-3 border-b border-slate-100">FAQ</a>
-            <div class="pt-4 flex flex-col gap-3">
-                <a href="#form-jual" class="bg-brand-700 text-white text-center py-3 rounded-xl font-bold shadow-md">Portal Akuisisi (Jual UCO)</a>
-                <a href="#form-mitra" class="bg-slate-100 text-slate-800 border border-slate-300 text-center py-3 rounded-xl font-bold">Registrasi Kemitraan</a>
-            </div>
-        </div>
-    </nav>
+    </header>
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex items-center justify-center pt-32 pb-24">
-        <!-- Background Slider menggunakan gambar lokal (1.png, 2.png, 3.png) -->
-        <div class="absolute inset-0 z-0 overflow-hidden bg-dark-950">
-            <div class="hero-slide active" style="background-image: url('1.png'); background-color: #0f172a;"></div>
-            <div class="hero-slide" style="background-image: url('2.png'); background-color: #0f172a;"></div>
-            <div class="hero-slide" style="background-image: url('3.png'); background-color: #0f172a;"></div>
-            <!-- Heavy Gradient Overlay to ensure WHITE text is always readable -->
-            <div class="absolute inset-0 bg-gradient-to-b from-dark-950/85 via-dark-900/70 to-dark-950/95"></div>
+    <!-- Hero Section -->
+    <section class="relative pt-20 h-screen flex items-center">
+        <div class="absolute inset-0 z-0">
+            <img src="hero-utama.jpg" alt="Corporate" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop';"/>
+            <div class="absolute inset-0 hero-overlay"></div>
         </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col items-center text-center">
-            <div class="inline-flex items-center px-4 py-2 rounded-full border border-brand-500/50 bg-dark-900/50 backdrop-blur-md text-brand-400 mb-6 shadow-lg">
-                <i class="fas fa-shield-alt mr-2 text-xs"></i>
-                <span class="text-[0.65rem] md:text-xs font-bold tracking-widest uppercase">Mitra Rantai Pasok Terintegrasi Nasional</span>
-            </div>
-            
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white leading-tight mb-6 max-w-5xl drop-shadow-xl">
-                Transformasi Limbah UCO Menjadi <span class="text-brand-400 block mt-2">Ketahanan Energi Nasional</span>
-            </h1>
-            
-            <p class="text-base sm:text-lg md:text-xl text-slate-200 mb-10 max-w-3xl font-light leading-relaxed drop-shadow-md">
-                <strong>PT WAYGO SINERGI NUSANTARA</strong> hadir sebagai pelopor manajemen rantai pasok <em>Used Cooking Oil</em> (UCO). Kami mengelola limbah dengan standar tata kelola industri untuk mewujudkan visi ekonomi sirkular dan masa depan energi berkelanjutan.
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">PT WAYGO SINERGI NUSANTARA</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 font-light max-w-3xl mx-auto leading-relaxed">
+                <span class="lang-id">Integritas dalam Rantai Pasok Nasional. Menjembatani komoditas alam berkualitas tinggi dengan kebutuhan manufaktur global melalui kepatuhan hukum dan standar operasi yang ketat.</span>
+                <span class="lang-en hidden">Integrity in the National Supply Chain. Bridging high-quality natural commodities with global manufacturing needs through strict legal compliance and operational standards.</span>
             </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
-                <a href="#form-jual" class="w-full sm:w-auto px-6 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-xl font-bold text-center transition-all shadow-lg hover:-translate-y-1 text-base md:text-lg flex items-center justify-center">
-                    <i class="fas fa-recycle mr-2"></i> Akuisisi Limbah Sekarang
-                </a>
-                <a href="#layanan" class="w-full sm:w-auto px-6 py-4 bg-dark-900 sm:bg-white/10 hover:bg-dark-800 sm:hover:bg-white/20 text-white border border-dark-700 sm:border-white/30 sm:backdrop-blur-md rounded-xl font-bold text-center transition-all sm:shadow-none hover:-translate-y-1 text-base md:text-lg flex items-center justify-center">
-                    Eksplorasi Ekosistem
-                </a>
-            </div>
+            <a href="#divisions" class="bg-brand-wood text-white px-8 py-4 rounded font-bold hover:bg-amber-900 transition shadow-lg inline-flex items-center">
+                <span class="lang-id">Jelajahi Divisi Kami</span><span class="lang-en hidden">Explore Our Divisions</span>
+                <i class="fas fa-arrow-down ml-3"></i>
+            </a>
         </div>
     </section>
-    <!-- ABOUT SECTION (Corporate Profile) -->
-    <section id="tentang" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Image Grid menggunakan 4.png -->
-                <div class="relative order-2 lg:order-1">
-                    <img src="4.png" alt="Fasilitas Logistik WAYGO" class="rounded-[2rem] shadow-floating object-cover aspect-[4/3] w-full border border-slate-100" onerror="this.src='https://placehold.co/800x600/e2e8f0/475569?text=Corporate+Facility'">
-                    <div class="absolute -bottom-8 -right-8 bg-dark-900 p-6 rounded-2xl shadow-floating max-w-xs border border-dark-800 hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 bg-brand-600 text-white rounded-full flex items-center justify-center text-2xl shadow-inner">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-bold text-white text-lg leading-tight">Tata Kelola & Kepatuhan</h4>
-                                <p class="text-sm text-slate-400 mt-1">Legalitas Korporasi Terjamin.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Content -->
-                <div class="order-1 lg:order-2">
-                    <h2 class="text-brand-700 font-extrabold tracking-widest uppercase text-sm mb-4 flex items-center">
-                        <span class="w-8 h-1 bg-brand-700 mr-3 rounded-full"></span> Profil Korporat
-                    </h2>
-                    <h3 class="text-3xl md:text-5xl font-heading font-bold text-dark-900 leading-[1.2] mb-6">Membangun Infrastruktur Ekonomi Sirkular Berkelanjutan</h3>
-                    <p class="text-slate-600 mb-8 text-lg leading-relaxed">
-                        Sebagai entitas perseroan yang resmi berbadan hukum, <strong>PT WAYGO SINERGI NUSANTARA</strong> berkomitmen menyajikan solusi logistik limbah yang transparan dan profesional. Kami mengkonsolidasi pasokan minyak jelantah melalui sistem terpusat, menjaga standar mutu bahan baku <em>(Quality Control)</em> untuk kebutuhan suplai industri pengolahan Biodiesel (FAME).
-                    </p>
+    <!-- About & Legality -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h4 class="text-brand-wood font-bold tracking-wider uppercase mb-2">
+                    <span class="lang-id">Kredibilitas & Legalitas</span><span class="lang-en hidden">Credibility & Legality</span>
+                </h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-6">
+                    <span class="lang-id">Fondasi Kuat untuk Kemitraan Jangka Panjang</span>
+                    <span class="lang-en hidden">A Strong Foundation for Long-term Partnerships</span>
+                </h2>
+                <div class="space-y-4 text-gray-600 leading-relaxed text-justify">
+                    <p class="lang-id">Kepercayaan dalam bisnis Business-to-Business (B2B) bertumpu pada mitigasi risiko dan kepatuhan regulasi. PT WAYGO SINERGI NUSANTARA didirikan untuk memberikan kepastian pasokan bagi industri modern tanpa mengorbankan integritas operasional.</p>
+                    <p class="lang-en hidden">Trust in Business-to-Business (B2B) relies on risk mitigation and regulatory compliance. PT WAYGO SINERGI NUSANTARA was established to provide supply certainty for modern industries without compromising operational integrity.</p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                            <div class="text-brand-600 text-3xl mb-3"><i class="fas fa-truck-fast"></i></div>
-                            <h4 class="font-heading font-bold text-dark-900 text-lg mb-2">Manajemen Armada Logistik</h4>
-                            <p class="text-sm text-slate-600">Sistem penjemputan terstruktur dengan skala operasi terukur. Kapasitas akuisisi minimal 100Kg demi efisiensi rantai pasok.</p>
-                        </div>
-                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                            <div class="text-brand-600 text-3xl mb-3"><i class="fas fa-chart-line"></i></div>
-                            <h4 class="font-heading font-bold text-dark-900 text-lg mb-2">Sistem Valuasi Dinamis</h4>
-                            <p class="text-sm text-slate-600">Algoritma penentuan harga (Smart Pricing) yang transparan, berbasis volume, dan selaras dengan pergerakan indeks pasar energi.</p>
-                        </div>
-                    </div>
+                    <p class="lang-id">Berdomisili di Kabupaten Brebes, kami adalah entitas berbadan hukum sah yang terdaftar secara resmi di Kementerian Hukum dan HAM Republik Indonesia, serta tunduk pada perpajakan nasional. Kami siap menjalani proses <em>Vendor Onboarding</em> dan <em>Due Diligence</em> yang disyaratkan oleh perusahaan Anda.</p>
+                    <p class="lang-en hidden">Domiciled in Brebes Regency, we are a legal entity officially registered with the Ministry of Law and Human Rights of the Republic of Indonesia, and strictly comply with national taxation. We are ready to undergo any Vendor Onboarding and Due Diligence processes required by your company.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES (Unit Bisnis) -->
-    <section id="layanan" class="py-24 bg-[#f8fafc] border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-brand-700 font-extrabold tracking-widest uppercase text-sm mb-4">Unit Bisnis Strategis</h2>
-                <h3 class="text-3xl md:text-5xl font-heading font-bold text-dark-900 mb-6">Solusi Ekosistem End-to-End</h3>
-                <p class="text-slate-600 text-lg">Infrastruktur portal elektronik korporat untuk memfasilitasi akuisisi di tingkat hulu hingga pemenuhan suplai industri berskala masif di tingkat hilir.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1: Jual (5.png) -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-soft border border-slate-200 hover:shadow-floating transition-all duration-300 group flex flex-col">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="5.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Portal Akuisisi UCO" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Portal+Akuisisi'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 text-white">
-                            <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-lg">
-                                <i class="fas fa-recycle text-white"></i>
-                            </div>
-                            <h4 class="text-2xl font-heading font-bold">Portal Akuisisi Hulu</h4>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <p class="text-slate-600 text-base mb-8 leading-relaxed flex-grow">Platform digital bagi entitas F&B, Perhotelan, industri pangan, dan pengepul lokal untuk mengelola pelepasan limbah UCO secara aman dan menguntungkan.</p>
-                        <a href="#form-jual" class="w-full py-4 bg-brand-50 text-brand-700 font-bold rounded-xl text-center hover:bg-brand-600 hover:text-white transition-colors border border-brand-200 hover:border-brand-600">Akses Portal Akuisisi</a>
-                    </div>
-                </div>
-
-                <!-- Card 2: Beli B2B (6.png) -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-soft border border-slate-200 hover:shadow-floating transition-all duration-300 group flex flex-col">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="6.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Supply Chain B2B" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=B2B+Supply'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 text-white">
-                            <div class="w-12 h-12 bg-slate-100 text-dark-900 rounded-xl flex items-center justify-center text-xl mb-3 shadow-lg">
-                                <i class="fas fa-industry"></i>
-                            </div>
-                            <h4 class="text-2xl font-heading font-bold">Suplai B2B Korporat</h4>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <p class="text-slate-600 text-base mb-8 leading-relaxed flex-grow">Inquiry pengadaan bahan baku UCO bervolume tinggi yang telah melewati standarisasi dan filtrasi ketat untuk memenuhi spesifikasi industri Biodiesel.</p>
-                        <a href="#form-beli" class="w-full py-4 bg-slate-50 text-dark-800 font-bold rounded-xl text-center hover:bg-dark-900 hover:text-white transition-colors border border-slate-200">Ajukan Inquiry B2B</a>
-                    </div>
-                </div>
-
-                <!-- Card 3: Mitra (7.png) -->
-                <div class="bg-dark-900 rounded-[2rem] overflow-hidden shadow-soft hover:shadow-floating transition-all duration-300 group flex flex-col relative border border-dark-800">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="7.png" class="w-full h-full object-cover opacity-50 mix-blend-overlay group-hover:scale-110 transition-transform duration-700" alt="Partnership Strategis" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Partnership'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 text-white">
-                            <div class="w-12 h-12 bg-white/10 backdrop-blur rounded-xl border border-white/20 flex items-center justify-center text-xl mb-3 shadow-lg">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h4 class="text-2xl font-heading font-bold text-brand-400">Jaringan Kemitraan</h4>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow bg-dark-950">
-                        <p class="text-slate-400 text-base mb-8 leading-relaxed flex-grow">Peluang ekspansi strategis sebagai Agen Perwakilan Distrik <em>(Hub)</em> kami. Dapatkan dukungan modal, bimbingan operasional, dan proteksi area kerja.</p>
-                        <a href="#form-mitra" class="w-full py-4 bg-brand-600 text-white font-bold rounded-xl text-center hover:bg-brand-500 transition-colors shadow-lg">Registrasi Keagenan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AREA OPERASI -->
-    <section id="area" class="py-24 bg-dark-950 relative overflow-hidden">
-        <div class="absolute -right-40 -top-40 w-[600px] h-[600px] bg-brand-800 rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
-        <div class="absolute -left-40 bottom-0 w-[500px] h-[500px] bg-blue-900 rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-brand-400 font-extrabold tracking-widest uppercase text-sm mb-4">Strategic Coverage Area</h2>
-                <h3 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6">Peta Infrastruktur Logistik</h3>
-                <p class="text-slate-400 text-lg">Konsolidasi penjemputan difokuskan pada hub wilayah strategis untuk menjamin kecepatan respons, meminimalisir emisi karbon transportasi, dan memaksimalkan nilai efisiensi rantai pasok.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Point 1 -->
-                <div class="bg-dark-900 border border-dark-800 p-8 rounded-[2rem] hover:border-brand-500/50 transition-colors">
-                    <div class="w-16 h-16 bg-dark-800 rounded-2xl flex items-center justify-center text-brand-500 text-2xl mb-6 shadow-inner">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <h4 class="text-xl font-heading font-bold text-white mb-3">Kabupaten Brebes</h4>
-                    <p class="text-slate-400 leading-relaxed text-sm">Pusat operasional utama (Central Hub). Area ini mendapatkan prioritas tertinggi untuk penjadwalan armada logistik skala harian.</p>
-                </div>
-                <!-- Point 2 -->
-                <div class="bg-dark-900 border border-dark-800 p-8 rounded-[2rem] hover:border-brand-500/50 transition-colors">
-                    <div class="w-16 h-16 bg-dark-800 rounded-2xl flex items-center justify-center text-brand-500 text-2xl mb-6 shadow-inner">
-                        <i class="fas fa-route"></i>
-                    </div>
-                    <h4 class="text-xl font-heading font-bold text-white mb-3">Cirebon Timur</h4>
-                    <p class="text-slate-400 leading-relaxed text-sm">Jalur strategis terintegrasi (Node). Penjemputan dilakukan secara berkala mengikuti sistem rute konsolidasi mingguan.</p>
-                </div>
-                <!-- Point 3 -->
-                <div class="bg-dark-900 border border-dark-800 p-8 rounded-[2rem] hover:border-brand-500/50 transition-colors">
-                    <div class="w-16 h-16 bg-dark-800 rounded-2xl flex items-center justify-center text-brand-500 text-2xl mb-6 shadow-inner">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h4 class="text-xl font-heading font-bold text-white mb-3">Kuningan Timur</h4>
-                    <p class="text-slate-400 leading-relaxed text-sm">Area perluasan operasi (Expansion Zone). Penugasan armada dilaksanakan secara optimal apabila pemenuhan kuota tercapai.</p>
-                </div>
-            </div>
-            
-            <div class="mt-10 bg-blue-900/20 border border-blue-800/50 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between">
-                <div class="flex items-center mb-4 sm:mb-0">
-                    <i class="fas fa-info-circle text-blue-400 text-2xl mr-4"></i>
-                    <p class="text-blue-200 text-sm">Lokasi entitas Anda berada di luar area jangkauan utama? Tim <em>Business Development</em> kami senantiasa siap melakukan tinjauan kelayakan operasional kustom.</p>
-                </div>
-                <a href="#form-jual" class="whitespace-nowrap px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg text-sm transition-colors">Ajukan Tinjauan</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- 🧾 RUANG 1: FORM JUAL JELANTAH (UCO) -->
-    <!-- ========================================== -->
-    <section id="form-jual" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div class="mb-12">
-                <span class="bg-brand-100 text-brand-800 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-flex items-center">
-                    <i class="fas fa-door-open mr-2"></i> Ruang Transaksi 01
-                </span>
-                <h3 class="text-3xl md:text-5xl font-heading font-bold text-dark-900">Portal Akuisisi UCO</h3>
-                <p class="text-slate-600 mt-4 text-lg max-w-3xl">Registrasikan data pasokan Anda untuk memicu penjadwalan armada penjemputan. Fitur <em>Smart Pricing</em> akan memberikan simulasi nilai valuasi barang Anda secara transparan.</p>
-            </div>
-
-            <!-- PREMIUM SPLIT LAYOUT -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-                
-                <!-- LEFT: FORM LAYOUT -->
-                <div class="lg:col-span-7 bg-[#f8fafc] border border-slate-200 rounded-[2.5rem] p-8 md:p-10 shadow-sm">
-                    <form id="jualForm" class="space-y-6">
-                        
-                        <!-- Form Row 1 -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-bold text-dark-900 mb-2">Nama Instansi / Entitas *</label>
-                                <input type="text" id="j_nama" required class="w-full px-5 py-4 rounded-xl input-field text-base" placeholder="Contoh: PT ABC / Bapak Budi">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-dark-900 mb-2">WhatsApp PIC Aktif *</label>
-                                <input type="tel" id="j_wa" required class="w-full px-5 py-4 rounded-xl input-field text-base" placeholder="08xxxxxxxxxx">
-                            </div>
-                        </div>
-
-                        <!-- Form Row 2 -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-bold text-dark-900 mb-2">Wilayah Teritori *</label>
-                                <select id="j_kota" required class="w-full px-5 py-4 rounded-xl input-field text-base appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.8rem_auto] bg-no-repeat bg-[position:right_1.2rem_center]">
-                                    <option value="" disabled selected>Pilih Area Hub...</option>
-                                    <option value="Kabupaten Brebes">Kabupaten Brebes</option>
-                                    <option value="Cirebon Timur">Cirebon Timur</option>
-                                    <option value="Kuningan Timur">Kuningan Timur</option>
-                                    <option value="Luar Area">Luar Area Teritori (Review Khusus)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-dark-900 mb-2">Alamat Detail Lokasi *</label>
-                                <input type="text" id="j_alamat" required class="w-full px-5 py-4 rounded-xl input-field text-base" placeholder="Jalan, No, Gudang/Gedung, Patokan">
-                            </div>
-                        </div>
-
-                        <!-- Form Row 3 -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-bold text-dark-900 mb-2">Kategori Sumber Suplai *</label>
-                                <select id="j_sumber" required class="w-full px-5 py-4 rounded-xl input-field text-base appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.8rem_auto] bg-no-repeat bg-[position:right_1.2rem_center]">
-                                    <option value="" disabled selected>Pilih Kategori Sumber...</option>
-                                    <option value="F&B (Resto/Cafe)">Entitas F&B (Restoran/Hotel)</option>
-                                    <option value="Industri / Pabrik">Sektor Industri / Pabrik Pangan</option>
-                                    <option value="Pengepul Mandiri">Agen / Pengepul Mandiri</option>
-                                    <option value="Rumah Tangga">Kolektif Rumah Tangga</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-dark-900 mb-2">Tanggal Eksekusi Logistik *</label>
-                                <input type="date" id="j_jadwal" required class="w-full px-5 py-4 rounded-xl input-field text-base">
-                            </div>
-                        </div>
-
-                        <!-- THE TRIGGER INPUT (SMART PRICING) -->
-                        <div class="mt-8 bg-white border border-brand-300 p-8 rounded-[2rem] shadow-[0_10px_30px_rgba(21,128,61,0.05)] relative overflow-hidden">
-                            <div class="absolute top-0 right-0 bg-brand-600 text-white px-4 py-1.5 rounded-bl-2xl font-bold text-xs tracking-wider uppercase shadow-md">
-                                Smart Valuasi Aktif
-                            </div>
-                            
-                            <label class="block text-base font-bold text-dark-900 mb-3">Estimasi Volume Pasokan (Kilogram) *</label>
-                            <p class="text-sm text-slate-500 mb-4 font-medium">Algoritma sistem akan mengkalkulasi harga dasar akuisisi secara dinamis.</p>
-                            
-                            <div class="relative">
-                                <input type="number" id="j_jumlah" min="1" required class="w-full px-6 py-5 pr-16 rounded-2xl border-2 border-slate-300 focus:border-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-600/10 text-2xl font-bold text-dark-900 transition-all bg-slate-50 focus:bg-white" placeholder="Masukkan angka volume..." oninput="calculatePricing()">
-                                <span class="absolute right-6 top-[1.3rem] text-slate-400 font-bold text-lg">Kg</span>
-                            </div>
-                        </div>
-
-                        <!-- Action Buttons -->
-                        <div class="pt-8 mt-4 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <button type="button" onclick="submitForm('jual', 'wa')" class="w-full bg-[#25D366] hover:bg-[#1ebd5b] text-white font-bold py-5 rounded-xl transition shadow-lg hover:-translate-y-1 flex items-center justify-center text-lg">
-                                <i class="fab fa-whatsapp text-2xl mr-3"></i> Transmisi Data (WA)
-                            </button>
-                            <button type="button" onclick="submitForm('jual', 'email')" class="w-full bg-dark-900 hover:bg-dark-950 text-white font-bold py-5 rounded-xl transition shadow-lg hover:-translate-y-1 flex items-center justify-center text-lg">
-                                <i class="fas fa-envelope text-xl mr-3"></i> Transmisi Data (Email)
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- RIGHT: SMART PRICING PANEL -->
-                <div class="lg:col-span-5">
-                    <div class="sticky top-32 bg-dark-950 rounded-[2.5rem] p-8 md:p-10 text-white shadow-floating overflow-hidden relative border border-dark-800">
-                        <!-- Design Element -->
-                        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-700 rounded-full blur-[90px] opacity-30"></div>
-                        
-                        <div class="relative z-10">
-                            <div class="flex justify-between items-start mb-8 border-b border-dark-800 pb-6">
-                                <div>
-                                    <h4 class="text-xs font-bold text-brand-400 tracking-widest uppercase mb-2">Modul Kalkulasi Data</h4>
-                                    <h5 class="text-3xl font-heading font-bold text-white leading-tight">Proyeksi<br>Valuasi Aset</h5>
-                                </div>
-                                <div class="w-14 h-14 bg-dark-800 rounded-2xl flex items-center justify-center text-brand-400 border border-dark-700 shadow-inner">
-                                    <i class="fas fa-calculator text-2xl"></i>
-                                </div>
-                            </div>
-
-                            <!-- Display Area -->
-                            <div id="pricing-display" class="min-h-[220px] flex flex-col justify-center">
-                                <!-- Default Empty State -->
-                                <div class="flex flex-col items-center text-center py-10 border-2 border-dashed border-dark-800 rounded-3xl text-slate-500 bg-dark-900/50">
-                                    <div class="w-16 h-16 bg-dark-800 rounded-full flex items-center justify-center mb-4">
-                                        <i class="fas fa-arrow-left text-2xl text-slate-400"></i>
-                                    </div>
-                                    <p class="text-base font-medium px-6 text-slate-400">Silakan input data volume (Kg) pada form di samping kiri untuk mengaktifkan kalkulasi.</p>
-                                </div>
-                            </div>
-
-                            <!-- Terms Info -->
-                            <div class="mt-8 bg-dark-900 p-6 rounded-2xl border border-dark-800">
-                                <h6 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Ketentuan Operasional Standard (SOP)</h6>
-                                <ul class="space-y-3 text-sm text-slate-400">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-info-circle text-brand-500 mt-0.5 mr-3 text-base shrink-0"></i> 
-                                        <span>Prioritas pengerahan armada eksklusif diberlakukan untuk volume <strong>&ge; 100 Kg</strong>.</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-info-circle text-brand-500 mt-0.5 mr-3 text-base shrink-0"></i> 
-                                        <span>Realisasi transaksi bersifat tunduk pada hasil inspeksi <em>Quality Control</em> (indikator kadar air & zat pengotor) di titik bongkar-muat.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- 🏢 RUANG 2 & 3: FORM BELI & MITRA (Terpisah Warna & Style) -->
-    <!-- ========================================== -->
-    <section class="py-24 bg-[#f1f5f9] border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                
-                <!-- PORTAL B2B (CORPORATE BLUE/GREY THEME) -->
-                <div id="form-beli" class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-soft border border-slate-200 flex flex-col relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-100 rounded-bl-full z-0 pointer-events-none"></div>
-                    
-                    <div class="mb-10 relative z-10">
-                        <div class="w-14 h-14 bg-dark-900 text-white rounded-2xl flex items-center justify-center text-2xl mb-5 shadow-lg">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <h2 class="text-xs font-bold text-slate-500 tracking-widest uppercase mb-2">Ruang Transaksi 02</h2>
-                        <h3 class="text-3xl font-heading font-bold text-dark-900">Portal Pengadaan B2B</h3>
-                        <p class="text-slate-600 text-base mt-2">Registrasi kebutuhan pasokan <em>Used Cooking Oil</em> (UCO) bervolume masif untuk menyokong kebutuhan produksi industri Anda.</p>
-                    </div>
-
-                    <form class="space-y-6 flex-grow relative z-10">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Identitas Korporasi *</label>
-                                <input type="text" id="b_nama" required class="w-full border-b-2 border-slate-200 bg-transparent py-3 focus:border-dark-900 outline-none text-dark-900 font-bold transition-colors placeholder-slate-400" placeholder="PT / CV / Ltd">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Kontak Direksi / PIC *</label>
-                                <input type="tel" id="b_wa" required class="w-full border-b-2 border-slate-200 bg-transparent py-3 focus:border-dark-900 outline-none text-dark-900 font-bold transition-colors placeholder-slate-400" placeholder="Nomor Telepon/WA">
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Kapasitas Diminta (Ton) *</label>
-                                <input type="number" id="b_kebutuhan" required class="w-full border-b-2 border-slate-200 bg-transparent py-3 focus:border-dark-900 outline-none text-dark-900 font-bold transition-colors placeholder-slate-400" placeholder="Estimasi Tonase Bulanan">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Destinasi Logistik *</label>
-                                <input type="text" id="b_lokasi" required class="w-full border-b-2 border-slate-200 bg-transparent py-3 focus:border-dark-900 outline-none text-dark-900 font-bold transition-colors placeholder-slate-400" placeholder="Lokasi Plant/Gudang">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Alamat Email Resmi (Opsional)</label>
-                            <input type="email" id="b_email" class="w-full border-b-2 border-slate-200 bg-transparent py-3 focus:border-dark-900 outline-none text-dark-900 font-bold transition-colors placeholder-slate-400" placeholder="procurement@perusahaan.com">
-                        </div>
-
-                        <div class="pt-8 mt-auto grid grid-cols-2 gap-4">
-                            <button type="button" onclick="submitForm('beli', 'email')" class="w-full py-4 bg-slate-100 text-dark-900 font-bold rounded-xl hover:bg-slate-200 transition-colors border border-slate-300">
-                                Submit via Email
-                            </button>
-                            <button type="button" onclick="submitForm('beli', 'wa')" class="w-full py-4 bg-dark-900 text-white font-bold rounded-xl hover:bg-dark-950 transition-colors shadow-lg">
-                                Submit via WhatsApp
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- PORTAL MITRA (EXCLUSIVE DARK GREEN THEME) -->
-                <div id="form-mitra" class="bg-dark-950 rounded-[2.5rem] p-8 md:p-12 shadow-floating border border-dark-800 flex flex-col relative overflow-hidden">
-                    <div class="absolute -right-20 -bottom-20 opacity-5 pointer-events-none">
-                        <i class="fas fa-handshake text-[300px] text-white"></i>
-                    </div>
-
-                    <div class="mb-10 relative z-10">
-                        <div class="w-14 h-14 bg-white/10 text-white rounded-2xl flex items-center justify-center text-2xl mb-5 backdrop-blur border border-white/20 shadow-lg">
-                            <i class="fas fa-id-badge"></i>
-                        </div>
-                        <h2 class="text-xs font-bold text-brand-400 tracking-widest uppercase mb-2">Ruang Integrasi Bisnis</h2>
-                        <h3 class="text-3xl font-heading font-bold text-white">Registrasi Kemitraan</h3>
-                        <p class="text-slate-400 text-base mt-2">Daftarkan diri atau entitas Anda sebagai representatif operasional (Hub) resmi WAYGO di teritori wilayah Anda.</p>
-                    </div>
-
-                    <form class="space-y-6 flex-grow relative z-10">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Nama Representatif *</label>
-                                <input type="text" id="p_nama" required class="w-full px-5 py-4 rounded-xl input-field-dark text-base" placeholder="Nama Sesuai KTP/Akta">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Nomor Telepon/WA *</label>
-                                <input type="tel" id="p_wa" required class="w-full px-5 py-4 rounded-xl input-field-dark text-base" placeholder="Kontak Utama">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Cakupan Zona Penugasan *</label>
-                            <input type="text" id="p_lokasi" required class="w-full px-5 py-4 rounded-xl input-field-dark text-base" placeholder="Kota / Kabupaten Pengajuan">
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Klasifikasi Mitra *</label>
-                                <select id="p_jenis" required class="w-full px-5 py-4 rounded-xl input-field-dark text-base appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.8rem_auto] bg-no-repeat bg-[position:right_1.2rem_center]">
-                                    <option value="Agen Wilayah" class="text-dark-900">Agen Perwakilan Wilayah</option>
-                                    <option value="Pengepul Mandiri" class="text-dark-900">Distributor Utama</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Fasilitas Pendanaan</label>
-                                <select id="p_modal" class="w-full px-5 py-4 rounded-xl input-field-dark text-base appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.8rem_auto] bg-no-repeat bg-[position:right_1.2rem_center]">
-                                    <option value="Mandiri" class="text-dark-900">Modal Swadaya</option>
-                                    <option value="Butuh Support" class="text-dark-900">Pengajuan Injeksi Pusat</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="pt-8 mt-auto">
-                            <button type="button" onclick="submitForm('mitra', 'wa')" class="w-full py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-500 transition-colors shadow-[0_4px_20px_rgba(21,128,61,0.4)] text-lg">
-                                Transmisi Registrasi Kemitraan
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- ❓ FAQ SECTION (Pusat Informasi Korporat) -->
-    <!-- ========================================== -->
-    <section id="faq" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-brand-700 font-extrabold tracking-widest uppercase text-sm mb-4">Informasi Operasional</h2>
-                <h3 class="text-3xl md:text-5xl font-heading font-bold text-dark-900 mb-6">Pusat Resolusi & Kebijakan (FAQ)</h3>
-                <p class="text-slate-600 text-lg">Akses literatur panduan mengenai standardisasi operasional, regulasi harga, dan tata cara kemitraan PT WAYGO.</p>
-            </div>
-
-            <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <details class="group bg-[#f8fafc] border border-slate-200 rounded-2xl open:bg-white open:shadow-soft open:border-brand-200 transition-all duration-300">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-dark-900 font-heading font-bold text-lg outline-none select-none">
-                        Berapa spesifikasi volume minimal (Minimum Order Quantity) untuk penjemputan logistik?
-                        <span class="relative w-6 h-6 shrink-0 bg-white rounded-full flex items-center justify-center border border-slate-200 group-open:bg-brand-50 group-open:border-brand-200 transition-colors">
-                            <i class="fas fa-chevron-down text-sm text-slate-500 group-open:text-brand-600 transition-transform duration-300 group-open:-rotate-180"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-slate-600 leading-relaxed pt-2">
-                        <div class="w-full h-px bg-slate-100 mb-4"></div>
-                        Demi menjaga efisiensi rantai pasok dan menekan emisi karbon logistik, standar pengerahan armada eksklusif adalah untuk volume akumulatif minimal <strong>100 Kg</strong>. Pengajuan di bawah kuota tersebut tetap akan diakomodasi melalui sistem penjadwalan konsolidasi <em>(batch route)</em>.
-                    </div>
-                </details>
-
-                <!-- FAQ 2 -->
-                <details class="group bg-[#f8fafc] border border-slate-200 rounded-2xl open:bg-white open:shadow-soft open:border-brand-200 transition-all duration-300">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-dark-900 font-heading font-bold text-lg outline-none select-none">
-                        Bagaimana mekanisme penetapan valuasi harga beli (Smart Pricing)?
-                        <span class="relative w-6 h-6 shrink-0 bg-white rounded-full flex items-center justify-center border border-slate-200 group-open:bg-brand-50 group-open:border-brand-200 transition-colors">
-                            <i class="fas fa-chevron-down text-sm text-slate-500 group-open:text-brand-600 transition-transform duration-300 group-open:-rotate-180"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-slate-600 leading-relaxed pt-2">
-                        <div class="w-full h-px bg-slate-100 mb-4"></div>
-                        Kami mengimplementasikan metode <em>Volume-Based Tiering</em> transparan. Harga pokok per-kilogram bersifat progresif; semakin besar tonase pasokan, semakin tinggi nilai indeks harganya. Anda dapat menggunakan kalkulator pada <strong>Portal Akuisisi Hulu</strong> untuk memproyeksikan besaran nilai secara *real-time*.
-                    </div>
-                </details>
-
-                <!-- FAQ 3 -->
-                <details class="group bg-[#f8fafc] border border-slate-200 rounded-2xl open:bg-white open:shadow-soft open:border-brand-200 transition-all duration-300">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-dark-900 font-heading font-bold text-lg outline-none select-none">
-                        Apakah entitas WAYGO mengakomodasi pasokan dari limbah skala rumah tangga domestik?
-                        <span class="relative w-6 h-6 shrink-0 bg-white rounded-full flex items-center justify-center border border-slate-200 group-open:bg-brand-50 group-open:border-brand-200 transition-colors">
-                            <i class="fas fa-chevron-down text-sm text-slate-500 group-open:text-brand-600 transition-transform duration-300 group-open:-rotate-180"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-slate-600 leading-relaxed pt-2">
-                        <div class="w-full h-px bg-slate-100 mb-4"></div>
-                        Ya, kami melayani semua spektrum sumber pasokan. Namun, guna memenuhi kelayakan operasional, limbah domestik (rumah tangga) sangat direkomendasikan untuk dihimpun terlebih dahulu melalui Bank Sampah terdekat atau dikelola secara kolektif di tingkat Rukun Warga (RW)/Kompleks Perumahan.
-                    </div>
-                </details>
-
-                <!-- FAQ 4 -->
-                <details class="group bg-[#f8fafc] border border-slate-200 rounded-2xl open:bg-white open:shadow-soft open:border-brand-200 transition-all duration-300">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-dark-900 font-heading font-bold text-lg outline-none select-none">
-                        Apa terminologi "Fasilitas Pendanaan" dalam program kemitraan keagenan?
-                        <span class="relative w-6 h-6 shrink-0 bg-white rounded-full flex items-center justify-center border border-slate-200 group-open:bg-brand-50 group-open:border-brand-200 transition-colors">
-                            <i class="fas fa-chevron-down text-sm text-slate-500 group-open:text-brand-600 transition-transform duration-300 group-open:-rotate-180"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-slate-600 leading-relaxed pt-2">
-                        <div class="w-full h-px bg-slate-100 mb-4"></div>
-                        Bagi kandidat Agen Perwakilan Distrik yang lulus tahap evaluasi kelayakan <em>(due diligence)</em> dan terbukti memiliki infrastruktur jejaring yang solid, PT WAYGO menyediakan opsi injeksi pendanaan operasional modal kerja. Syarat dan ketentuan akan diatur ketat dalam Perjanjian Kerja Sama (PKS) legal.
-                    </div>
-                </details>
-
-                <!-- FAQ 5 -->
-                <details class="group bg-[#f8fafc] border border-slate-200 rounded-2xl open:bg-white open:shadow-soft open:border-brand-200 transition-all duration-300">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-dark-900 font-heading font-bold text-lg outline-none select-none">
-                        Bagaimana standarisasi proses penyelesaian pembayaran?
-                        <span class="relative w-6 h-6 shrink-0 bg-white rounded-full flex items-center justify-center border border-slate-200 group-open:bg-brand-50 group-open:border-brand-200 transition-colors">
-                            <i class="fas fa-chevron-down text-sm text-slate-500 group-open:text-brand-600 transition-transform duration-300 group-open:-rotate-180"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-slate-600 leading-relaxed pt-2">
-                        <div class="w-full h-px bg-slate-100 mb-4"></div>
-                        Siklus pencairan dana diotorisasi seketika <strong>(Real-time Settlement)</strong> pasca-penyelesaian fase <em>Quality Control (QC)</em> dan audit timbangan presisi di titik muat. Untuk mewujudkan prinsip tata kelola yang baik (Good Corporate Governance), kami merekomendasikan metode pembayaran nontunai via Transfer Bank.
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER LENGKAP -->
-    <footer class="bg-dark-950 text-slate-400 pt-24 pb-12 border-t-4 border-brand-600">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-                
-                <!-- Branding Korporat -->
-                <div class="md:col-span-4">
-                    <div class="flex items-center gap-3 mb-6">
-                        <!-- Menggunakan logo.png -->
-                        <img src="logo.png" alt="Logo WAYGO" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/100x100/15803d/ffffff?text=W'">
-                        <div class="flex flex-col">
-                            <span class="font-heading font-bold text-2xl text-white tracking-tight leading-none">WAYGO</span>
-                            <span class="text-[0.65rem] font-bold text-brand-500 tracking-[0.2em] uppercase mt-1">Sinergi Nusantara</span>
-                        </div>
-                    </div>
-                    <p class="text-sm leading-relaxed mb-8 text-slate-400">
-                        Korporasi manajemen rantai pasok minyak jelantah nasional. Beroperasi secara resmi guna mengakselerasi sirkular ekonomi, menurunkan emisi karbon, dan menjamin ketahanan industri energi terbarukan di Indonesia.
-                    </p>
-                    
-                    <h6 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Jejaring Media Resmi</h6>
-                    <div class="flex space-x-3">
-                        <a href="https://www.facebook.com/profile.php?id=61589771496118" target="_blank" class="w-10 h-10 bg-dark-900 border border-dark-800 hover:bg-brand-600 hover:border-brand-500 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all shadow-md">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/way_go.id?igsh=MW53b3o1Nng1ZDhnZQ==" target="_blank" class="w-10 h-10 bg-dark-900 border border-dark-800 hover:bg-brand-600 hover:border-brand-500 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all shadow-md">
-                            <i class="fab fa-instagram text-lg"></i>
-                        </a>
-                        <a href="https://tiktok.com/@waygo.indonesia" target="_blank" class="w-10 h-10 bg-dark-900 border border-dark-800 hover:bg-brand-600 hover:border-brand-500 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all shadow-md">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Kontak Eksekutif -->
-                <div class="md:col-span-4">
-                    <h4 class="text-white font-heading font-bold text-lg mb-6 flex items-center">
-                        <i class="fas fa-headset mr-3 text-brand-500"></i> Corporate Contact
-                    </h4>
-                    <ul class="space-y-6">
-                        <li class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-dark-900 border border-dark-800 flex items-center justify-center mr-4 shrink-0 text-brand-400">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <p class="text-[0.7rem] uppercase text-slate-500 mb-1 font-bold tracking-wider">Layanan Representatif WA</p>
-                                <a href="https://wa.me/6285641366030" class="text-slate-200 text-lg font-bold hover:text-brand-400 transition-colors">0856 4136 6030</a>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-dark-900 border border-dark-800 flex items-center justify-center mr-4 shrink-0 text-brand-400">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <p class="text-[0.7rem] uppercase text-slate-500 mb-1 font-bold tracking-wider">Telepon Manajemen Ops</p>
-                                <a href="tel:+6283181662814" class="text-slate-200 text-lg font-bold hover:text-brand-400 transition-colors">0831 8166 2814</a>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-dark-900 border border-dark-800 flex items-center justify-center mr-4 shrink-0 text-brand-400">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-[0.7rem] uppercase text-slate-500 mb-1 font-bold tracking-wider">Surel Institusi (B2B)</p>
-                                <a href="mailto:halo.waygo@gmail.com" class="text-slate-200 font-medium hover:text-brand-400 transition-colors">halo.waygo@gmail.com</a>
-                            </div>
-                        </li>
+                <div class="mt-8 bg-gray-50 p-6 rounded-lg border-l-4 border-brand-green">
+                    <h3 class="font-bold text-lg mb-4 text-brand-dark">
+                        <span class="lang-id">Dokumen Kepatuhan Resmi</span><span class="lang-en hidden">Official Compliance Documents</span>
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex"><i class="fas fa-shield-alt text-brand-green mt-1 mr-3"></i> <span><strong class="lang-id">AHU Kemenkumham RI:</strong><strong class="lang-en hidden">Ministry of Law Decree:</strong> <span class="lang-id">Pengesahan legalitas pendirian perusahaan.</span><span class="lang-en hidden">Legal validation of company establishment.</span></span></li>
+                        <li class="flex"><i class="fas fa-file-signature text-brand-green mt-1 mr-3"></i> <span><strong class="lang-id">NIB (Nomor Induk Berusaha):</strong><strong class="lang-en hidden">Business Identification Number (NIB):</strong> <span class="lang-id">Izin operasional komersial berbasis risiko melalui sistem OSS.</span><span class="lang-en hidden">Risk-based commercial operational license via the OSS system.</span></span></li>
                     </ul>
                 </div>
+            </div>
+            <div class="relative">
+                <img src="legalitas.jpg" alt="Dokumen Legalitas" class="w-full rounded-xl shadow-2xl border border-gray-200" onerror="this.src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop';">
+            </div>
+        </div>
+    </section>
 
-                <!-- Google Maps Asli (Interaktif) -->
-                <div class="md:col-span-4">
-                    <h4 class="text-white font-heading font-bold text-lg mb-6 flex items-center">
-                        <i class="fas fa-map-marked-alt mr-3 text-brand-500"></i> Kantor Eksekutif & Hub
-                    </h4>
-                    <div class="relative rounded-2xl overflow-hidden border border-dark-700 hover:border-brand-500 transition-colors shadow-lg h-48 group">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=-7.083112,108.886174&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(90%) contrast(90%);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="opacity-70 group-hover:opacity-100 transition-opacity duration-500">
-                        </iframe>
-                        
-                        <a href="https://maps.app.goo.gl/jRik6Z7SxPBAjF8K8?g_st=ac" target="_blank" class="absolute bottom-3 right-3 bg-dark-900/90 hover:bg-brand-600 border border-dark-700 hover:border-brand-500 backdrop-blur-md px-4 py-2 text-xs text-white rounded-xl font-bold transition-all shadow-lg flex items-center z-10">
-                            <i class="fas fa-external-link-alt mr-2 text-brand-400 group-hover:text-white"></i> Arahkan Rute
-                        </a>
-                    </div>
-                </div>
-
+    <!-- Divisions Gateway -->
+    <section id="divisions" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-4">
+                <span class="lang-id">Pilih Divisi Spesialis Kami</span><span class="lang-en hidden">Choose Our Specialist Divisions</span>
+            </h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+                <span class="lang-id">Untuk menjaga fokus kualitas dan standar operasional (SOP) yang spesifik pada industrinya, operasional kami dibagi menjadi dua ekosistem terpisah.</span>
+                <span class="lang-en hidden">To maintain quality focus and industry-specific operational standards (SOP), our operations are divided into two separate ecosystems.</span>
+            </p>
             
-            <!-- Bottom Footer with Legal Links -->
-            <div class="border-t border-dark-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
-                <p class="text-slate-500 mb-4 md:mb-0">&copy; 2026 PT WAYGO SINERGI NUSANTARA. Hak Kekayaan Intelektual Terlindungi Hukum.</p>
-                
-                <div class="flex flex-wrap justify-center gap-6">
-                    <button onclick="openModal('privacyModal')" class="text-slate-500 hover:text-brand-400 transition-colors font-medium">Kebijakan Privasi</button>
-                    <button onclick="openModal('termsModal')" class="text-slate-500 hover:text-brand-400 transition-colors font-medium">Syarat & Ketentuan Akses</button>
-                    <button onclick="openModal('legalModal')" class="text-slate-500 hover:text-brand-400 transition-colors font-medium">Status Legalitas Perseroan</button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Card Divisi Biomassa -->
+                <a href="biomassa.html" class="block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                    <div class="h-64 bg-brand-green flex flex-col items-center justify-center text-white relative">
+                        <i class="fas fa-recycle text-8xl opacity-10 absolute"></i>
+                        <h3 class="text-2xl font-bold z-10 mb-2">
+                            <span class="lang-id">Divisi Biomassa & Limbah Industri</span><span class="lang-en hidden">Biomass & Industrial Waste Division</span>
+                        </h3>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-xs tracking-widest font-semibold z-10">NON-HAZARDOUS MATERIALS</span>
+                    </div>
+                    <div class="p-8 text-left">
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            <span class="lang-id">Spesialisasi pengumpulan dan penyortiran Used Cooking Oil (UCO) untuk Biodiesel, serta komoditas turunan kayu dan kelapa (Sawdust, Charcoal) untuk energi terbarukan boiler.</span>
+                            <span class="lang-en hidden">Specializing in the collection and sorting of Used Cooking Oil (UCO) for Biodiesel, as well as wood and coconut derivative commodities (Sawdust, Charcoal) for renewable boiler energy.</span>
+                        </p>
+                        <span class="text-brand-green font-bold flex items-center border-t pt-4">
+                            <span class="lang-id">Masuk ke Portal Biomassa</span><span class="lang-en hidden">Enter Biomass Portal</span> <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Card Divisi Pangan -->
+                <a href="pangan.html" class="block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                    <div class="h-64 bg-yellow-600 flex flex-col items-center justify-center text-white relative">
+                        <i class="fas fa-leaf text-8xl opacity-10 absolute"></i>
+                        <h3 class="text-2xl font-bold z-10 mb-2">
+                            <span class="lang-id">Divisi Agrikultur & Suplai Madu</span><span class="lang-en hidden">Agriculture & Honey Supply Division</span>
+                        </h3>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-xs tracking-widest font-semibold z-10">FOOD GRADE COMMODITIES</span>
+                    </div>
+                    <div class="p-8 text-left">
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            <span class="lang-id">Suplai bahan baku Madu Curah Murni (Industrial Grade) skala grosir dan komoditas agrikultur segar, dirancang khusus dengan standar higienis untuk manufaktur F&B dan Herbal.</span>
+                            <span class="lang-en hidden">Wholesale supply of Pure Bulk Honey (Industrial Grade) and fresh agricultural commodities, specifically designed with hygienic standards for F&B and Herbal manufacturing.</span>
+                        </p>
+                        <span class="text-yellow-600 font-bold flex items-center border-t pt-4">
+                            <span class="lang-id">Masuk ke Portal Pangan</span><span class="lang-en hidden">Enter Food Portal</span> <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t-4 border-brand-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <img src="logo.png" alt="PT WAYGO" class="h-12 bg-white p-2 rounded mb-4" onerror="this.src='https://via.placeholder.com/150x50/ffffff/1b4332?text=WAYGO';">
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        <span class="lang-id">PT WAYGO SINERGI NUSANTARA PERORANGAN. Entitas bisnis tersertifikasi yang menjunjung tinggi integritas komersial dan keberlanjutan pasokan bahan baku B2B.</span>
+                        <span class="lang-en hidden">PT WAYGO SINERGI NUSANTARA PERORANGAN. A certified business entity upholding commercial integrity and sustainable B2B raw material supply.</span>
+                    </p>
                 </div>
+                <div>
+                    <h3 class="font-bold text-lg text-brand-wood mb-4">
+                        <span class="lang-id">Kontak Korporat</span><span class="lang-en hidden">Corporate Contact</span>
+                    </h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li><i class="fab fa-whatsapp w-5 text-brand-wood"></i> +62 856-4136-6030 (Sales 1)</li>
+                        <li><i class="fab fa-whatsapp w-5 text-brand-wood"></i> +62 858-9276-7032 (Sales 2)</li>
+                        <li><i class="fas fa-phone-alt w-5 text-brand-wood"></i> +62 831-8166-2814 (Office)</li>
+                        <li><i class="fas fa-envelope w-5 text-brand-wood"></i> halo.waygo@gmail.com</li>
+                        <li class="pt-2"><i class="fas fa-map-marker-alt w-5 text-brand-wood"></i> Kab. Brebes, Jawa Tengah, Indonesia</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-brand-wood mb-4">
+                        <span class="lang-id">Kebijakan Hukum</span><span class="lang-en hidden">Legal Policies</span>
+                    </h3>
+                    <ul class="text-sm text-gray-400 space-y-3">
+                        <li><button onclick="openModal('privacyModal')" class="hover:text-white transition underline"><span class="lang-id">Kebijakan Privasi Data B2B</span><span class="lang-en hidden">B2B Data Privacy Policy</span></button></li>
+                        <li><button onclick="openModal('termsModal')" class="hover:text-white transition underline"><span class="lang-id">Syarat & Ketentuan Perdagangan</span><span class="lang-en hidden">Trade Terms & Conditions</span></button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+                &copy; <span id="year"></span> PT WAYGO SINERGI NUSANTARA. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- ========================================== -->
-    <!-- LEGAL MODALS (Popup untuk Privasi dll) -->
-    <!-- ========================================== -->
-    
-    <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4">
-        <div class="modal-content bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200">
-            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-                <h3 class="font-heading font-bold text-xl text-dark-900">Kebijakan Pengelolaan Data (Privacy Policy)</h3>
-                <button onclick="closeModal('privacyModal')" class="w-8 h-8 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full flex items-center justify-center transition-colors">
-                    <i class="fas fa-times"></i>
-                </button>
+    <!-- MODAL: PRIVACY POLICY -->
+    <div id="privacyModal" class="modal fixed inset-0 z-[100] bg-black bg-opacity-80 justify-center items-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                <h2 class="text-2xl font-bold text-brand-green">
+                    <span class="lang-id">Kebijakan Privasi B2B</span><span class="lang-en hidden">B2B Privacy Policy</span>
+                </h2>
+                <button onclick="closeModal('privacyModal')" class="text-gray-500 hover:text-red-600 text-3xl">&times;</button>
             </div>
-            <div class="p-8 overflow-y-auto text-slate-600 text-sm space-y-4">
-                <p>Status Revisi Dokumen: Januari 2026</p>
-                <h4 class="font-bold text-dark-900 text-base mt-4">1. Ekstraksi Data Klien</h4>
-                <p>PT WAYGO Sinergi Nusantara berhak mengumpulkan instrumen data korporat atau personal yang Anda transmisikan secara sukarela pada ekosistem portal digital kami (mencakup dan tidak terbatas pada Nama, Nomor Kontak, Surel Elektronik, serta Detail Titik Penjemputan).</p>
-                
-                <h4 class="font-bold text-dark-900 text-base mt-4">2. Utilisasi Informasi</h4>
-                <p>Basis data yang diinput hanya dialokasikan untuk kepentingan sinkronisasi penjadwalan rantai pasok (supply chain), penugasan logistik terpadu, dan finalisasi regulasi kontrak <em>B2B</em>. Kami menjaga pakta integritas untuk tidak mendistribusikan data internal kepada pihak luar (Third Party) tanpa otorisasi sah.</p>
-                
-                <h4 class="font-bold text-dark-900 text-base mt-4">3. Protokol Enkripsi Internal</h4>
-                <p>Sistem kami dilindungi dengan prosedur dan lapis arsitektur keamanan tingkat industri guna mereduksi resiko intersepsi, eksploitasi, serta modifikasi data di luar wewenang resmi manajemen.</p>
-                <p class="italic text-slate-400 mt-4">*Disclaimer: Uraian di atas merupakan draf ringkas atas kebijakan komprehensif kami. Perjanjian formal penuh (NDA) akan disertakan pada MOU kemitraan.</p>
+            <div class="p-6 overflow-y-auto text-gray-700 space-y-5 text-sm leading-relaxed">
+                <p><strong><span class="lang-id">1. Komitmen Non-Disclosure (NDA)</span><span class="lang-en hidden">1. Non-Disclosure Commitment (NDA)</span></strong><br>
+                <span class="lang-id">PT WAYGO sangat menghargai kerahasiaan data korporat. Seluruh informasi teknis (Spesifikasi Pabrik, COA, Rencana Pembelian/PO) yang dipertukarkan selama negosiasi tidak akan pernah dibagikan kepada pihak ketiga atau kompetitor mana pun tanpa izin tertulis.</span>
+                <span class="lang-en hidden">PT WAYGO highly respects corporate data confidentiality. All technical information (Factory Specifications, COAs, Purchase Plans/POs) exchanged during negotiations will never be shared with third parties or competitors without written consent.</span></p>
+
+                <p><strong><span class="lang-id">2. Penggunaan Data Kontak</span><span class="lang-en hidden">2. Use of Contact Data</span></strong><br>
+                <span class="lang-id">Email, nomor telepon PIC (Person In Charge), dan detail rekening bank perusahaan hanya digunakan murni untuk keperluan korespondensi resmi, penagihan (Invoicing), dan logistik pengiriman barang. Kami mengimplementasikan protokol anti-spam ketat.</span>
+                <span class="lang-en hidden">Emails, PIC (Person In Charge) phone numbers, and corporate bank details are used purely for official correspondence, invoicing, and cargo logistics. We implement strict anti-spam protocols.</span></p>
+
+                <p><strong><span class="lang-id">3. Audit Pihak Ketiga</span><span class="lang-en hidden">3. Third-Party Audits</span></strong><br>
+                <span class="lang-id">Dalam hal diperlukan audit kualitas oleh pihak ketiga (seperti SGS, Sucofindo, atau auditor sertifikasi pabrik Anda), kami akan memberikan akses data terbatas secara transparan sesuai dengan batas lingkup kerja sama yang disepakati.</span>
+                <span class="lang-en hidden">In the event a third-party quality audit is required (e.g., SGS, Sucofindo, or your factory's certification auditors), we will provide transparent, limited data access in accordance with the agreed scope of work.</span></p>
             </div>
-            <div class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end">
-                <button onclick="closeModal('privacyModal')" class="px-6 py-2.5 bg-dark-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-colors">Setuju & Lanjutkan</button>
+            <div class="p-4 bg-gray-50 text-right border-t">
+                <button onclick="closeModal('privacyModal')" class="bg-brand-green text-white px-6 py-2 rounded font-bold">Tutup / Close</button>
             </div>
         </div>
     </div>
 
-    <!-- Terms Modal -->
-    <div id="termsModal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4">
-        <div class="modal-content bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200">
-            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-                <h3 class="font-heading font-bold text-xl text-dark-900">Regulasi & Syarat Akses Portal (Terms of Service)</h3>
-                <button onclick="closeModal('termsModal')" class="w-8 h-8 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full flex items-center justify-center transition-colors">
-                    <i class="fas fa-times"></i>
-                </button>
+    <!-- MODAL: TERMS & CONDITIONS -->
+    <div id="termsModal" class="modal fixed inset-0 z-[100] bg-black bg-opacity-80 justify-center items-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                <h2 class="text-2xl font-bold text-brand-green">
+                    <span class="lang-id">Syarat & Ketentuan Perdagangan</span><span class="lang-en hidden">Trade Terms & Conditions</span>
+                </h2>
+                <button onclick="closeModal('termsModal')" class="text-gray-500 hover:text-red-600 text-3xl">&times;</button>
             </div>
-            <div class="p-8 overflow-y-auto text-slate-600 text-sm space-y-4">
-                <h4 class="font-bold text-dark-900 text-base">1. Limitasi Pertanggungjawaban Pra-Kontrak</h4>
-                <p>Website ini merupakan fasilitator tahap awal (Initial Inquiry). Input formulir tidak memicu kewajiban hukum yang mengikat bagi PT WAYGO Sinergi Nusantara hingga diterbitkannya bukti <em>Purchase Order</em> (PO) resmi yang dibubuhi tanda tangan direksi.</p>
-                
-                <h4 class="font-bold text-dark-900 text-base mt-4">2. Validasi Indikator Mutu & Kalkulasi Harga</h4>
-                <p>Panel instrumen <em>Smart Pricing</em> bertugas memberikan referensi valuasi kasar (Estimate Value). Nilai eksekusi moneter bersifat mengikat pasca-validasi uji lab portabel dari auditor <em>Quality Control</em> kami (pemeriksaan FFA, kelembapan, kotoran suspensi, dan warna visual).</p>
-                
-                <h4 class="font-bold text-dark-900 text-base mt-4">3. Klausal Pembatalan Otoritatif</h4>
-                <p>Korporat berhak menangguhkan, menjadwal ulang, atau mendiskualifikasi tiket penjemputan pada insiden kahar <em>(Force Majeure)</em> atau ketika ditemukan deviasi masif antara data terinput dengan kondisi fisik limbah di lokasi lapangan.</p>
+            <div class="p-6 overflow-y-auto text-gray-700 space-y-5 text-sm leading-relaxed">
+                <p><strong><span class="lang-id">1. Sifat Penawaran (Price Validity)</span><span class="lang-en hidden">1. Nature of Quotation (Price Validity)</span></strong><br>
+                <span class="lang-id">Mengingat volatilitas pasar komoditas agrikultur dan biomassa global, semua dokumen *Quotation* (Penawaran Harga) yang diterbitkan PT WAYGO memiliki batas waktu validitas yang mengikat (umumnya 7-14 hari kerja). Setelah masa tersebut, harga dapat dievaluasi ulang berdasarkan indeks pasar terkini.</span>
+                <span class="lang-en hidden">Given the volatility of the global agriculture and biomass commodity markets, all Quotation documents issued by PT WAYGO have a binding validity period (typically 7-14 working days). After this period, prices may be re-evaluated based on current market indices.</span></p>
+
+                <p><strong><span class="lang-id">2. Ketentuan Incoterms & Logistik</span><span class="lang-en hidden">2. Incoterms & Logistics Terms</span></strong><br>
+                <span class="lang-id">Kami melayani pengiriman berbasis regulasi Incoterms 2020. Penyerahan barang umumnya dilakukan melalui basis *FOT (Free On Truck)* di pabrik klien untuk domestik, atau *FOB (Free On Board) / CIF* untuk kebutuhan ekspor. Risiko kerusakan berpindah sesuai terminologi Incoterms yang disepakati dalam kontrak (MoU/PO).</span>
+                <span class="lang-en hidden">We facilitate shipments based on Incoterms 2020 regulations. Handover of goods is generally done on an FOT (Free On Truck) basis at the client's factory for domestic, or FOB (Free On Board) / CIF for export needs. Risk of damage transfers according to the agreed Incoterm terminology in the contract (MoU/PO).</span></p>
+
+                <p><strong><span class="lang-id">3. Prosedur Pembayaran (Terms of Payment)</span><span class="lang-en hidden">3. Terms of Payment</span></strong><br>
+                <span class="lang-id">Untuk menjamin arus kas yang sehat dalam pengadaan bahan baku skala grosir, kami menerapkan sistem pembayaran Transfer Bank (T/T) ke rekening perusahaan resmi. Skema *Down Payment* (DP) diwajibkan sebelum proses *loading* (pemuatan) untuk mengunci ketersediaan barang. Opsi Letter of Credit (L/C) *at sight* yang tidak dapat dibatalkan (Irrevocable) dari bank prima (Prime Bank) dapat didiskusikan untuk transaksi ekspor skala masif.</span>
+                <span class="lang-en hidden">To guarantee healthy cash flow in wholesale raw material procurement, we implement a Bank Transfer (T/T) payment system to the official corporate account. A Down Payment (DP) scheme is strictly required prior to the loading process to lock in stock availability. Irrevocable Letter of Credit (L/C) at sight from a prime bank can be negotiated for massive-scale export transactions.</span></p>
+
+                 <p><strong><span class="lang-id">4. Klaim Susut / Quality Dispute</span><span class="lang-en hidden">4. Shrinkage / Quality Dispute Claims</span></strong><br>
+                <span class="lang-id">Hasil final untuk tonase (berat) merujuk pada Tiket Timbangan Bersama (Weighbridge Ticket) di titik bongkar, dengan toleransi penyusutan alamiah yang disepakati (misal: penguapan material basah). Perselisihan mengenai spesifikasi kualitas (Quality Dispute) akan diselesaikan berdasarkan uji sampling dari laboratorium independen yang disetujui bersama.</span>
+                <span class="lang-en hidden">Final results for tonnage refer to the Joint Weighbridge Ticket at the discharge point, with an agreed natural shrinkage tolerance (e.g., evaporation of wet materials). Quality Disputes regarding specifications will be resolved based on sampling tests from a mutually approved independent laboratory.</span></p>
             </div>
-            <div class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end">
-                <button onclick="closeModal('termsModal')" class="px-6 py-2.5 bg-dark-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-colors">Memahami Kebijakan</button>
+            <div class="p-4 bg-gray-50 text-right border-t">
+                <button onclick="closeModal('termsModal')" class="bg-brand-green text-white px-6 py-2 rounded font-bold">Tutup / Close</button>
             </div>
         </div>
     </div>
 
-    <!-- Legal Modal -->
-    <div id="legalModal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4">
-        <div class="modal-content bg-white rounded-3xl w-full max-w-sm flex flex-col shadow-2xl overflow-hidden border border-slate-200 text-center">
-            <div class="p-8">
-                <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
-                    <i class="fas fa-landmark"></i>
-                </div>
-                <h3 class="font-heading font-bold text-xl text-dark-900 mb-2">Legalitas Institusional</h3>
-                <p class="text-sm text-slate-600 mb-4">
-                    <strong>PT WAYGO Sinergi Nusantara</strong> merupakan perseroan terbatas (Perorangan) bersertifikasi yang beroperasi penuh mematuhi perundang-undangan Kementerian Hukum dan HAM Republik Indonesia.
-                </p>
-                <div class="bg-slate-100 p-4 rounded-xl text-xs text-slate-500 font-mono">
-                    NIB: [Tersedia Untuk Klien B2B]<br>
-                    NPWP: [Tersedia Untuk Klien B2B]
-                </div>
-            </div>
-            <div class="p-4 border-t border-slate-100 bg-slate-50">
-                <button onclick="closeModal('legalModal')" class="w-full py-2.5 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 transition-colors">Tutup Jendela</button>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- ========================================== -->
-    <!-- JAVASCRIPT LOGIC (Sistem Inti) -->
-    <!-- ========================================== -->
     <script>
-        // Modal Logic
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden';
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        let currentLang = 'id';
+        const langToggleBtn = document.getElementById('langToggleBtn');
+        function switchLanguage() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            if(currentLang === 'en') { langToggleBtn.classList.add('en'); } 
+            else { langToggleBtn.classList.remove('en'); }
+            document.querySelectorAll('.lang-id').forEach(el => el.classList.toggle('hidden'));
+            document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden'));
         }
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+        langToggleBtn.addEventListener('click', switchLanguage);
 
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Hero Slider Automatic
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 7000);
-
-        // SMART PRICING LOGIC
-        let currentPricePerKg = 0;
-        let isBelowMinimum = false;
-
-        function calculatePricing() {
-            const input = document.getElementById('j_jumlah').value;
-            const display = document.getElementById('pricing-display');
-            const qty = parseFloat(input);
-
-            if (isNaN(qty) || qty <= 0) {
-                currentPricePerKg = 0;
-                display.innerHTML = `
-                    <div class="flex flex-col items-center text-center py-10 border-2 border-dashed border-dark-800 rounded-3xl text-slate-500 bg-dark-900/50">
-                        <div class="w-16 h-16 bg-dark-800 rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-arrow-left text-2xl text-slate-400"></i>
-                        </div>
-                        <p class="text-base font-medium px-6 text-slate-400">Silakan input data volume (Kg) pada form di samping kiri untuk mengaktifkan kalkulasi.</p>
-                    </div>`;
-                return;
-            }
-
-            // Aturan Tiering Harga WAYGO
-            if (qty < 100) {
-                currentPricePerKg = 6000;
-                isBelowMinimum = true;
-            } else if (qty >= 100 && qty < 400) {
-                currentPricePerKg = 6500;
-                isBelowMinimum = false;
-            } else if (qty >= 400) {
-                currentPricePerKg = 7500;
-                isBelowMinimum = false;
-            }
-
-            const totalValue = qty * currentPricePerKg;
-            const formatCurrency = (val) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(val);
-
-            let html = `
-                <div class="bg-dark-900 rounded-3xl p-8 border border-brand-500/20 shadow-[0_0_30px_rgba(21,128,61,0.1)]">
-                    <p class="text-slate-400 text-sm mb-1 font-medium">Indeks Valuasi Dasar</p>
-                    <div class="text-3xl font-heading font-bold text-white mb-6">${formatCurrency(currentPricePerKg)} <span class="text-sm font-normal text-slate-500">/ Kg</span></div>
-                    
-                    <div class="w-full h-px bg-dark-700 mb-6"></div>
-                    
-                    <p class="text-brand-400 text-sm mb-2 font-bold tracking-wider uppercase">Proyeksi Akuisisi (Vol. ${qty} Kg)</p>
-                    <div class="text-4xl md:text-5xl font-heading font-bold text-white">${formatCurrency(totalValue)}</div>
-                </div>
-            `;
-
-            if (isBelowMinimum) {
-                html += `
-                <div class="mt-4 bg-amber-500/10 border border-amber-500/30 text-amber-500 px-5 py-4 rounded-2xl text-sm flex items-start">
-                    <i class="fas fa-exclamation-triangle mt-0.5 mr-3 text-xl"></i>
-                    <div>
-                        <strong class="font-bold text-amber-400">Perhatian Eksekusi Khusus:</strong><br>
-                        Tercatat di bawah batas efisiensi ideal (100Kg). Penjadwalan logistik akan diklasifikasikan ke dalam antrean konsolidasi komunal.
-                    </div>
-                </div>`;
-            } else {
-                html += `
-                <div class="mt-4 bg-brand-500/10 border border-brand-500/30 text-brand-400 px-5 py-4 rounded-2xl text-sm flex items-center">
-                    <i class="fas fa-check-double mr-3 text-xl"></i>
-                    <span class="font-medium">Validasi sistem disetujui. Memenuhi spesifikasi pengadaan armada logistik eksklusif.</span>
-                </div>`;
-            }
-
-            display.innerHTML = html;
-        }
-
-        // FORM SUBMISSION HANDLER
-        const WA_CORP = "6285641366030";
-        const EMAIL_CORP = "halo.waygo@gmail.com";
-
-        function submitForm(type, method) {
-            const refId = Math.floor(100000 + Math.random() * 900000);
-            let message = "";
-            let subject = "";
-
-            if (type === 'jual') {
-                const nama = document.getElementById('j_nama').value.trim();
-                const wa = document.getElementById('j_wa').value.trim();
-                const kota = document.getElementById('j_kota').value;
-                const alamat = document.getElementById('j_alamat').value.trim();
-                const sumber = document.getElementById('j_sumber').value;
-                const qty = document.getElementById('j_jumlah').value;
-                const jadwal = document.getElementById('j_jadwal').value;
-
-                if(!nama || !wa || !kota || !alamat || !qty || !jadwal) {
-                    alert("Akses Ditolak: Seluruh field bertanda bintang (*) pada formulir akuisisi wajib terisi."); return;
-                }
-
-                const fmtTot = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(qty * currentPricePerKg);
-                const fmtHarga = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(currentPricePerKg);
-
-                subject = `[#WYG-${refId}] Aplikasi Penjualan (Akuisisi UCO) - ${nama}`;
-                
-                message = `*==============================*\n`;
-                message += `*PORTAL AKUISISI PT WAYGO SINERGI*\n`;
-                message += `*==============================*\n\n`;
-                message += `*No. Registrasi :* #WYG-${refId}\n\n`;
-                message += `*I. ENTITAS DISTRIBUTOR*\n`;
-                message += `- Nama : ${nama}\n`;
-                message += `- Kontak PIC : ${wa}\n\n`;
-                message += `*II. SKEMA LOGISTIK*\n`;
-                message += `- Klasifikasi : ${sumber}\n`;
-                message += `- Wilayah Hub : ${kota}\n`;
-                message += `- Alamat Rinci : ${alamat}\n`;
-                message += `- Tgl Eksekusi : ${jadwal}\n\n`;
-                message += `*III. PROYEKSI SISTEM*\n`;
-                message += `- Tonase : *${qty} Kg*\n`;
-                message += `- Indeks Harga : ${fmtHarga}\n`;
-                message += `- Total Valuasi : *${fmtTot}*\n\n`;
-                
-                if (isBelowMinimum) message += `_Catatan Sistem: Volume <100kg. Skema antrean konsolidasi._\n\n`;
-                message += `_(Mohon informasikan/lampirkan bukti fisik dokumentasi limbah pada balasan pesan ini)_`;
-
-            } else if (type === 'beli') {
-                const nama = document.getElementById('b_nama').value.trim();
-                const wa = document.getElementById('b_wa').value.trim();
-                const email = document.getElementById('b_email').value.trim();
-                const kebutuhan = document.getElementById('b_kebutuhan').value;
-                const lokasi = document.getElementById('b_lokasi').value.trim();
-
-                if(!nama || !wa || !kebutuhan || !lokasi) {
-                    alert("Akses Ditolak: Seluruh parameter esensial B2B wajib disertakan."); return;
-                }
-
-                subject = `[#B2B-${refId}] Inquiry Pengadaan Bahan Baku - ${nama}`;
-                message = `*INQUIRY B2B PT WAYGO SINERGI*\n\n`;
-                message += `*No. Registrasi :* #B2B-${refId}\n\n`;
-                message += `*1. DATA KORPORAT*\n`;
-                message += `- Nama Institusi : ${nama}\n`;
-                message += `- Kontak Direksi/PIC : ${wa}\n`;
-                message += `- Surel : ${email || 'Tidak Dilampirkan'}\n\n`;
-                message += `*2. PARAMETER PENGADAAN*\n`;
-                message += `- Proyeksi Volume : *${kebutuhan} Ton / Siklus Bulan*\n`;
-                message += `- Destinasi Bongkar : ${lokasi}\n\n`;
-                message += `_Permohonan diteruskan kepada Divisi Commercial and Supply Chain._`;
-
-            } else if (type === 'mitra') {
-                const nama = document.getElementById('p_nama').value.trim();
-                const wa = document.getElementById('p_wa').value.trim();
-                const lokasi = document.getElementById('p_lokasi').value.trim();
-                const jenis = document.getElementById('p_jenis').value;
-                const modal = document.getElementById('p_modal').value;
-
-                if(!nama || !wa || !lokasi) {
-                    alert("Akses Ditolak: Detail aplikasi kemitraan belum tervalidasi lengkap."); return;
-                }
-
-                subject = `[#MTR-${refId}] Registrasi Ekspansi Kemitraan - ${nama}`;
-                message = `*APLIKASI EKSPANSI KEMITRAAN PT WAYGO*\n\n`;
-                message += `*No. Registrasi :* #MTR-${refId}\n\n`;
-                message += `*1. PROFIL KANDIDAT*\n`;
-                message += `- Nama Pendaftar : ${nama}\n`;
-                message += `- Nomor Hotline : ${wa}\n\n`;
-                message += `*2. DETAIL OPERASIONAL*\n`;
-                message += `- Target Teritori : ${lokasi}\n`;
-                message += `- Tipe Keagenan : ${jenis}\n`;
-                message += `- Status Modal : ${modal}\n\n`;
-                message += `_Aplikasi ini siap diteruskan ke tahap Business Due Diligence pusat._`;
-            }
-
-            if (method === 'wa') {
-                window.open(`https://wa.me/${WA_CORP}?text=${encodeURIComponent(message)}`, '_blank');
-            } else if (method === 'email') {
-                window.location.href = `mailto:${EMAIL_CORP}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-            }
-        }
+        function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
     </script>
 </body>
 </html>
