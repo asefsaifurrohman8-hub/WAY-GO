@@ -1,498 +1,765 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT WAYGO SINERGI NUSANTARA | Divisi Pangan & Agrikultur Brebes</title>
-    <meta name="description" content="Pusat suplai bahan baku pangan dan agrikultur dari Brebes. Menyediakan Madu Curah, Bawang Merah Bima, Bawang Putih Lokal, Jagung Kering, Beras, dan Telur Asin.">
+    <meta name="description" content="PT Waygo Sinergi Nusantara - Agriculture Division. Direct supplier for Brebes Red Onions, Corn, Chili, Rice, and Industrial Food Commodities.">
+    <title>Agriculture & Food Supply Chain | PT Waygo Sinergi Nusantara</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
     <script>
-        tailwind.config = { 
-            theme: { 
-                extend: { 
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }, 
-                    colors: { 
-                        brand: { green: '#1b4332', lightgreen: '#2d6a4f', wood: '#d4af37', dark: '#111827', gray: '#fdfdf8' } 
-                    } 
-                } 
-            } 
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        corporate: { 950: '#060B19', 900: '#0B132B' },
+                        agri: { 950: '#05110B', 900: '#0A1C14', 800: '#142E23', 700: '#1E4233', 600: '#2A5C47' },
+                        accent: { 500: '#D4AF37', 600: '#C5A028', 900: '#8A6D14' }
+                    },
+                    backgroundImage: {
+                        'hero-agri': "linear-gradient(to right, rgba(10, 28, 20, 0.95), rgba(20, 46, 35, 0.8)), url('hero-pangan.jpg')",
+                        'texture-dots': "url('hero-pangan.jpg')"
+                    }
+                }
+            }
         }
     </script>
     <style>
-        .hero-overlay { background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(212, 175, 55, 0.3) 100%); }
-        
-        /* Bilingual Toggle Switch UI */
-        .lang-switch { position: relative; width: 64px; height: 32px; background-color: #fef08a; border-radius: 9999px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 2px solid #d4af37; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); }
-        .lang-switch::after { content: ''; position: absolute; width: 24px; height: 24px; background-color: #1b4332; border-radius: 50%; top: 2px; left: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .lang-switch.en { background-color: #d4af37; border-color: #b48e20; }
-        .lang-switch.en::after { transform: translateX(32px); background-color: white; }
-        
-        /* Tables for Specifications */
-        .spec-table { width: 100%; border-collapse: separate; border-spacing: 0; }
-        .spec-table th, .spec-table td { padding: 14px 20px; border-bottom: 1px solid #e5e7eb; text-align: left; }
-        .spec-table th { background-color: #f9fafb; font-weight: 700; color: #374151; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; border-top: 1px solid #e5e7eb; }
-        .spec-table tr:hover td { background-color: #f3f4f6; transition: background-color 0.2s; }
-        .spec-table tr:last-child td { border-bottom: none; }
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0A1C14; }
+        ::-webkit-scrollbar-thumb { background: #1E4233; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        .table-agri th, .table-agri td { border-color: #1E4233; }
+        .fade-in-slow { animation: fadeInSlow 1.5s ease-out forwards; }
+        @keyframes fadeInSlow { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-brand-gray antialiased">
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-accent-500 selection:text-agri-950">
 
-    <!-- 1. NAVIGATION BAR -->
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b-2 border-brand-wood transition-all duration-300">
+    <!-- GLOBAL TRADE DESK TOP BAR -->
+    <div class="bg-agri-950 text-gray-400 text-xs py-2 px-6 border-b border-agri-800 hidden lg:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-8">
+                <span class="flex items-center font-medium tracking-wide hover:text-white transition-colors cursor-pointer">
+                    <svg class="w-4 h-4 mr-2 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> 
+                    halo.waygo@gmail.com
+                </span>
+                <span class="flex items-center font-medium tracking-wide hover:text-white transition-colors cursor-pointer">
+                    <svg class="w-4 h-4 mr-2 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> 
+                    B2B Trade Desk: 085892767032
+                </span>
+                <span class="flex items-center font-medium tracking-wide text-accent-500">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Direct Farm-to-Factory Integrator
+                </span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#portfolio" class="hover:text-accent-500 transition-colors uppercase tracking-widest font-bold">Commodities</a>
+                <a href="#network" class="hover:text-accent-500 transition-colors uppercase tracking-widest font-bold">Sourcing Network</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="bg-agri-900 sticky top-0 z-50 shadow-2xl shadow-agri-900/50 border-b border-agri-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
+            <div class="flex justify-between h-24 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-4 group">
+                    <div class="w-12 h-12 bg-white rounded flex items-center justify-center font-black text-agri-950 text-2xl shadow-lg border-2 border-accent-500"><img src="logo.png" alt="Logo PT Waygo Sinergi Nusantara" class="h-12"></div>
+                    <div class="flex flex-col justify-center">
+                        <span class="text-3xl font-extrabold text-white tracking-tight leading-none">WAYGO <span class="text-accent-500 group-hover:text-white transition-colors">SINERGI</span></span>
+                        <div class="text-[0.65rem] text-gray-400 tracking-[0.3em] uppercase font-bold mt-1">Agriculture Division</div>
+                    </div>
+                </a>
                 
-                <!-- Logo & Back to Main -->
-                <div class="flex items-center gap-5">
-                    <a href="index.html" class="flex-shrink-0 group" title="Kembali ke Holding Profile">
-                        <div class="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center group-hover:bg-brand-wood transition-colors duration-300 shadow-inner border border-yellow-100">
-                            <i class="fas fa-home text-brand-wood group-hover:text-white transition-colors text-lg"></i>
-                        </div>
+                <div class="hidden lg:flex space-x-10 items-center">
+                    <a href="index.html" class="text-gray-300 hover:text-white font-semibold text-sm tracking-widest uppercase transition-colors">Corporate Home</a>
+                    <a href="biomassa.html" class="text-gray-300 hover:text-white font-semibold text-sm tracking-widest uppercase transition-colors">Industrial Energy</a>
+                    <a href="pangan.html" class="text-accent-500 font-bold text-sm tracking-widest uppercase transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-accent-500">Food Supply Chain</a>
+                    <div class="h-8 w-px bg-agri-700"></div>
+                    <a href="#rfq" class="bg-accent-500 text-agri-950 px-8 py-3 rounded hover:bg-accent-600 font-bold text-sm uppercase tracking-widest transition-all shadow-lg shadow-accent-500/30 flex items-center group">
+                        Procurement Request
+                        <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
-                    <div class="h-12 border-l-2 border-gray-200"></div>
-                    <div>
-                        <h1 class="font-bold text-brand-wood text-xl md:text-2xl tracking-tight leading-none uppercase">
-                            <span class="lang-id">Pangan & Agrikultur</span><span class="lang-en hidden">Food & Agriculture</span>
-                        </h1>
-                        <p class="text-xs text-brand-green font-bold tracking-widest mt-1">PT WAYGO SINERGI NUSANTARA</p>
-                    </div>
                 </div>
+            </div>
+        </div>
+    </nav>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex space-x-8 items-center">
-                    <a href="#trading" class="text-sm font-bold text-gray-600 hover:text-brand-wood transition-colors uppercase tracking-wide">
-                        <span class="lang-id">Beli & Jual</span><span class="lang-en hidden">Buy & Sell</span>
+    <!-- HERO SECTION -->
+    <header class="bg-hero-agri bg-cover bg-center bg-no-repeat relative flex items-center min-h-[90vh] py-24 border-b-8 border-accent-500">
+        <div class="absolute inset-0 bg-gradient-to-b from-agri-950/90 via-agri-950/60 to-agri-950 z-0"></div>
+        <div class="absolute inset-0 bg-texture-dots opacity-20 z-0 mix-blend-overlay"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center h-full fade-in-slow">
+            <div class="max-w-4xl border-l-4 border-accent-500 pl-6 md:pl-10 py-2">
+                <div class="inline-flex items-center bg-agri-800/90 border border-agri-700 px-4 py-2 rounded-sm mb-6 shadow-xl backdrop-blur-md">
+                    <svg class="w-4 h-4 text-accent-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    <span class="text-accent-500 font-bold tracking-[0.25em] text-xs md:text-sm uppercase">Pusat Agregasi Pangan Nasional</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight">
+                    Memutus Rantai Pengepul. <br>Menyambungkan Petani ke <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-yellow-200">Pabrik Global.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed font-light max-w-3xl">
+                    PT Waygo Sinergi Nusantara hadir dengan misi radikal: Menghapus lapisan perantara tengkulak yang merugikan. Kami mengambil Bawang Merah, Jagung Kering, Cabai, dan Beras langsung dari tangan gabungan kelompok tani, memastikan pasokan bervolume masif mengalir langsung ke pabrik pengolahan Anda dengan efisiensi harga maksimal.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#portfolio" class="bg-accent-500 text-agri-950 text-center font-bold px-10 py-5 rounded hover:bg-yellow-400 transition-all shadow-2xl shadow-accent-500/20 uppercase tracking-widest text-sm flex items-center justify-center">
+                        Lihat Katalog Komoditas
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
-                    <a href="#catalog" class="text-sm font-bold text-gray-600 hover:text-brand-wood transition-colors uppercase tracking-wide">
-                        <span class="lang-id">Katalog Pangan</span><span class="lang-en hidden">Food Catalog</span>
+                    <a href="#network" class="bg-agri-800/80 border border-gray-400 text-white text-center font-bold px-10 py-5 rounded hover:bg-white/10 transition-all uppercase tracking-widest text-sm backdrop-blur-md flex items-center justify-center">
+                        Pelajari Sistem Kami
                     </a>
-                    
-                    <!-- ID / EN Toggle Switch -->
-                    <div class="flex items-center ml-4 bg-white py-1.5 px-4 rounded-full shadow-sm border border-yellow-200">
-                        <span class="mr-3 text-xs font-bold transition-colors duration-300" id="label-id" style="color: #d4af37;">ID</span>
-                        <div id="langToggleBtn" class="lang-switch"></div>
-                        <span class="ml-3 text-xs font-bold text-gray-400 transition-colors duration-300" id="label-en">EN</span>
-                    </div>
-
-                    <a href="biomassa.html" class="ml-4 bg-green-50 text-brand-green border border-green-200 px-6 py-3 rounded-xl text-sm font-bold hover:bg-green-100 transition-colors shadow-sm flex items-center gap-2">
-                        <i class="fas fa-recycle"></i> <span class="lang-id">Ke Divisi Biomassa</span><span class="lang-en hidden">To Biomass Div.</span>
-                    </a>
-                </nav>
+                </div>
+            </div>
+            
+            <div class="mt-24 flex flex-wrap gap-6 text-white relative z-10 border-t border-agri-800 pt-8">
+                <div class="flex items-center mr-8">
+                    <div class="text-accent-500 text-4xl font-black mr-4">100%</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400 font-bold leading-tight">Direct from<br>Farmers</div>
+                </div>
+                <div class="flex items-center mr-8">
+                    <div class="text-accent-500 text-4xl font-black mr-4">B2B</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400 font-bold leading-tight">Industrial Volume<br>Procurement</div>
+                </div>
+                <div class="flex items-center">
+                    <div class="text-accent-500 text-4xl font-black mr-4">QC</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400 font-bold leading-tight">Strict Sorting<br>Facilities</div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
-    <section class="relative pt-24 min-h-screen flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-brand-dark">
-            <img src="hero-pangan.jpg" alt="Agriculture Trading" class="w-full h-full object-cover transform scale-105 opacity-80" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop';"/>
-            <div class="absolute inset-0 hero-overlay"></div>
+    <!-- MACRO INDUSTRY OVERVIEW -->
+    <section class="py-28 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gray-50 transform skew-x-12 translate-x-32 border-l border-gray-200"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute inset-0 bg-agri-900 transform -translate-x-4 -translate-y-4 rounded-2xl -z-10 opacity-10"></div>
+                    <!-- Placeholder untuk foto petani / fasilitas bawang merah -->
+                    <img src="fasilitas-pangan.jpg" class="rounded-2xl shadow-2xl border-4 border-white w-full h-[550px] object-cover" alt="Pertanian Lokal Indonesia">
+                    
+                    <div class="absolute bottom-10 -right-6 bg-agri-950 p-6 rounded-xl shadow-2xl border border-agri-800 max-w-[320px]">
+                        <div class="flex items-center justify-between mb-4 pb-4 border-b border-agri-800">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Core Mission</span>
+                            <span class="bg-accent-500 text-agri-950 px-3 py-1 rounded text-xs font-bold">Cut The Middleman</span>
+                        </div>
+                        <h4 class="font-extrabold text-white text-lg mb-2">Mendekatkan Jarak Logistik</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Menghilangkan lima lapis perantara tradisional. Barang mengalir lurus dari lahan sentra menuju pabrik manufaktur Anda.</p>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <h4 class="text-accent-600 font-bold tracking-[0.25em] uppercase text-sm mb-4">The Aggregation Strategy</h4>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-agri-950 mb-8 tracking-tight leading-tight">Solusi Total untuk Rantai Pasok Pangan Industri</h2>
+                    
+                    <div class="space-y-6 text-gray-600 leading-relaxed text-lg">
+                        <p>
+                            Bagi pabrik pengolahan makanan, restoran waralaba raksasa, dan eksportir, tantangan terbesar di Indonesia bukanlah ketersediaan lahan, melainkan <strong>fragmentasi pasokan</strong>. Membeli bahan baku dari tengkulak berarti menerima risiko kualitas yang dicampur aduk, kadar air yang tidak stabil, dan harga yang membengkak karena margin perantara.
+                        </p>
+                        <p>
+                            PT Waygo Sinergi Nusantara hadir untuk memotong kompas tersebut. Berakar kuat di sentra agrikultur Jawa Tengah dan wilayah sekitarnya, kami membangun infrastruktur penyortiran dan gudang langsung di dekat lumbung panen utama.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-agri-900 shadow-sm mt-10">
+                        <h4 class="text-agri-950 font-bold mb-3 uppercase tracking-widest text-sm flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Direct Farm Access
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Kami turun ke lapangan. Waygo bermitra dengan pemimpin Gapoktan (Gabungan Kelompok Tani). Kami menyerap Bawang Merah dari Brebes, Jagung dari dataran rendah, hingga Cabai segar. Kami menstandardisasi ukurannya, menurunkan kadar airnya dengan mesin pengering, dan menyajikannya dalam volume tonase siap kontrak untuk perusahaan Anda.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- DETAILED COMMODITIES PORTFOLIO (THE CORE) -->
+    <section id="portfolio" class="py-28 bg-agri-950 text-white relative">
+        <div class="absolute inset-0 bg-texture-dots opacity-10"></div>
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-500 to-transparent"></div>
         
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <h4 class="text-accent-500 font-bold tracking-[0.25em] uppercase text-sm mb-4">Traded Materials Portfolio</h4>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Katalog Agrikultur Industrial B2B</h2>
+                <p class="text-gray-400 text-lg leading-relaxed">Menyediakan akses langsung ke komoditas pokok paling vital di Indonesia, diproses dengan standarisasi presisi untuk kebutuhan pabrikasi massal.</p>
+            </div>
+
+            <div class="space-y-16">
                 
-                <!-- Hero Text -->
-                <div class="lg:col-span-7">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-brand-wood/50 backdrop-blur-md mb-8 shadow-lg">
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-ping absolute"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 relative"></span>
-                        <span class="text-xs font-bold text-white tracking-widest uppercase ml-2">DIRECT SOURCING FROM BREBES</span>
+                <!-- 1. Bawang Merah Brebes -->
+                <div class="bg-agri-900 border border-agri-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <!-- Placeholder gambar Bawang Merah -->
+                        <img src="produk-bawang.jpg" class="w-full h-full object-cover min-h-[300px]" alt="Bawang Merah Brebes">
+                        <div class="absolute inset-0 bg-agri-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 left-6 bg-accent-500 text-agri-950 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Flagship Commodity</div>
                     </div>
-                    
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-                        <span class="lang-id">Rantai Pasok Agrikultur <span class="text-brand-wood border-b-4 border-brand-wood">Brebes</span> & Bahan Baku Pangan.</span>
-                        <span class="lang-en hidden">Brebes Agriculture & Food Raw Material <span class="text-brand-wood border-b-4 border-brand-wood">Supply Chain.</span></span>
-                    </h2>
-                    
-                    <p class="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed font-light max-w-2xl">
-                        <span class="lang-id">Kami memutus rantai distribusi yang panjang. Kami mengumpulkan hasil panen langsung dari lumbung pangan Brebes, dan menyuplainya untuk kebutuhan pabrik makanan, produsen bumbu, dan industri farmasi dengan jaminan mutu tingkat industri.</span>
-                        <span class="lang-en hidden">We cut the long distribution chain. We collect harvests directly from the Brebes food basket, and supply them for food factories, seasoning producers, and pharmaceutical industries with industrial grade quality assurance.</span>
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="#trading" class="bg-brand-wood text-white px-8 py-4 rounded-xl font-bold hover:bg-yellow-600 transition-all shadow-xl flex items-center justify-center gap-3 text-center">
-                            <i class="fas fa-handshake"></i> <span class="lang-id">Sistem Beli & Jual (Trading)</span><span class="lang-en hidden">Buy & Sell System (Trading)</span>
-                        </a>
-                        <a href="#catalog" class="bg-white/10 text-white border border-white/30 backdrop-blur-sm px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-3 text-center">
-                            <i class="fas fa-boxes"></i> <span class="lang-id">Katalog Komoditas Pangan</span><span class="lang-en hidden">Food Commodity Catalog</span>
-                        </a>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center text-white">
+                            Bawang Merah Brebes Premium
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Komoditas kebanggaan yang menjadi nyawa industri bumbu (seasoning) dan F&B nasional. PT Waygo beroperasi di jantung sentra produksi Brebes, mengumpulkan bawang merah langsung dari lahan. Kami melakukan proses penjemuran (curing) yang tepat untuk memperpanjang umur simpan, menyortir ukuran dengan ketat, dan memisahkan kotoran tanah sebelum pengemasan.
+                        </p>
+                        
+                        <div class="bg-agri-950 rounded-xl p-6 border border-agri-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Spesifikasi Suplai Industri</h4>
+                            <table class="w-full text-sm table-agri">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Kaliber Ukuran</td>
+                                        <td class="py-3 font-bold text-white text-right">Super Cross, Super, Medium, atau Ekstra Kecil (sesuai pesanan pabrik)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Kadar Air (Moisture)</td>
+                                        <td class="py-3 font-bold text-white text-right">Kering Simpan / Kering Askip (Low Moisture)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Packaging Setup</td>
+                                        <td class="py-3 font-bold text-white text-right">Karung Jaring (Mesh Bags) 20kg - 25kg / Ventilated Sacks</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+                </div>
+
+                <!-- 2. Cabai Merah & Rawit -->
+                <div class="bg-agri-900 border border-agri-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <img src="produk-cabai.jpg" class="w-full h-full object-cover min-h-[300px]" alt="Cabai Merah">
+                        <div class="absolute inset-0 bg-agri-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 right-6 bg-red-600 text-white text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Fresh Produce Grade</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center text-white">
+                            Cabai Merah Besar, Keriting & Rawit Merah
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Tulang punggung industri saus, sambal botolan, dan pengolahan makanan instan. Mengelola cabai membutuhkan kecepatan logistik ekstrem (Cold Chain Logistics) untuk mencegah pembusukan. Kami memiliki armada pengumpul harian yang mengevakuasi panen cabai dari dataran tinggi untuk segera disortir dari tangkai dan didistribusikan dalam hitungan jam ke fasilitas produksi klien.
+                        </p>
+                        
+                        <div class="bg-agri-950 rounded-xl p-6 border border-agri-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Spesifikasi Suplai Industri</h4>
+                            <table class="w-full text-sm table-agri">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Kondisi Barang</td>
+                                        <td class="py-3 font-bold text-white text-right">Segar, Petik Merah (Red Index > 90 persen)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Sortasi Kualitas</td>
+                                        <td class="py-3 font-bold text-white text-right">Bebas Patek (Antraknosa), Bebas Tangkai (sesuai kontrak)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Packaging Setup</td>
+                                        <td class="py-3 font-bold text-white text-right">Keranjang Plastik Berventilasi / Kotak Karton Berlubang</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Jagung Kering Pipil -->
+                <div class="bg-agri-900 border border-agri-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <img src="produk-jagung.jpg" class="w-full h-full object-cover min-h-[300px]" alt="Jagung Pipil Kering">
+                        <div class="absolute inset-0 bg-agri-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 left-6 bg-yellow-500 text-agri-950 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Feed & Food Grade</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center text-white">
+                            Jagung Kering Pipil (Yellow Corn)
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Komoditas curah bervolume masif yang dirancang untuk memasok pabrik pakan ternak (Feedmill) raksasa dan pabrik ekstraksi pemanis buatan. Jagung yang kami agregasi langsung dipipil dan dimasukkan ke dalam silo pengering raksasa untuk menekan kadar air dan menyingkirkan risiko tumbuhnya jamur Aflatoksin. Kami menjamin pasokan stabil hingga ribuan ton per bulan.
+                        </p>
+                        
+                        <div class="bg-agri-950 rounded-xl p-6 border border-agri-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Spesifikasi Suplai Industri</h4>
+                            <table class="w-full text-sm table-agri">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Kadar Air (Moisture)</td>
+                                        <td class="py-3 font-bold text-white text-right">Maksimal 14 Persen (Standard Feedmill)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Biji Rusak (Broken/Damaged)</td>
+                                        <td class="py-3 font-bold text-white text-right">Maksimal 3 - 5 Persen</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Packaging Setup</td>
+                                        <td class="py-3 font-bold text-white text-right">Karung PP 50kg / Curah Dalam Truk Dump (Loose Bulk)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Beras Medium & Premium -->
+                <div class="bg-agri-900 border border-agri-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <img src="produk-beras.jpg" class="w-full h-full object-cover min-h-[300px]" alt="Beras Premium">
+                        <div class="absolute inset-0 bg-agri-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 right-6 bg-gray-200 text-agri-950 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Staple Food Supply</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center text-white">
+                            Beras Kualitas Premium & Medium
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Kami bermitra erat dengan sentra penggilingan padi (Rice Milling Units) modern di sentra lumbung padi nasional. PT Waygo menyuplai Beras Putih dengan rasio patahan (broken grains) yang sangat presisi, ditujukan untuk pengadaan jaringan ritel supermarket berskala besar, katering industri, dan program pasokan pangan korporat.
+                        </p>
+                        
+                        <div class="bg-agri-950 rounded-xl p-6 border border-agri-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Spesifikasi Suplai Industri</h4>
+                            <table class="w-full text-sm table-agri">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Persentase Patahan (Broken)</td>
+                                        <td class="py-3 font-bold text-white text-right">Premium Maks 5 Persen / Medium Maks 15 Persen</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Derajat Sosoh</td>
+                                        <td class="py-3 font-bold text-white text-right">Minimum 95 Persen</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Packaging Setup</td>
+                                        <td class="py-3 font-bold text-white text-right">Karung Plastik PP 5kg, 10kg, 25kg, hingga 50kg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Bawang Putih & Tambahan Lainnya -->
+                <div class="bg-agri-900 border border-agri-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <img src="produk-bawangputih.jpg" class="w-full h-full object-cover min-h-[300px]" alt="bawang Putih Premium">
+                        <div class="absolute inset-0 bg-agri-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 right-6 bg-gray-200 text-agri-950 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Culinary Staple</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center text-white">
+                            Bawang Putih (Garlic)
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Menyediakan bawang putih siung besar kualitas super, bersih dari akar dan kotoran. Kami mengagregasi volume dari petani lokal maupun melakukan konsolidasi kuota impor resmi untuk menstabilkan harga bagi pabrik pengolahan bumbu kering dan saus yang menuntut kepastian harga sepanjang tahun.
+                        </p>
+                        
+                        <div class="bg-agri-950 rounded-xl p-6 border border-agri-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Rincian Kualitas produk</h4>
+                            <table class="w-full text-sm table-agri">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Grade Sortasi</td>
+                                        <td class="py-3 font-bold text-white text-right">A / B (Sesuai Permintaan)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Kondisi Fisik</td>
+                                        <td class="py-3 font-bold text-white text-right">Utuh, Bersih, Kering Permukaan</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Kemasan</td>
+                                        <td class="py-3 font-bold text-white text-right">Mesh Bags 10kg - 20kg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Madu Industri & Ekstrak -->
+                <div class="bg-agri-900 border border-agri-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <img src="produk-madu.jpg" class="w-full h-full object-cover min-h-[300px]" alt="Madu hutan murni">
+                        <div class="absolute inset-0 bg-agri-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 right-6 bg-gray-200 text-agri-950 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">FLAGSHIP PRODUCT</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center text-white">
+                            Madu Industri & Ekstrak Alam
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Menyediakan pasokan Madu Murni bersertifikasi SNI dan ekstrak getah alam (seperti Damar/Kemenyan) bebas dari adulterasi (pemalsuan gula). Komoditas cairan ini dikurasi khusus untuk pabrikan kosmetik, farmasi, dan produsen minuman kesehatan dengan pengujian laboratorium ketat sebelum dimasukkan ke dalam drum baja.
+                        </p>
+                        
+                        <div class="bg-agri-950 rounded-xl p-6 border border-agri-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Spesifikasi Suplai Industri</h4>
+                            <table class="w-full text-sm table-agri">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Jaminan Kualitas</td>
+                                        <td class="py-3 font-bold text-white text-right">Lulus Uji Lab Independen</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Kadar Air Madu</td>
+                                        <td class="py-3 font-bold text-white text-right">Maksimal 22 %</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Kemasan jerigen</td>
+                                        <td class="py-3 font-bold text-white text-right">Food Grade Jerigen 25 kg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                        <div class="bg-agri-950 p-5 rounded-lg border border-agri-800">
+                            <ul class="text-sm space-y-3">
+                                <li class="flex justify-between border-b border-agri-800 pb-2"><span class="text-gray-500">Jaminan Kualitas</span><span class="font-bold text-white">Lulus Uji Lab Independen</span></li>
+                                <li class="flex justify-between border-b border-agri-800 pb-2"><span class="text-gray-500">Kadar Air Madu</span><span class="font-bold text-white">Maksimal 22 Persen</span></li>
+                                <li class="flex justify-between"><span class="text-gray-500">Kemasan Drum</span><span class="font-bold text-accent-500">Food Grade Steel Drum 300kg</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE CHAIN ARCHITECTURE (SUPPLY NETWORK) -->
+    <section id="network" class="py-28 bg-gray-50 relative overflow-hidden border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <h4 class="text-accent-600 font-bold tracking-[0.25em] uppercase text-sm mb-4">Sourcing Masterplan</h4>
+                <h2 class="text-4xl font-extrabold text-agri-950 mb-6 tracking-tight">Anatomi Eksekusi Pengadaan Langsung</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">Dari lahan ladang berlumpur menuju ruang produksi steril pabrik Anda. Berikut adalah cetak biru PT Waygo Sinergi mengamankan suplai tanpa melibatkan rantai perantara tak berizin.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-4 gap-6 relative z-10">
+                <!-- Node 1 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group">
+                    <div class="absolute -top-6 right-6 text-6xl font-black text-gray-100 group-hover:text-agri-900/5 transition-colors">01</div>
+                    <div class="w-14 h-14 bg-agri-900 text-white rounded-xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-agri-950 mb-3">Farm-Gate Deal</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Kami melakukan transaksi persis di pinggir ladang panen. Pembayaran tunai kepada koperasi atau Gapoktan memastikan petani mendapatkan harga maksimal, sekaligus memberi kami hak eksklusif memborong seluruh tonase panen sebelum dibajak oleh calo pasar.</p>
+                </div>
+
+                <!-- Node 2 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group">
+                    <div class="absolute -top-6 right-6 text-6xl font-black text-gray-100 group-hover:text-agri-900/5 transition-colors">02</div>
+                    <div class="w-14 h-14 bg-agri-900 text-white rounded-xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-agri-950 mb-3">Regional Hub Drop</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Muatan dari ladang dipindahkan via truk kecil ke gudang konsolidasi (*Regional Hub*) kami yang tersebar di lumbung daerah. Di sinilah proses pembersihan awal terjadi: memisahkan tanah, daun basah, dan kotoran ladang untuk mencegah pembusukan massal.</p>
+                </div>
+
+                <!-- Node 3 -->
+                <div class="bg-agri-950 p-8 rounded-xl border border-accent-500 shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group transform lg:scale-105 z-10">
+                    <div class="absolute -top-6 right-6 text-6xl font-black text-agri-900 group-hover:text-accent-500/20 transition-colors">03</div>
+                    <div class="w-14 h-14 bg-accent-500 text-agri-950 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-3">Waygo Standardization Center</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">Puluhan ton masuk ke fasilitas sentral kami. Pengeringan mekanik menyusutkan kadar air, mesin pengayak memisahkan ukuran menjadi *Grade* A/B/C yang seragam, dan tim kontrol kualitas memilah barang cacat. Barang mentah berubah menjadi bahan baku kelas pabrik yang presisi.</p>
+                </div>
+
+                <!-- Node 4 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group">
+                    <div class="absolute -top-6 right-6 text-6xl font-black text-gray-100 group-hover:text-agri-900/5 transition-colors">04</div>
+                    <div class="w-14 h-14 bg-agri-900 text-white rounded-xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-agri-950 mb-3">Industrial Doorstep Dispatch</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Penimbangan akhir terkomputerisasi. Barang dikemas secara profesional dan dinaikkan ke armada truk tronton tertutup atau kontainer kapal. Waygo memfasilitasi pengiriman hingga tiba tepat di pintu penerimaan barang (Receiving Bay) pabrik Anda dengan jadwal presisi.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. BUSINESS MODEL: BUY & SELL -->
-    <section id="trading" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h3 class="text-brand-wood font-bold tracking-widest uppercase text-sm mb-3">
-                    <span class="lang-id">Ekosistem Perdagangan Agrikultur</span><span class="lang-en hidden">Agriculture Trading Ecosystem</span>
-                </h3>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-dark mb-6">
-                    <span class="lang-id">Menghubungkan Potensi Lokal Brebes dengan Industri Global</span>
-                    <span class="lang-en hidden">Connecting Brebes Local Potential with Global Industry</span>
-                </h2>
-                <p class="text-gray-600 text-lg leading-relaxed">
-                    <span class="lang-id">Kami hadir sebagai agregator tepercaya. Membuka pintu bagi para petani lokal untuk menjual hasil panennya, sekaligus menjamin pasokan bahan baku yang konsisten dan tersortir bagi pabrik manufaktur.</span>
-                    <span class="lang-en hidden">We are here as a trusted aggregator. Opening doors for local farmers to sell their harvests, while guaranteeing consistent and sorted raw material supply for manufacturing plants.</span>
-                </p>
+    <!-- MASSIVE FAQ SECTION -->
+    <section class="py-28 bg-white border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h4 class="text-accent-600 font-bold tracking-[0.25em] uppercase text-sm mb-4">B2B Procurement Knowledge Base</h4>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-agri-950 mb-6">Pertanyaan Seputar Suplai Agrikultur</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">Panduan lengkap mengenai kebijakan tonase, manajemen risiko fluktuasi harga, dan garansi kualitas untuk kontrak suplai korporasi besar.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-10">
-                <!-- BUYING SECTION -->
-                <div class="bg-[#fdfdf8] rounded-3xl p-10 border-t-8 border-brand-green shadow-lg hover:-translate-y-2 transition-transform duration-300">
-                    <div class="flex items-center gap-4 mb-8 border-b border-gray-200 pb-6">
-                        <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center text-white text-2xl shadow-md"><i class="fas fa-tractor"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-brand-dark"><span class="lang-id">KAMI MEMBELI (INBOUND)</span><span class="lang-en hidden">WE BUY (INBOUND)</span></h3>
-                            <p class="text-gray-500 font-medium text-sm"><span class="lang-id">Menyerap Hasil Bumi Lokal Brebes</span><span class="lang-en hidden">Absorbing Local Brebes Harvests</span></p>
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-agri-950 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Bagaimana cara PT Waygo menyelesaikan masalah harga yang selalu bergejolak di pasar tradisional?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Gejolak harga seringkali diciptakan secara artifisial oleh rantai perantara tengkulak yang terlalu panjang. Dengan memotong perantara tersebut dan memborong langsung dari petani binaan, kami mengunci harga beli dasar yang lebih rendah. Untuk klien B2B, kami dapat menawarkan opsi Kontrak Harga Tetap (Fixed Price Contract) selama periode tertentu (misal tiga atau enam bulan) agar biaya produksi pabrik Anda tidak terganggu oleh fluktuasi harian pasar lokal.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-agri-950 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Berapa minimal jumlah pesanan (Minimum Order Quantity) untuk dikirim ke pabrik?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        PT Waygo dirancang untuk menyuplai industri manufaktur, bukan skala eceran atau rumah tangga. Untuk pengiriman domestik via jalur darat antar provinsi, batas pemesanan paling efisien adalah satu muatan truk medium atau truk tronton penuh (berkisar antara 8 hingga 25 Metrik Ton per pengiriman). Untuk jalur laut (ekspor atau antar pulau), kami mensyaratkan minimum 1x Kontainer 20ft (FCL) demi efisiensi biaya logistik kargo Anda.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-agri-950 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Siapa yang menanggung kerugian jika terjadi penyusutan bobot (Shrinkage) selama perjalanan?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Komoditas agrikultur alami memiliki kecenderungan melepaskan uap air selama proses perjalanan tertutup, yang berujung pada susut bobot. PT Waygo menanggung risiko ini. Kami memiliki formula kalkulasi margin penyusutan internal yang cermat. Harga kesepakatan akhir yang Anda bayarkan adalah murni untuk tonase final barang yang tiba dan ditimbang secara faktual di jembatan timbang pintu penerimaan (Receiving Bay) pabrik Anda.
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-agri-950 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Dapatkah PT Waygo memisahkan kaliber ukuran Bawang Merah secara presisi?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Sangat bisa. Kegagalan sortasi ukuran adalah mimpi buruk bagi mesin pemotong (*slicer*) di pabrik makanan otomatis. Oleh sebab itu, sebelum dikemas, kami memasukkan bawang merah maupun komoditas sejenis ke dalam mesin pengayak silinder putar yang memisahkan kaliber menjadi fraksi seragam: Super Besar, Medium (Tanggung), hingga Ekstra Kecil (untuk kebutuhan pasta/saus). Anda tinggal menyebutkan spesifikasi diameter yang diinginkan dalam dokumen permintaan.
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-agri-950 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Apakah Jagung Kering Pipil dipastikan aman dari racun Aflatoksin?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Jamur Aflatoksin tumbuh merajalela jika jagung disimpan dalam keadaan lembap di atas angka 15 persen. Kami meredam risiko ini dengan mendirikan silo pengering (Dryer) industri. Jagung yang baru dipipil langsung dipanaskan secara mekanis hingga tingkat kelembapan (Moisture Level) anjlok di angka batas aman 14 persen atau lebih rendah. Sirkulasi udara dalam kemasan juga dikontrol ketat untuk memblokir pertumbuhan jamur selama masa transit.
+                    </div>
+                </details>
+
+                <!-- FAQ 6 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-agri-950 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Apakah PT Waygo dapat menjamin Madu Murni terbebas dari sirup gula (Oplosan)?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Madu adalah komoditas dengan tingkat pemalsuan tertinggi. Kami tidak mengambil risiko reputasi. Pengambilan madu dilakukan langsung dari jaringan peternak lebah terverifikasi kami, bukan membelinya dari pasar lapak. Setiap kedatangan drum madu akan disampling dan diuji laboratorium parameter SNI (mengukur Enzim Diastase, rasio Gula Pereduksi, dan HMF) sebelum dinyatakan aman untuk disuplai ke perusahaan farmasi atau F&B raksasa.
+                    </div>
+                </details>
+
+                <!-- FAQ 7 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-agri-950 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Bagaimana penanganan logistik Cabai Segar agar tidak membusuk di jalan?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Komoditas hasil segar (Fresh Produce) seperti cabai merah dan rawit memiliki usia simpan yang sangat pendek pasca pemetikan. Kami mengelola armada terdedikasi (*dedicated line*) dengan jadwal keberangkatan malam hari untuk menghindari hawa panas ekstrem. Cabai diletakkan di dalam keranjang berlubang lebar yang ditumpuk dengan perhitungan sirkulasi oksigen presisi, memastikan cabai tiba di fasilitas produksi saus Anda dengan warna merah mengkilap dan tanpa bintik busuk air.
+                    </div>
+                </details>
+
+                <!-- FAQ 8 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-agri-950 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Dapatkah kami meminta spesifikasi kemasan khusus (Custom Packaging Size)?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Ya, fasilitasi kemasan kustom sepenuhnya tersedia untuk menyelaraskan dengan kemampuan alat bongkar muat di gudang klien. Kami dapat melakukan pengarungan beras atau jagung dengan karung 25kg, 50kg, ataupun menggunakan karung super besar (Jumbo Bags 1 Ton). Untuk komoditas madu, tersedia opsi pemuatan di drum baja berkapasitas 300kg atau IBC Tote Tank 1000 Liter dengan palet kayu standar *forklift*.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B PROCUREMENT RFQ FORM -->
+    <section id="rfq" class="py-28 bg-agri-950 relative border-t-8 border-accent-500">
+        <div class="absolute inset-0 bg-texture-dots opacity-20 pointer-events-none"></div>
+        <div class="absolute left-0 bottom-0 w-1/3 h-full bg-agri-900 transform -skew-x-12 -translate-x-32 opacity-50 z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Info Panel -->
+                <div class="lg:col-span-5 text-white">
+                    <div class="w-16 h-16 bg-accent-500 text-agri-950 rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-accent-500/20">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    </div>
+                    <h2 class="text-4xl font-extrabold mb-6 tracking-tight">Portal Pengadaan Manufaktur</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed text-lg">
+                        Saluran komunikasi resmi bagi manajer pembelian korporat (Procurement Manager). Silakan ajukan rincian volume bulanan komoditas yang pabrik Anda butuhkan. Tim Trade Desk PT Waygo akan menyusun <b>Full Corporate Offer</b> secara tertulis.
+                    </p>
+                    
+                    <div class="space-y-6 pt-8 border-t border-agri-800">
+                        <div class="flex items-start group">
+                            <svg class="w-6 h-6 text-accent-500 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <div>
+                                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-1">Electronic Mail Service</h4>
+                                <a href="mailto:halo.waygo@gmail.com" class="text-gray-400 text-sm hover:text-accent-500 transition-colors">halo.waygo@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start group">
+                            <svg class="w-6 h-6 text-accent-500 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <div>
+                                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-1">Corporate Hotline / B2B Line</h4>
+                                <span class="text-accent-500 font-mono text-lg">085892767032</span>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-                        <span class="lang-id">PT Waygo senantiasa mencari mitra kelompok tani, peternak lebah, dan perajin telur asin di wilayah Brebes dan sekitarnya. Kami rutin menyerap komoditas berkualitas dengan sistem pembayaran tunai atau transfer cepat.</span>
-                        <span class="lang-en hidden">PT Waygo constantly seeks partner farmer groups, beekeepers, and salted egg artisans in the Brebes region and its surroundings. We routinely absorb quality commodities with a fast cash or transfer payment system.</span>
+                </div>
+
+                <!-- Web Form without asterisks -->
+                <div class="lg:col-span-7 bg-agri-900 border border-agri-800 p-8 md:p-10 rounded-2xl shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-8 border-b border-agri-800 pb-4">Request for Quotation (RFQ) Data</h3>
+                    
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Nama Perusahaan Pabrikan (Required)</label>
+                                <input type="text" class="w-full px-4 py-3 bg-agri-950 border border-agri-700 rounded text-white focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors" placeholder="PT / CV Legal Name" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Email Perusahaan (Required)</label>
+                                <input type="email" class="w-full px-4 py-3 bg-agri-950 border border-agri-700 rounded text-white focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors" placeholder="procurement@company.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Sektor Komoditas Target (Required)</label>
+                                <select class="w-full px-4 py-3 bg-agri-950 border border-agri-700 rounded text-white focus:outline-none focus:border-accent-500 cursor-pointer appearance-none" required>
+                                    <option value="" disabled selected>-- Pilih Kategori --</option>
+                                    <option value="bawang">Bawang Merah / Bawang Putih</option>
+                                    <option value="cabai">Cabai Segar (Merah/Rawit)</option>
+                                    <option value="jagung_beras">Jagung Pipil / Beras Karungan</option>
+                                    <option value="madu">Madu Murni Industri / Ekstrak Alam</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Estimasi Volume Per Bulan</label>
+                                <input type="text" class="w-full px-4 py-3 bg-agri-950 border border-agri-700 rounded text-white focus:outline-none focus:border-accent-500 transition-colors" placeholder="Ketik angka dalam Metrik Ton">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Rincian Spesifikasi Teknis (Required)</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-agri-950 border border-agri-700 rounded text-white focus:outline-none focus:border-accent-500 transition-colors text-sm" placeholder="Sebutkan detail yang spesifik. Contoh untuk Bawang Merah: Minta Kaliber Medium, kering, dalam jaring 20kg. Sebutkan pula kota tujuan pabrik Anda untuk perhitungan biaya logistik darat laut." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-accent-500 text-agri-950 font-extrabold py-5 rounded hover:bg-yellow-400 transition-all text-sm uppercase tracking-widest shadow-xl flex items-center justify-center group">
+                            Kirimkan Pengajuan Suplai
+                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLIANCE & LEGAL ANNEX -->
+    <section class="py-16 bg-gray-100 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-xs font-bold text-gray-500 uppercase tracking-[0.3em] mb-6">Food Safety & Export Legal Governance</h3>
+            <p class="text-xs text-gray-500 max-w-5xl mx-auto leading-relaxed font-medium text-justify md:text-center">
+                Tindakan Pencegahan Hama Antarnegara: Seluruh kargo agrikultur ekspor PT Waygo Sinergi Nusantara diwajibkan melewati prosedur fumigasi bersertifikat resmi sebelum pemuatan ke dalam lambung kapal kargo laut. Ini difungsikan untuk meredam potensi kontaminasi biologis dan penyebaran hama lintas batas negara secara total. Dokumen Phytosanitary Certificate, Bill of Lading mutlak, dan Form Certificate of Origin akan selalu diserahkan penuh secara transparan kepada pembeli.
+                <br><br>
+                Penolakan Risiko Perdagangan: Komoditas hasil panen bumi menyimpan risiko bawaan terhadap anomali iklim ekstrem secara natural. Rincian pasokan kapasitas, besaran harga penawaran awal, dan kalkulasi waktu penyerahan yang dikomunikasikan via saluran informal tidaklah mengikat secara hukum legal. Volume suplai final dan garansi tarif perdagangan hanya sah divalidasi apabila telah terjadi penandatanganan dokumen Sales and Purchase Agreement (SPA) berbadan hukum serta penerbitan Letter of Credit dari bank koresponden.
+            </p>
+        </div>
+    </section>
+
+    <!-- DIVISIONAL MEGA FOOTER -->
+    <footer class="bg-corporate-950 text-gray-400 pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Branding -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center font-black text-corporate-950 text-lg border border-accent-300"><img src="logo.png" alt="Logo PT Waygo Sinergi Nusantara" class="h-12"></div>
+                        <span class="text-xl font-extrabold text-white tracking-tight leading-none">WAYGO <span class="text-accent-500">SINERGI NUSANTARA</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 font-medium text-gray-500">
+                        Divisi Agrikultur dan Pengolahan Pangan Industri. Kami mengunci stabilitas harga komoditas pokok untuk pabrik multinasional dengan menghilangkan jarak membentang antara lumbung panen pedesaan dengan infrastruktur manufaktur urban global.
                     </p>
-                    <ul class="space-y-4 text-sm font-semibold text-gray-700 mb-8">
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span class="lang-id">Menerima Madu Curah murni asli dari peternak lokal.</span><span class="lang-en hidden">Accepting pure Bulk Honey directly from local beekeepers.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span class="lang-id">Membeli Bawang Merah, Bawang Putih, Cabai, Jagung Pipil, dan Padi.</span><span class="lang-en hidden">Buying Shallots, Garlic, Chili, Shelled Corn, and Paddy.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span class="lang-id">Membeli Telur Asin khas Brebes standar grosir yang utuh dan berkualitas.</span><span class="lang-en hidden">Buying Brebes signature Salted Eggs at wholesale standards.</span></li>
-                    </ul>
-                    <a href="https://wa.me/6285641366030?text=Halo%20PT%20Waygo,%20saya%20memiliki%20pasokan%20hasil%20bumi%20untuk%20dijual..." class="block bg-white text-brand-green border-2 border-brand-green px-6 py-4 rounded-xl font-bold hover:bg-brand-green hover:text-white transition-colors text-center w-full shadow-sm">
-                        <i class="fab fa-whatsapp text-lg mr-2"></i> <span class="lang-id">Tawarkan Pasokan Anda ke Waygo</span><span class="lang-en hidden">Offer Your Harvest to Waygo</span>
+                    <a href="index.html" class="inline-flex items-center text-xs font-bold text-accent-500 uppercase tracking-widest hover:text-white transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        Kembali Ke Halaman Utama Perusahaan
                     </a>
                 </div>
 
-                <!-- SELLING SECTION -->
-                <div class="bg-brand-wood rounded-3xl p-10 border-t-8 border-yellow-700 shadow-2xl hover:-translate-y-2 transition-transform duration-300">
-                    <div class="flex items-center gap-4 mb-8 border-b border-white/20 pb-6">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-wood text-2xl shadow-md"><i class="fas fa-industry"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-white"><span class="lang-id">KAMI MENJUAL (OUTBOUND)</span><span class="lang-en hidden">WE SELL (OUTBOUND)</span></h3>
-                            <p class="text-yellow-100 font-medium text-sm"><span class="lang-id">Suplai B2B Pabrik & HORECA</span><span class="lang-en hidden">B2B Factory & HORECA Supply</span></p>
-                        </div>
-                    </div>
-                    <p class="text-white mb-6 leading-relaxed text-sm">
-                        <span class="lang-id">Kami menjamin kelancaran produksi pabrik makanan, produsen obat herbal, hingga jaringan katering skala besar. Komoditas yang kami suplai telah disortir dan dibersihkan sesuai parameter standar keamanan pangan.</span>
-                        <span class="lang-en hidden">We guarantee the smooth production of food factories, herbal medicine producers, to large-scale catering networks. The commodities we supply have been sorted and cleaned according to food safety standard parameters.</span>
-                    </p>
-                    <ul class="space-y-4 text-sm font-semibold text-white mb-8">
-                        <li class="flex items-start gap-3"><i class="fas fa-shield-check text-yellow-300 mt-1"></i> <span class="lang-id">Jaminan mutu absolut, bebas dari pemalsuan bahan campuran.</span><span class="lang-en hidden">Absolute quality guarantee, free from artificial adulteration.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-shield-check text-yellow-300 mt-1"></i> <span class="lang-id">Penyortiran ukuran yang seragam sesuai spesifikasi mesin pabrik.</span><span class="lang-en hidden">Uniform size grading according to factory machinery specifications.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-shield-check text-yellow-300 mt-1"></i> <span class="lang-id">Siap mengikat kontrak suplai tonase mingguan atau bulanan.</span><span class="lang-en hidden">Ready to bind weekly or monthly tonnage supply contracts.</span></li>
-                    </ul>
-                    <a href="mailto:halo.waygo@gmail.com" class="block bg-brand-green text-white px-6 py-4 rounded-xl font-bold hover:bg-[#113a27] transition-colors shadow-lg text-center w-full">
-                        <i class="fas fa-file-contract text-lg mr-2"></i> <span class="lang-id">Minta Penawaran B2B (Quotation)</span><span class="lang-en hidden">Request B2B Quotation</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. COMMODITY CATALOG & SPECS -->
-    <section id="catalog" class="py-24 bg-brand-gray border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-16 border-l-4 border-brand-wood pl-6">
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-dark mb-4 uppercase tracking-tight">
-                    <span class="lang-id">Katalog Detail Komoditas Pangan</span><span class="lang-en hidden">Detailed Food Commodity Catalog</span>
-                </h2>
-                <p class="text-gray-600 max-w-3xl text-lg">
-                    <span class="lang-id">Fokus kami adalah menyediakan bahan baku murni dengan tingkat kebersihan tinggi. Berikut adalah enam komoditas unggulan kami beserta spesifikasi target industri.</span>
-                    <span class="lang-en hidden">Our focus is providing pure raw materials with high cleanliness levels. Below are our six flagship commodities along with industrial target specifications.</span>
-                </p>
-            </div>
-
-            <div class="space-y-20">
-
-                <!-- 1. MADU CURAH MURNI -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-5 relative">
-                            <img src="produk-madu.jpg" alt="Madu Curah Murni" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1587049352851-8d4e8913478d?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 left-6 bg-brand-wood text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">FLAGSHIP PRODUCT</div>
-                        </div>
-                        <div class="lg:col-span-7 p-8 lg:p-12">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Madu Curah Murni (Industrial Raw Honey)</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Bahan baku esensial untuk pabrik makanan, minuman kesehatan, dan obat herbal. Kami menyuplai madu mentah asli tanpa tambahan pemanis buatan, tanpa sirup gula, dan tanpa pasteurisasi berlebih guna mempertahankan profil enzim alami (Diastase). Disajikan dalam kemasan berskala industri yang terjamin keamanan pangannya.</span>
-                                <span class="lang-en hidden">Essential raw material for food factories, health drinks, and herbal medicines. We supply pure raw honey without added artificial sweeteners, sugar syrup, and without excessive pasteurization to maintain the natural enzyme profile (Diastase). Presented in food-safety guaranteed industrial-scale packaging.</span>
-                            </p>
-                            
-                            <div class="bg-[#fdfdf8] rounded-xl border border-yellow-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Parameter Kualitas Dasar</th><th>Standar Jaminan Mutu</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Tingkat Kemurnian (Purity)</td>
-                                            <td class="text-brand-green font-bold text-lg">100% Madu Asli Alam</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Kadar Air (Moisture Content)</td>
-                                            <td class="text-brand-green font-bold text-lg">Maksimal 22% (Sesuai SNI Madu)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Kesiapan Uji Laboratorium</td>
-                                            <td class="text-gray-600 font-medium">Siap untuk uji HMF dan Enzim Diastase oleh tim QC Pabrik</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Kemasan Logistik</td>
-                                            <td class="text-gray-600 font-medium">Jerigen Food-Grade HDPE / Drum Industri Spesifik Pangan</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. BAWANG MERAH BREBES -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-7 p-8 lg:p-12 order-2 lg:order-1">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Bawang Merah Varietas Bima Brebes</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Kabupaten Brebes adalah pusat lumbung bawang merah nasional. Kami secara khusus mendistribusikan bawang merah varietas Bima yang memiliki karakteristik unggul: aroma yang sangat tajam, warna merah gelap pekat, dan ketahanan simpan yang lama (kondisi askip). Komoditas ini sangat vital bagi produsen bumbu kering, pasta bawang, mie instan, dan industri bawang goreng.</span>
-                                <span class="lang-en hidden">Brebes Regency is the national shallot epicenter. We specifically distribute the Bima variety shallot which has superior characteristics: extremely sharp aroma, dark red color, and long shelf life (askip condition). This commodity is vital for dry seasoning producers, shallot paste, instant noodles, and fried shallot industries.</span>
-                            </p>
-                            
-                            <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Kualifikasi Penyortiran</th><th>Detail Parameter Target</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Kategori Ukuran (Grading)</td>
-                                            <td class="text-brand-green font-bold text-lg">Super Cross, Super, Medium, atau sesuai pesanan pabrik</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Kondisi Umbi Fisik</td>
-                                            <td class="text-brand-green font-bold text-lg">Kering Askip (Tahan Simpan Lama), Bebas Busuk</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Tingkat Kebersihan Sortasi</td>
-                                            <td class="text-gray-600 font-medium">Bebas dari gumpalan tanah, daun dan akar dipotong rapi</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5 relative order-1 lg:order-2">
-                            <img src="produk-bawang.jpg" alt="Bawang Merah Bima Brebes" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 right-6 bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">SPICES & SEASONING</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. BAWANG PUTIH LOKAL -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-5 relative">
-                            <img src="produk-bawangputih.jpg" alt="Bawang Putih Lokal" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1540148426945-3642eb0e5494?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 left-6 bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">SPICES & SEASONING</div>
-                        </div>
-                        <div class="lg:col-span-7 p-8 lg:p-12">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Bawang Putih Lokal Pilihan</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Berbeda dengan varietas impor, bawang putih lokal yang kami suplai memiliki profil rasa (*flavor profile*) dan aroma minyak atsiri yang jauh lebih tajam dan pekat. Meskipun ukurannya cenderung lebih kecil, efisiensi rasanya membuatnya sangat diminati oleh industri produsen kaldu, bumbu penyedap rasa, saus, dan industri pengolahan daging olahan.</span>
-                                <span class="lang-en hidden">Unlike imported varieties, the local garlic we supply has a flavor profile and essential oil aroma that is much sharper and denser. Although tending to be smaller in size, its flavor efficiency makes it highly sought after by broth producers, flavor seasonings, sauces, and processed meat industries.</span>
-                            </p>
-                            
-                            <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Kualifikasi Penyortiran</th><th>Detail Parameter Target</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Profil Rasa Aroma</td>
-                                            <td class="text-brand-green font-bold text-lg">Pekat dan Tajam (Khas Lokal)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Kondisi Umbi Fisik</td>
-                                            <td class="text-brand-green font-bold text-lg">Kering, Utuh, Tidak Keriput</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Tingkat Kebersihan Sortasi</td>
-                                            <td class="text-gray-600 font-medium">Bebas dari kelembapan berlebih, bersih dari sisa tanah</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. JAGUNG KERING PIPIL -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-7 p-8 lg:p-12 order-2 lg:order-1">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Jagung Pipil Kering Industri</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Jagung kuning pipil dengan standar kualitas pabrik. Kami menjaga tingkat kelembapan secara ketat untuk mencegah pertumbuhan jamur dan toksin (seperti aflatoksin) selama penyimpanan di silo. Komoditas ini merupakan bahan baku utama bagi pabrik pakan ternak skala besar (*Feedmill*) serta industri ekstraksi pati jagung (*corn starch*).</span>
-                                <span class="lang-en hidden">Yellow shelled corn with factory quality standards. We strictly maintain moisture levels to prevent mold and toxin growth (such as aflatoxin) during silo storage. This commodity is the main raw material for large-scale animal feed mills (Feedmill) and corn starch extraction industries.</span>
-                            </p>
-                            
-                            <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Parameter Kualitas</th><th>Standar Jaminan Mutu Target</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Kadar Air (Moisture Content)</td>
-                                            <td class="text-brand-green font-bold text-lg">Maksimal 15% (Aman Simpan Lama)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Tingkat Biji Pecah (Broken)</td>
-                                            <td class="text-brand-green font-bold text-lg">Sangat Minimal (Sesuai Grade Pabrik)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Keamanan Pangan</td>
-                                            <td class="text-gray-600 font-medium">Bebas Jamur, Bebas Kutu, Bebas Kotoran Tongkol</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5 relative order-1 lg:order-2">
-                            <img src="produk-jagung.jpg" alt="Jagung Pipil Kering" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1550081699-73e4b0051e59?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 right-6 bg-yellow-500 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">STAPLE CROPS</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. BERAS PREMIUM & MEDIUM -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-5 relative">
-                            <img src="produk-beras.jpg" alt="Beras Premium dan Medium" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 left-6 bg-yellow-500 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">STAPLE CROPS</div>
-                        </div>
-                        <div class="lg:col-span-7 p-8 lg:p-12">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Beras Skala Grosir (Premium & Medium)</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Beras hasil gilingan langsung dari sentra persawahan lokal Jawa Tengah. Kami menjamin beras bebas dari pemutih, pewangi, dan pengawet buatan. Menawarkan tingkat kepatahan biji (*broken grain*) yang dapat disesuaikan dengan permintaan pabrik makanan olahan, jaringan katering industri besar, maupun untuk program bantuan sosial.</span>
-                                <span class="lang-en hidden">Milled rice directly from local Central Java rice field centers. We guarantee the rice is free from artificial bleach, fragrances, and preservatives. Offering broken grain levels that can be adjusted to the demands of processed food factories, large industrial catering networks, or social assistance programs.</span>
-                            </p>
-                            
-                            <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Parameter Kualitas</th><th>Standar Jaminan Mutu Target</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Tingkat Derajat Sosoh</td>
-                                            <td class="text-brand-green font-bold text-lg">Maksimal (Warna putih alami)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Tingkat Kepatahan (Broken)</td>
-                                            <td class="text-brand-green font-bold text-lg">Dapat disesuaikan (Kualitas Premium / Medium)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Tingkat Kebersihan</td>
-                                            <td class="text-gray-600 font-medium">Bebas batu kecil, gabah, dan benda asing lainnya</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. TELUR ASIN KHAS BREBES -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-7 p-8 lg:p-12 order-2 lg:order-1">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Telur Asin Khas Brebes Skala B2B</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Komoditas ikonik Brebes yang kami angkat pengadaannya ke skala korporasi (B2B). Kami menyuplai telur asin berkualitas tinggi (tersedia opsi mentah, rebus matang, atau asap) untuk mendukung industri kuliner kekinian. Sangat diminati oleh *franchise* restoran hidangan laut, serta pabrik makanan ringan (*snack*) yang mengekstraksi kuning telur sebagai bumbu perasa saus telur asin (*salted egg flavor*).</span>
-                                <span class="lang-en hidden">Brebes iconic commodity elevated to corporate scale (B2B) procurement. We supply high-quality salted eggs (available raw, boiled, or smoked) to support modern culinary industries. Highly demanded by seafood restaurant franchises, and snack factories extracting the yolk as salted egg flavor sauce seasoning.</span>
-                            </p>
-                            
-                            <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Parameter Spesifikasi Target</th><th>Standar Jaminan Mutu</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Profil Kuning Telur Fisik</td>
-                                            <td class="text-brand-green font-bold text-lg">Masir, Berminyak, dan Berwarna Jingga Pekat</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Kondisi Cangkang Luar</td>
-                                            <td class="text-brand-green font-bold text-lg">Utuh Sempurna, Bersih dari sisa tanah liat/abu</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Pengemasan Logistik Khusus</td>
-                                            <td class="text-gray-600 font-medium">Menggunakan Krat telur khusus untuk mencegah risiko pecah selama transportasi logistik</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5 relative order-1 lg:order-2">
-                            <img src="produk-telur.jpg" alt="Telur Asin Brebes" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1598448834461-8ee44d03d09a?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 right-6 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">CULINARY & HORECA</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. FOOTER & CONTACT -->
-    <footer class="bg-brand-dark text-white border-t-8 border-brand-wood">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-12 border-b border-gray-800 pb-12">
+                <!-- Division Specific Links -->
                 <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-brand-wood">PT WAYGO SINERGI NUSANTARA</h2>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                        <span class="lang-id">Sinergi mutlak antara kekayaan panen Brebes dan kebutuhan pangan korporat nasional. Transaksi aman, harga langsung dari lumbungnya, dengan standar kebersihan kelas industri.</span>
-                        <span class="lang-en hidden">Absolute synergy between Brebes harvest wealth and national corporate food needs. Secure transactions, direct source pricing, with industrial-grade cleanliness standards.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://wa.me/6285892767032" class="bg-brand-wood text-white px-6 py-3 rounded-xl font-bold hover:bg-yellow-600 transition flex items-center gap-2">
-                            <i class="fab fa-whatsapp text-lg"></i> WA Sales & Purchasing
-                        </a>
-                        <a href="mailto:halo.waygo@gmail.com" class="border border-white/30 bg-white/5 px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-brand-dark transition flex items-center gap-2">
-                            <i class="fas fa-envelope text-lg"></i> halo.waygo@gmail.com
-                        </a>
-                    </div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Pilar Komoditas Kami</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#portfolio" class="hover:text-accent-500 transition-colors">Bawang Merah & Putih</a></li>
+                        <li><a href="#portfolio" class="hover:text-accent-500 transition-colors">Cabai Segar Industri</a></li>
+                        <li><a href="#portfolio" class="hover:text-accent-500 transition-colors">Jagung Kering Pipil</a></li>
+                        <li><a href="#portfolio" class="hover:text-accent-500 transition-colors">Beras Skala Tonase</a></li>
+                        <li><a href="#portfolio" class="hover:text-accent-500 transition-colors">Madu Murni Bersertifikat</a></li>
+                    </ul>
                 </div>
-                <div class="text-sm text-gray-400 space-y-3">
-                    <p class="font-bold text-brand-wood mb-4 uppercase tracking-widest text-xs">Informasi Operasional & Legal</p>
-                    <p><i class="fas fa-map-marker-alt w-6 text-gray-300"></i> Kantor Pusat: Kab. Brebes, Jawa Tengah, Indonesia</p>
-                    <p><i class="fas fa-shield-alt w-6 text-gray-300"></i> Terdaftar Resmi NIB OSS & Kemenkumham RI</p>
-                    <p><i class="fas fa-hand-holding-heart w-6 text-gray-300"></i> Mendukung Pemberdayaan Petani & UMKM Lokal</p>
+
+                <!-- Trade Desk & Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Jalur Kontak Cepat B2B</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li class="flex flex-col">
+                            <span class="text-gray-500 text-xs mb-1 uppercase tracking-widest">Surat Elektronik Resmi</span>
+                            <a href="mailto:halo.waygo@gmail.com" class="text-white hover:text-accent-500 transition-colors">halo.waygo@gmail.com</a>
+                        </li>
+                        <li class="flex flex-col pt-2 border-t border-gray-800">
+                            <span class="text-gray-500 text-xs mb-1 uppercase tracking-widest">Saluran Telepon Langsung</span>
+                            <span class="text-accent-500 font-mono">085892767032</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="text-center text-xs text-gray-500">
-                &copy; <span id="year"></span> PT WAYGO SINERGI NUSANTARA PERORANGAN. All Rights Reserved.
+
+            <!-- Footer Bottom Strip -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-medium text-gray-500">
+                <p>Hak Cipta 2026 Dimiliki Oleh PT Waygo Sinergi Nusantara Bagian Agrikultur.</p>
+                <div class="mt-4 md:mt-0">
+                    <span>Membangun Ketahanan Rantai Pangan Nasional</span>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- 6. JAVASCRIPT LOGIC -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        let currentLang = 'id';
-        const langToggleBtn = document.getElementById('langToggleBtn');
-        const labelId = document.getElementById('label-id');
-        const labelEn = document.getElementById('label-en');
-
-        langToggleBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'id' ? 'en' : 'id';
-            langToggleBtn.classList.toggle('en');
-            
-            if(currentLang === 'en') {
-                labelId.style.color = '#9ca3af'; 
-                labelEn.style.color = '#d4af37'; 
-            } else {
-                labelId.style.color = '#d4af37';
-                labelEn.style.color = '#9ca3af';
-            }
-
-            document.querySelectorAll('.lang-id').forEach(el => el.classList.toggle('hidden'));
-            document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden'));
-        });
-    </script>
 </body>
 </html>

@@ -1,466 +1,771 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT WAYGO SINERGI NUSANTARA | Divisi Biomassa & Energi Terbarukan</title>
-    <meta name="description" content="Platform Trading Biomassa dan Limbah Non-B3 Industri. Menerima pasokan dan menyuplai UCO, Wood Chip, Serbuk Kayu, Batok Kelapa, dan Arang berstandar SNI.">
+    <meta name="description" content="PT Waygo Sinergi Nusantara - Industrial Energy & Biomass Division. Supplying UCO, Coconut Shell, and Solid Biomass for Global Bio-refineries and Power Plants.">
+    <title>Industrial Energy & Biomass Division | PT Waygo Sinergi Nusantara</title>
+    
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
     <script>
-        tailwind.config = { 
-            theme: { 
-                extend: { 
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }, 
-                    colors: { 
-                        brand: { green: '#0f3d26', lightgreen: '#1a593a', wood: '#b57b45', dark: '#0a192f', gray: '#f4f7f6' } 
-                    } 
-                } 
-            } 
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        corporate: { 950: '#060B19', 900: '#0B132B', 800: '#1C2541', 700: '#3A506B' },
+                        accent: { 500: '#D4AF37', 600: '#C5A028', 900: '#8A6D14' }
+                    },
+                    backgroundImage: {
+                        'hero-energy': "linear-gradient(to right, rgba(6, 11, 25, 0.95), rgba(11, 19, 43, 0.8)), url(hero-biomassa.jpg)",
+                        'texture-grid': "url(hero-biomassa.jpg)"
+                    }
+                }
+            }
         }
     </script>
     <style>
-        .hero-overlay { background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(15, 61, 38, 0.85) 100%); }
-        
-        /* Bilingual Toggle Switch UI */
-        .lang-switch { position: relative; width: 64px; height: 32px; background-color: #cbd5e1; border-radius: 9999px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); border: 2px solid #e2e8f0; }
-        .lang-switch::after { content: ''; position: absolute; width: 24px; height: 24px; background-color: white; border-radius: 50%; top: 2px; left: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .lang-switch.en { background-color: #0f3d26; border-color: #0f3d26; }
-        .lang-switch.en::after { transform: translateX(32px); }
-        
-        /* Tables for Specifications */
-        .spec-table { width: 100%; border-collapse: separate; border-spacing: 0; }
-        .spec-table th, .spec-table td { padding: 14px 20px; border-bottom: 1px solid #e2e8f0; text-align: left; }
-        .spec-table th { background-color: #f8fafc; font-weight: 700; color: #1e293b; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; border-top: 1px solid #e2e8f0; }
-        .spec-table tr:hover td { background-color: #f1f5f9; transition: background-color 0.2s; }
-        .spec-table tr:last-child td { border-bottom: none; }
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0B132B; }
+        ::-webkit-scrollbar-thumb { background: #3A506B; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        .spec-table th, .spec-table td { border-color: #3A506B; }
+        .fade-in { animation: fadeIn 1.2s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-brand-gray antialiased">
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-accent-500 selection:text-corporate-900">
 
-    <!-- 1. NAVIGATION BAR -->
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200 transition-all duration-300">
+    <!-- ========================================== -->
+    <!-- TOP BAR (GLOBAL TRADE DESK)                -->
+    <!-- ========================================== -->
+    <div class="bg-corporate-950 text-gray-400 text-xs py-2 px-6 border-b border-gray-800 hidden lg:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-8">
+                <span class="flex items-center font-medium tracking-wide">
+                    <svg class="w-4 h-4 mr-2 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> 
+                    Industrial Energy Division
+                </span>
+                <span class="flex items-center font-medium tracking-wide">
+                    <svg class="w-4 h-4 mr-2 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> 
+                    halo.waygo@gmail.com
+                </span>
+                <span class="flex items-center font-medium tracking-wide text-accent-500">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    ISCC Traceability Framework Adopted
+                </span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#specs" class="hover:text-accent-500 transition-colors uppercase tracking-widest font-bold">Lab Specs</a>
+                <a href="#logistics" class="hover:text-accent-500 transition-colors uppercase tracking-widest font-bold">Logistics & Shipping</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MAIN NAVIGATION                            -->
+    <!-- ========================================== -->
+    <nav class="bg-corporate-900 sticky top-0 z-50 shadow-2xl shadow-corporate-900/40 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
+            <div class="flex justify-between h-24 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-4 group">
+                    <div class="w-12 h-12 bg-white rounded flex items-center justify-center font-black text-corporate-900 text-2xl shadow-lg shadow-accent-500/20 group-hover:bg-white transition-colors"><img src="logo.png" alt="Logo PT Waygo Sinergi Nusantara" class="h-12"></div>
+                    <div class="flex flex-col justify-center">
+                        <span class="text-3xl font-extrabold text-white tracking-tight leading-none">WAYGO <span class="text-accent-500 group-hover:text-white transition-colors">SINERGI</span></span>
+                        <div class="text-[0.65rem] text-gray-400 tracking-[0.3em] uppercase font-bold mt-1">Energy Division</div>
+                    </div>
+                </a>
                 
-                <!-- Logo & Back to Main -->
-                <div class="flex items-center gap-5">
-                    <a href="index.html" class="flex-shrink-0 group" title="Kembali ke Holding Profile">
-                        <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-brand-green transition-colors duration-300 shadow-inner">
-                            <i class="fas fa-home text-gray-500 group-hover:text-white transition-colors text-lg"></i>
-                        </div>
+                <div class="hidden lg:flex space-x-10 items-center">
+                    <a href="index.html" class="text-gray-300 hover:text-white font-semibold text-sm tracking-widest uppercase transition-colors">Corporate Home</a>
+                    <a href="biomassa.html" class="text-accent-500 font-bold text-sm tracking-widest uppercase transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-accent-500">Industrial Energy</a>
+                    <a href="pangan.html" class="text-gray-300 hover:text-white font-semibold text-sm tracking-widest uppercase transition-colors">Agri Commodities</a>
+                    <div class="h-8 w-px bg-gray-700"></div>
+                    <a href="#rfq" class="bg-accent-500 text-corporate-900 px-8 py-3 rounded hover:bg-accent-600 font-bold text-sm uppercase tracking-widest transition-all shadow-lg shadow-accent-500/30 flex items-center group">
+                        Submit RFQ
+                        <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
-                    <div class="h-12 border-l-2 border-gray-300"></div>
-                    <div>
-                        <h1 class="font-bold text-brand-green text-xl md:text-2xl tracking-tight leading-none uppercase">
-                            <span class="lang-id">Biomassa & Limbah</span><span class="lang-en hidden">Biomass & Waste</span>
-                        </h1>
-                        <p class="text-xs text-brand-wood font-bold tracking-widest mt-1">PT WAYGO SINERGI NUSANTARA</p>
-                    </div>
                 </div>
+            </div>
+        </div>
+    </nav>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex space-x-8 items-center">
-                    <a href="#trading" class="text-sm font-bold text-gray-600 hover:text-brand-green transition-colors uppercase tracking-wide">
-                        <span class="lang-id">Beli & Jual</span><span class="lang-en hidden">Buy & Sell</span>
+    <!-- ========================================== -->
+    <!-- HERO SECTION                               -->
+    <!-- ========================================== -->
+    <header class="bg-hero-energy bg-cover bg-center bg-no-repeat relative flex items-center min-h-[85vh] py-24 border-b-8 border-accent-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-corporate-950 via-transparent to-transparent z-0"></div>
+        <div class="absolute inset-0 bg-texture-grid opacity-20 z-0 mix-blend-overlay"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center h-full fade-in">
+            <div class="max-w-4xl border-l-4 border-accent-500 pl-6 md:pl-10 py-2">
+                <div class="inline-flex items-center bg-corporate-800/80 border border-gray-700 px-4 py-1.5 rounded-sm mb-6 shadow-xl backdrop-blur-md">
+                    <svg class="w-4 h-4 text-accent-500 mr-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <span class="text-accent-500 font-bold tracking-[0.25em] text-xs md:text-sm uppercase">Global Bio-Energy Feedstock Supplier</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight">
+                    Fueling the Net-Zero Transition with <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-yellow-200">Industrial Biomass.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed font-light max-w-3xl">
+                    Divisi Energi PT Waygo Sinergi Nusantara beroperasi sebagai integrator utama untuk rantai pasok material energi terbarukan di Asia Tenggara. Kami mengagregasi volume besar <em>Used Cooking Oil (UCO)</em>, Karbon Tempurung Kelapa, dan Residu Biomassa Padat untuk mensuplai <em>Bio-refineries</em> dan Pembangkit Listrik multinasional.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#commodities" class="bg-accent-500 text-corporate-900 text-center font-bold px-10 py-5 rounded hover:bg-yellow-400 transition-all shadow-2xl shadow-accent-500/20 uppercase tracking-widest text-sm">
+                        Explore Core Materials
                     </a>
-                    <a href="#catalog" class="text-sm font-bold text-gray-600 hover:text-brand-green transition-colors uppercase tracking-wide">
-                        <span class="lang-id">Katalog SNI</span><span class="lang-en hidden">SNI Catalog</span>
+                    <a href="#logistics" class="bg-corporate-800/80 border border-gray-500 text-white text-center font-bold px-10 py-5 rounded hover:bg-white/10 transition-all uppercase tracking-widest text-sm backdrop-blur-md">
+                        Review Technical Architecture
                     </a>
-                    
-                    <!-- ID / EN Toggle Switch -->
-                    <div class="flex items-center ml-4 bg-gray-100 py-1.5 px-4 rounded-full shadow-inner border border-gray-200">
-                        <span class="mr-3 text-xs font-bold transition-colors duration-300" id="label-id" style="color: #0f3d26;">ID</span>
-                        <div id="langToggleBtn" class="lang-switch"></div>
-                        <span class="ml-3 text-xs font-bold text-gray-400 transition-colors duration-300" id="label-en">EN</span>
-                    </div>
-
-                    <a href="pangan.html" class="ml-4 bg-yellow-50 text-yellow-700 border border-yellow-200 px-6 py-3 rounded-xl text-sm font-bold hover:bg-yellow-100 transition-colors shadow-sm flex items-center gap-2">
-                        <i class="fas fa-seedling"></i> <span class="lang-id">Ke Divisi Pangan</span><span class="lang-en hidden">To Food Div.</span>
-                    </a>
-                </nav>
+                </div>
+            </div>
+            
+            <!-- Quick Division Stats -->
+            <div class="mt-20 flex flex-wrap gap-6 text-white relative z-10">
+                <div class="bg-corporate-900/60 border border-gray-700 px-6 py-4 rounded backdrop-blur-sm flex items-center">
+                    <div class="text-accent-500 text-3xl font-black mr-4 border-r border-gray-600 pr-4">RED II</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-300 font-bold leading-tight">EU Directive<br>Compliant</div>
+                </div>
+                <div class="bg-corporate-900/60 border border-gray-700 px-6 py-4 rounded backdrop-blur-sm flex items-center">
+                    <div class="text-accent-500 text-3xl font-black mr-4 border-r border-gray-600 pr-4">Bulk</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-300 font-bold leading-tight">Flexitank & Container<br>Vessel Ready</div>
+                </div>
+                <div class="bg-corporate-900/60 border border-gray-700 px-6 py-4 rounded backdrop-blur-sm flex items-center">
+                    <div class="text-accent-500 text-3xl font-black mr-4 border-r border-gray-600 pr-4">Lab</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-300 font-bold leading-tight">Independent<br>SGS/Sucofindo QC</div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
-    <section class="relative pt-24 min-h-screen flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <!-- Background Image -->
-            <img src="hero-biomassa.jpg" alt="Biomass Trading" class="w-full h-full object-cover transform scale-105" onerror="this.src='https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=2070&auto=format&fit=crop';"/>
-            <div class="absolute inset-0 hero-overlay"></div>
+    <!-- ========================================== -->
+    <!-- MACRO INDUSTRY OVERVIEW                    -->
+    <!-- ========================================== -->
+    <section class="py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <h4 class="text-accent-600 font-bold tracking-[0.25em] uppercase text-sm mb-4">Macro Industry Overview</h4>
+                    <h2 class="text-4xl font-extrabold text-corporate-900 mb-8 tracking-tight leading-tight">Dekarbonisasi Global Membutuhkan Infrastruktur Logistik Ekstrem</h2>
+                    
+                    <div class="space-y-6 text-gray-600 leading-relaxed text-lg">
+                        <p>
+                            Dunia sedang bergerak secara radikal menuju target emisi Net Zero. Permintaan dari Eropa dan Amerika Utara untuk <em>Sustainable Aviation Fuel (SAF)</em> dan <em>Hydrotreated Vegetable Oil (HVO)</em> telah meledak. Indonesia, sebagai negara dengan populasi raksasa dan industri F&B masif, adalah reservoir terbesar dunia untuk bahan mentah berbasis limbah (<em>waste-based feedstocks</em>) seperti minyak jelantah (UCO).
+                        </p>
+                        <p>
+                            <strong>Namun, ada satu krisis logistik utama:</strong> Pabrik <em>bio-refinery</em> multinasional membutuhkan suplai puluhan ribu metrik ton per bulan. Sementara itu, bahan mentah ini tersebar dalam ukuran liter dan kilogram di jutaan dapur restoran, hotel, dan limbah pertanian di pelosok kepulauan Indonesia. 
+                        </p>
+                    </div>
+
+                    <div class="bg-corporate-900 p-8 rounded-xl border-l-4 border-accent-500 shadow-xl mt-10 text-white">
+                        <h4 class="text-accent-500 font-bold mb-3 uppercase tracking-widest text-sm flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            The Waygo Solution
+                        </h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Divisi Biomassa PT Waygo bertindak sebagai <strong>Tier-1 Industrial Aggregator</strong>. Kami mengorkestrasi ribuan titik pengumpul mikro, membiayai logistik inland, mengekstraksi material ke tangki/gudang sentral kami, dan melakukan standarisasi High-Grade untuk memastikan volume yang dikirim ke kapal kargo memenuhi persyaratan presisi industri global tanpa bottleneck.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Technical Visual -->
+                <div class="order-1 lg:order-2 relative">
+                    <div class="absolute inset-0 bg-accent-500 transform translate-x-4 translate-y-4 rounded-2xl -z-10"></div>
+                    <img src="fasilitas-biomassa.jpg" class="rounded-2xl shadow-2xl border-4 border-white w-full h-[550px] object-cover filter brightness-90" alt="Industrial Biomass Facility">
+                    
+                    <!-- Overlay Data Badge -->
+                    <div class="absolute top-10 -left-10 bg-white p-6 rounded-xl shadow-2xl border border-gray-100 max-w-[280px]">
+                        <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Global Demand</span>
+                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">+18% CAGR</span>
+                        </div>
+                        <h4 class="font-extrabold text-corporate-900 text-lg mb-2">Bio-Refinery Feedstocks</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed">Minyak jelantah (UCO) diklasifikasikan sebagai Annex IX Part B feedstock dalam direktif RED II, menjadikannya komoditas energi paling diburu di dunia.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- THE COMMODITIES (DEEP DIVE & SPECS)        -->
+    <!-- ========================================== -->
+    <section id="commodities" class="py-28 bg-corporate-950 text-white relative">
+        <div class="absolute inset-0 bg-texture-grid opacity-10"></div>
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-500 to-transparent"></div>
         
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Hero Text -->
-                <div class="lg:col-span-7">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8 shadow-lg">
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-400 animate-ping absolute"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-400 relative"></span>
-                        <span class="text-xs font-bold text-white tracking-widest uppercase ml-2">INDUSTRIAL TRADING HUB</span>
-                    </div>
-                    
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-                        <span class="lang-id">Pusat Jual-Beli <span class="text-brand-wood border-b-4 border-brand-wood">Biomassa</span> Terintegrasi.</span>
-                        <span class="lang-en hidden">Integrated <span class="text-brand-wood border-b-4 border-brand-wood">Biomass</span> Trading Hub.</span>
-                    </h2>
-                    
-                    <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed font-light max-w-2xl">
-                        <span class="lang-id">Kami adalah agregator dan fasilitator strategis. <strong>Kami menyerap dan membeli</strong> material mentah dari sumber lokal, serta <strong>menyuplai dan menjualnya</strong> kembali untuk kebutuhan pabrik manufaktur berskala besar dengan standar SNI dan mutu ekspor.</span>
-                        <span class="lang-en hidden">We are a strategic aggregator and facilitator. <strong>We absorb and buy</strong> raw materials from local sources, and <strong>supply and sell</strong> them for large-scale manufacturing factory needs with SNI and export quality standards.</span>
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="#trading" class="bg-brand-wood text-white px-8 py-4 rounded-xl font-bold hover:bg-yellow-700 transition-all shadow-xl flex items-center justify-center gap-3 text-center">
-                            <i class="fas fa-handshake"></i> <span class="lang-id">Sistem Jual-Beli Kami</span><span class="lang-en hidden">Our Trading System</span>
-                        </a>
-                        <a href="#catalog" class="bg-white/10 text-white border border-white/30 backdrop-blur-sm px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-3 text-center">
-                            <i class="fas fa-clipboard-check"></i> <span class="lang-id">Cek Standar Mutu SNI</span><span class="lang-en hidden">Check SNI Quality Standards</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Trading Illustration -->
-                <div class="hidden lg:block lg:col-span-5 relative">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-green to-brand-wood opacity-20 rounded-full blur-3xl animate-pulse"></div>
-                    <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-10 rounded-3xl shadow-2xl relative z-10">
-                        <h3 class="text-white font-bold text-2xl mb-8 text-center border-b border-white/20 pb-4">
-                            <span class="lang-id">Arus Rantai Pasok (Supply Chain)</span><span class="lang-en hidden">Supply Chain Flow</span>
-                        </h3>
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-4 bg-black/20 p-4 rounded-xl border border-white/10">
-                                <div class="w-12 h-12 rounded-full bg-brand-wood flex items-center justify-center text-white text-xl shadow-lg"><i class="fas fa-truck-loading"></i></div>
-                                <div>
-                                    <h4 class="text-white font-bold"><span class="lang-id">1. Kami Membeli (Inbound)</span><span class="lang-en hidden">1. We Buy (Inbound)</span></h4>
-                                    <p class="text-xs text-gray-300 mt-1"><span class="lang-id">Menerima pasokan komoditas mentah dari mitra dan pabrik lokal.</span><span class="lang-en hidden">Receiving raw commodity supplies from local partners and factories.</span></p>
-                                </div>
-                            </div>
-                            <div class="flex justify-center"><i class="fas fa-arrow-down text-brand-wood text-2xl"></i></div>
-                            <div class="flex items-center gap-4 bg-brand-green/40 p-4 rounded-xl border border-brand-green">
-                                <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-brand-green text-xl shadow-lg"><i class="fas fa-cogs"></i></div>
-                                <div>
-                                    <h4 class="text-white font-bold"><span class="lang-id">2. QC & Standardisasi</span><span class="lang-en hidden">2. QC & Standardization</span></h4>
-                                    <p class="text-xs text-gray-300 mt-1"><span class="lang-id">Penyortiran, pengeringan, dan kontrol kualitas untuk memenuhi spesifikasi.</span><span class="lang-en hidden">Sorting, drying, and quality control to meet specifications.</span></p>
-                                </div>
-                            </div>
-                            <div class="flex justify-center"><i class="fas fa-arrow-down text-brand-wood text-2xl"></i></div>
-                            <div class="flex items-center gap-4 bg-black/20 p-4 rounded-xl border border-white/10">
-                                <div class="w-12 h-12 rounded-full bg-brand-wood flex items-center justify-center text-white text-xl shadow-lg"><i class="fas fa-industry"></i></div>
-                                <div>
-                                    <h4 class="text-white font-bold"><span class="lang-id">3. Kami Menjual (Outbound)</span><span class="lang-en hidden">3. We Sell (Outbound)</span></h4>
-                                    <p class="text-xs text-gray-300 mt-1"><span class="lang-id">Menyuplai langsung ke pabrik energi, manufaktur, dan pasar ekspor.</span><span class="lang-en hidden">Supplying directly to energy plants, manufacturing, and export markets.</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. BUSINESS MODEL: BUY & SELL -->
-    <section id="trading" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h3 class="text-brand-wood font-bold tracking-widest uppercase text-sm mb-3">
-                    <span class="lang-id">Model Bisnis (Trading Hub)</span><span class="lang-en hidden">Business Model (Trading Hub)</span>
-                </h3>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-dark mb-6">
-                    <span class="lang-id">Membeli dari Sumbernya, Menjual ke Industrinya</span>
-                    <span class="lang-en hidden">Buying from the Source, Selling to the Industry</span>
-                </h2>
-                <p class="text-gray-600 text-lg leading-relaxed">
-                    <span class="lang-id">Sebagai integrator rantai pasok, operasi kami mencakup hulu dan hilir. Kami mengelola volume masif untuk menstabilkan harga dan menjamin ketersediaan barang.</span>
-                    <span class="lang-en hidden">As a supply chain integrator, our operations cover both upstream and downstream. We manage massive volumes to stabilize prices and guarantee goods availability.</span>
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-10">
-                <!-- BUYING SECTION -->
-                <div class="bg-gray-50 rounded-3xl p-10 border-t-8 border-brand-wood shadow-lg hover:-translate-y-2 transition-transform duration-300">
-                    <div class="flex items-center gap-4 mb-8 border-b border-gray-200 pb-6">
-                        <div class="w-16 h-16 bg-brand-wood rounded-2xl flex items-center justify-center text-white text-2xl shadow-md"><i class="fas fa-truck-loading"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-brand-dark"><span class="lang-id">KAMI MEMBELI (BUYING)</span><span class="lang-en hidden">WE BUY (PURCHASING)</span></h3>
-                            <p class="text-gray-500 font-medium text-sm"><span class="lang-id">Menerima Pasokan Material</span><span class="lang-en hidden">Receiving Material Supplies</span></p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-                        <span class="lang-id">Kami membuka kemitraan seluas-luasnya dengan pengepul lokal, pabrik penggergajian kayu (sawmill), dan industri kelapa. Kami rutin membeli komoditas Anda dengan sistem pembayaran yang cepat dan aman.</span>
-                        <span class="lang-en hidden">We widely open partnerships with local collectors, sawmills, and coconut industries. We routinely buy your commodities with a fast and secure payment system.</span>
-                    </p>
-                    <ul class="space-y-4 text-sm font-semibold text-gray-700 mb-8">
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-wood mt-1"></i> <span class="lang-id">Menerima Serbuk Kayu & Wood Chip murni langsung dari sawmill.</span><span class="lang-en hidden">Accepting pure Wood Sawdust & Wood Chips directly from sawmills.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-wood mt-1"></i> <span class="lang-id">Menerima pasokan Minyak Jelantah (UCO) dari mitra pengepul.</span><span class="lang-en hidden">Accepting Used Cooking Oil (UCO) supplies from collector partners.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-wood mt-1"></i> <span class="lang-id">Menerima Batok Kelapa kering dan Arang Batok berkualitas.</span><span class="lang-en hidden">Accepting dry Coconut Shells and quality Shell Charcoal.</span></li>
-                    </ul>
-                    <a href="https://wa.me/6285641366030?text=Halo%20PT%20Waygo,%20saya%20ingin%20menawarkan%20pasokan%20komoditas..." class="block bg-white text-brand-dark border-2 border-gray-200 px-6 py-4 rounded-xl font-bold hover:border-brand-wood hover:text-brand-wood transition-colors text-center w-full">
-                        <i class="fab fa-whatsapp text-lg mr-2"></i> <span class="lang-id">Tawarkan Pasokan Anda ke Kami</span><span class="lang-en hidden">Offer Your Supply to Us</span>
-                    </a>
-                </div>
-
-                <!-- SELLING SECTION -->
-                <div class="bg-brand-green rounded-3xl p-10 border-t-8 border-brand-lightgreen shadow-2xl hover:-translate-y-2 transition-transform duration-300">
-                    <div class="flex items-center gap-4 mb-8 border-b border-white/20 pb-6">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-green text-2xl shadow-md"><i class="fas fa-industry"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-white"><span class="lang-id">KAMI MENJUAL (SELLING)</span><span class="lang-en hidden">WE SELL (SUPPLYING)</span></h3>
-                            <p class="text-gray-300 font-medium text-sm"><span class="lang-id">Menyuplai Bahan Baku Pabrik</span><span class="lang-en hidden">Supplying Factory Raw Materials</span></p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed text-sm">
-                        <span class="lang-id">Untuk sektor manufaktur dan energi, ketidaksesuaian bahan baku berakibat pada berhentinya mesin (downtime). Kami menjamin kepastian pasokan dengan spesifikasi SNI mutlak dan komitmen logistik tingkat tinggi.</span>
-                        <span class="lang-en hidden">For the manufacturing and energy sectors, raw material non-compliance results in machine downtime. We guarantee supply certainty with absolute SNI specifications and high-level logistics commitment.</span>
-                    </p>
-                    <ul class="space-y-4 text-sm font-semibold text-white mb-8">
-                        <li class="flex items-start gap-3"><i class="fas fa-shield-check text-green-400 mt-1"></i> <span class="lang-id">Kapasitas suplai tonase masif & kontinu per bulan.</span><span class="lang-en hidden">Massive & continuous monthly tonnage supply capacity.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-shield-check text-green-400 mt-1"></i> <span class="lang-id">Jaminan kualitas parameter (Kadar Air, Kalori, FFA).</span><span class="lang-en hidden">Quality parameter guarantee (Moisture, Calories, FFA).</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-shield-check text-green-400 mt-1"></i> <span class="lang-id">Dukungan kontrak jangka panjang & pengiriman domestik/ekspor.</span><span class="lang-en hidden">Support for long-term contracts & domestic/export delivery.</span></li>
-                    </ul>
-                    <a href="mailto:halo.waygo@gmail.com" class="block bg-brand-wood text-white px-6 py-4 rounded-xl font-bold hover:bg-yellow-600 transition-colors shadow-lg text-center w-full">
-                        <i class="fas fa-file-contract text-lg mr-2"></i> <span class="lang-id">Kirim Permintaan Kuotasi (RFQ)</span><span class="lang-en hidden">Send Request for Quotation (RFQ)</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. CATALOG & SPECIFICATIONS (WITH UCO, SNI CHARCOAL, WOOD CHIP, COCONUT SHELL) -->
-    <section id="catalog" class="py-24 bg-brand-gray border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-16 border-l-4 border-brand-green pl-6">
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-dark mb-4 uppercase tracking-tight">
-                    <span class="lang-id">Katalog Komoditas & Parameter Mutu</span><span class="lang-en hidden">Commodity Catalog & Quality Parameters</span>
-                </h2>
-                <p class="text-gray-600 max-w-3xl text-lg">
-                    <span class="lang-id">Berikut adalah standar parameter kualifikasi (Certificate of Analysis & SNI) untuk setiap komoditas yang kami terima dan kami perdagangkan.</span>
-                    <span class="lang-en hidden">Below are the qualification parameter standards (Certificate of Analysis & SNI) for each commodity we receive and trade.</span>
-                </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <h4 class="text-accent-500 font-bold tracking-[0.25em] uppercase text-sm mb-4">Traded Materials Portfolio</h4>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Komoditas Energi & Karbon Industri</h2>
+                <p class="text-gray-400 text-lg leading-relaxed">Spesifikasi material yang diekstraksi dari alam Nusantara, dikendalikan melalui laboratorium Waygo Sinergi, siap untuk dieksekusi via kontrak volume industrial.</p>
             </div>
 
             <div class="space-y-16">
-
-                <!-- 1. MINYAK JELANTAH (UCO) -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-5 relative">
-                            <img src="produk-uco.jpg" alt="Used Cooking Oil" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1620015507026-6b22eb01e089?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 left-6 bg-brand-green text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">LIQUID BIOMASS</div>
-                        </div>
-                        <div class="lg:col-span-7 p-8 lg:p-12">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Minyak Jelantah (Used Cooking Oil / UCO)</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Bahan baku esensial untuk produksi energi terbarukan Biodiesel (FAME/HVO) dan Sustainable Aviation Fuel (SAF). Kami menampung pasokan dan memprosesnya melalui penyaringan ketat untuk menekan kadar air dan kotoran.</span>
-                                <span class="lang-en hidden">Essential raw material for renewable energy Biodiesel (FAME/HVO) and Sustainable Aviation Fuel (SAF) production. We absorb supplies and process them through strict filtration to suppress moisture and impurities.</span>
-                            </p>
-                            
-                            <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Parameter Uji Industri</th><th>Kualifikasi Maksimal / Target</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Free Fatty Acid (FFA)</td>
-                                            <td class="text-brand-green font-bold text-lg">Maksimal 5.0%</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Moisture & Impurities (MIU)</td>
-                                            <td class="text-brand-green font-bold text-lg">Maksimal 2.0%</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Iodine Value (IV)</td>
-                                            <td class="text-brand-green font-bold text-lg">Minimal 50 g I2/100g</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Sistem Logistik Pemuatan</td>
-                                            <td class="text-gray-600 font-medium">Truk Tangki (Domestik) / Flexitank (Ekspor)</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                <!-- 1. UCO (Used Cooking Oil) -->
+                <div class="bg-corporate-900 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <img src="produk-uco.jpg" class="w-full h-full object-cover min-h-[300px]" alt="UCO Storage">
+                        <div class="absolute inset-0 bg-corporate-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 left-6 bg-accent-500 text-corporate-900 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Liquid Biofuel</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center">
+                            Used Cooking Oil (UCO)
+                            <span class="ml-4 text-xs font-bold text-gray-400 border border-gray-600 px-2 py-1 rounded">HS Code: 1518.00</span>
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Komoditas utama masa depan energi aviasi dan logistik darat. Dikumpulkan dari jaringan HORECA (Hotel, Restaurant, Cafe) serta pabrik pemrosesan makanan lintas pulau. PT Waygo memiliki fasilitas <em>heating & decanting</em> tersendiri untuk menjamin tingkat Impurities yang sangat rendah sebelum material diinjeksi ke dalam Flexitank laut.
+                        </p>
+                        
+                        <div class="bg-corporate-950 rounded-xl p-6 border border-gray-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Standard Export Parameters (Indicative)</h4>
+                            <table class="w-full text-sm spec-table">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Free Fatty Acid (FFA)</td>
+                                        <td class="py-3 font-bold text-white text-right">Max 5% (Standard) / Up to 10% (High FFA)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Moisture & Impurities (M&I)</td>
+                                        <td class="py-3 font-bold text-white text-right">Max 2% - 3%</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Iodine Value (IV)</td>
+                                        <td class="py-3 font-bold text-white text-right">Min 50 g I2/100g</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Sulphur Content</td>
+                                        <td class="py-3 font-bold text-white text-right">Max 50 ppm</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. WOOD CHIP & SAWDUST -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-7 p-8 lg:p-12 order-2 lg:order-1">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Serbuk Kayu & Wood Chip (Kayu Cacah)</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Biomassa padat yang kami terima langsung dari lini penggergajian kayu murni. Bahan baku vital untuk industri pembuat Wood Pellet, Briket, dan media tanam jamur. Kami sangat ketat dalam menjamin kemurnian material.</span>
-                                <span class="lang-en hidden">Solid biomass we receive directly from pure wood sawing lines. Vital raw material for the Wood Pellet, Briquette, and mushroom planting media industries. We are very strict in guaranteeing material purity.</span>
-                            </p>
-                            
-                            <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Parameter Mutu Dasar</th><th>Standard Limits / Kualifikasi Target</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Moisture (Kadar Air)</td>
-                                            <td class="text-brand-green font-bold text-lg">Di Bawah 20%</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Purity (Kemurnian Asal)</td>
-                                            <td class="text-brand-green font-bold text-lg">100% Kayu Murni (Virgin Wood)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Contamination (Kontaminasi)</td>
-                                            <td class="text-gray-600 font-medium">Bersih dari paku, plastik, dan bahan lem kimia MDF</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5 relative order-1 lg:order-2">
-                            <img src="produk-serbuk.jpg" alt="Wood Chip and Sawdust" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 right-6 bg-brand-wood text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">SOLID BIOMASS</div>
+                <!-- 2. Coconut Shell (Batok Kelapa) -->
+                <div class="bg-corporate-900 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <!-- Placeholder image for Coconut Shells/Carbon -->
+                        <img src="produk-batok.jpg" class="w-full h-full object-cover min-h-[300px]" alt="Carbon Matrix">
+                        <div class="absolute inset-0 bg-corporate-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 right-6 bg-gray-300 text-corporate-900 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Carbon Precursor</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center">
+                            Coconut Shell (Batok Kelapa)
+                            <span class="ml-4 text-xs font-bold text-gray-400 border border-gray-600 px-2 py-1 rounded">HS Code: 1404.90</span>
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Dihasilkan dari sentra perkebunan kelapa nusantara (Sumatera & Sulawesi). Material ini dipisahkan dari sabutnya, dikeringkan sempurna di bawah sinar matahari (<em>sun-dried</em>), menghasilkan carbon matrix dengan densitas tertinggi di kelasnya. Input mutlak bagi pabrik Activated Carbon (Karbon Aktif) filter air industri dan produsen arang Shisha premium dunia.
+                        </p>
+                        
+                        <div class="bg-corporate-950 rounded-xl p-6 border border-gray-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Standard Export Parameters (Indicative)</h4>
+                            <table class="w-full text-sm spec-table">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Condition</td>
+                                        <td class="py-3 font-bold text-white text-right">Raw, Sun-Dried, Half/Quarter Cuts</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Moisture Content</td>
+                                        <td class="py-3 font-bold text-white text-right">Max 12% - 15%</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Impurities (Dust/Fiber)</td>
+                                        <td class="py-3 font-bold text-white text-right">Max 3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Packaging Setup</td>
+                                        <td class="py-3 font-bold text-white text-right">PP Bags 50kg / Loose Bulk in Container</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. ARANG BATOK KELAPA (CHARCOAL) -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-5 relative">
-                            <img src="produk-arang.jpg" alt="Coconut Shell Charcoal" class="w-full h-full object-cover min-h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1574087114660-f8f4a1cd34df?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 left-6 bg-gray-900 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg border border-gray-700">CARBONIZED MATERIAL</div>
-                        </div>
-                        <div class="lg:col-span-7 p-8 lg:p-12">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
-                                <h3 class="text-3xl font-bold text-brand-dark">Arang Batok Kelapa (Charcoal)</h3>
-                                <div class="flex gap-2">
-                                    <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-1 rounded border border-blue-200">SNI 01-1682-1996</span>
-                                    <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-1 rounded border border-blue-200">SNI 1-6235-2000</span>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Arang premium hasil pembakaran terkontrol. Kami memperdagangkan arang dengan spesifikasi teknis ketat untuk memenuhi standar SNI Briket Ekspor (kebutuhan Shisha & BBQ). Menghasilkan daya bakar tahan lama, tanpa asap, dan tanpa percikan.</span>
-                                <span class="lang-en hidden">Premium charcoal from controlled combustion. We trade charcoal with strict technical specifications to meet Export Briquette SNI standards (Shisha & BBQ needs). Yields long-lasting, smokeless, and spark-free combustion.</span>
-                            </p>
-                            
-                            <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden mb-6">
-                                <table class="spec-table">
-                                    <thead><tr><th>Parameter Laboratorium & SNI</th><th>Standar Mutu Target</th></tr></thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Moisture (Kadar Air)</td>
-                                            <td class="text-brand-green font-bold text-lg">Maksimal 5% - 8%</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Ash Content (Kadar Abu)</td>
-                                            <td class="text-brand-green font-bold text-lg">Di bawah 2% - 3%</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Volatile Matter (Zat Menguap)</td>
-                                            <td class="text-brand-green font-bold text-lg">Maksimal 15% - 20%</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-semibold text-gray-700">Gross Calorific Value (Nilai Kalor)</td>
-                                            <td class="text-brand-green font-bold text-lg">Minimal 6.500 - 7.000 kal/gram</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                <!-- Grid for Fiber and Solid Biomass -->
+                <div class="bg-corporate-900 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <!-- Placeholder image for Coconut Shells/Carbon -->
+                        <img src="produk-CoconutFiber.jpg" class="w-full h-full object-cover min-h-[300px]" alt="Carbon Matrix">
+                        <div class="absolute inset-0 bg-corporate-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 right-6 bg-gray-300 text-corporate-900 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Industrial Textiles</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center">
+                            Coconut Fiber (Cocofiber)
+                            <span class="ml-4 text-xs font-bold text-gray-400 border border-gray-600 px-2 py-1 rounded">HS Code: 1404.90</span>
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            Diekstraksi secara mekanis dari sabut luar kelapa. Serat kuat ini memiliki ketahanan luar biasa terhadap air garam dan gesekan. Dikompresi dengan mesin hidrolik menjadi bales (balok padat) untuk efisiensi kargo. Suplai krusial untuk industri matras karet, insulasi otomotif Eropa, dan anyaman geotextile reklamasi laut.
+                        </p>
+                        
+                        <div class="bg-corporate-950 rounded-xl p-6 border border-gray-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">spesifikasi produk</h4>
+                            <table class="w-full text-sm spec-table">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Color Grade</td>
+                                        <td class="py-3 font-bold text-white text-right">Golden Brow</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Moisture Limi</td>
+                                        <td class="py-3 font-bold text-white text-right">Max 15% - 20%</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Kadar Kotoran (Impurities)</td>
+                                        <td class="py-3 font-bold text-white text-right"> Maksimum 2% sampai 5% (termasuk debu atau sisa tempurung)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Packaging</td>
+                                        <td class="py-3 font-bold text-white text-right">High-Density Bales (100-115kg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-
-                <!-- 4. BATOK KELAPA (COCONUT SHELL) -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-7 p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
-                            <h3 class="text-3xl font-bold text-brand-dark mb-3">Batok Kelapa (Coconut Shell)</h3>
-                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                                <span class="lang-id">Batok kelapa tua berkualitas prima yang disiapkan khusus untuk pembakaran efisien di boiler industri maupun sebagai bahan dasar pembuatan karbon aktif. Kami hanya menerima dan menjual batok dengan kualitas kebersihan fisik yang tinggi.</span>
-                                <span class="lang-en hidden">Prime quality mature coconut shells specifically prepared for efficient combustion in industrial boilers or as the base material for activated carbon production. We only accept and sell shells with high physical cleanliness.</span>
-                            </p>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div class="bg-gray-50 border border-gray-200 p-6 rounded-xl flex items-center gap-4">
-                                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-wood shadow-sm border border-gray-100"><i class="fas fa-sun text-2xl"></i></div>
-                                    <div>
-                                        <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Kondisi Fisik</p>
-                                        <p class="font-bold text-brand-dark text-lg">Kering Sempurna</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-50 border border-gray-200 p-6 rounded-xl flex items-center gap-4">
-                                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-wood shadow-sm border border-gray-100"><i class="fas fa-broom text-2xl"></i></div>
-                                    <div>
-                                        <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Tingkat Kebersihan</p>
-                                        <p class="font-bold text-brand-dark text-lg">Bersih dari Serabut</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5 relative order-1 lg:order-2">
-                            <img src="produk-batok.jpg" alt="Coconut Shell" class="w-full h-full object-cover min-h-[350px]" onerror="this.src='https://images.unsplash.com/photo-1581005703759-4eeccb8e73be?w=800&auto=format&fit=crop';">
-                            <div class="absolute top-6 right-6 bg-brand-wood text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">BOILER FUEL</div>
+                    <!-- 4. Solid Biomass (PKS) -->
+                <div class="bg-corporate-900 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse hover:border-accent-500 transition-colors duration-500">
+                    <div class="lg:w-2/5 relative">
+                        <!-- Placeholder image for Coconut Shells/Carbon -->
+                        <img src="produk-serbuk.jpg" class="w-full h-full object-cover min-h-[300px]" alt="Carbon Matrix">
+                        <div class="absolute inset-0 bg-corporate-950/40 mix-blend-multiply"></div>
+                        <div class="absolute bottom-6 right-6 bg-gray-300 text-corporate-900 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-lg">Thermal Generation Fuel</div>
+                    </div>
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <h3 class="text-3xl font-extrabold mb-4 flex items-center">
+                            Solid Biomass (Sawdust& Wood Chip)
+                            <span class="ml-4 text-xs font-bold text-gray-400 border border-gray-600 px-2 py-1 rounded">HS Code: 4401</span>
+                        </h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">
+                            serbuk gergaji padat, dan wood chips yang digunakan sebagai bahan bakar boiler industri dan PLTU (Power Plants). Material ini memancarkan kalori tinggi dengan abu (ash) dan sulfur yang jauh lebih rendah dibanding batubara fosil, mempercepat transisi Co-firing korporasi Anda.
+                        </p>
+                        
+                        <div class="bg-corporate-950 rounded-xl p-6 border border-gray-800">
+                            <h4 class="text-accent-500 text-sm font-bold uppercase tracking-widest mb-4">Standard Kualitas nasional </h4>
+                            <table class="w-full text-sm spec-table">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Gross Calorific Value</td>
+                                        <td class="py-3 font-bold text-white text-right">4,000 - 4,200 Kcal/kg</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Moisture Limit</td>
+                                        <td class="py-3 font-bold text-white text-right">Max 20 %</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 text-gray-400">Kandungan Kimia</td>
+                                        <td class="py-3 font-bold text-white text-right">Kaya akan selulosa (sekitar 60%) dan lignin (sekitar 25% - 30%) yang berfungsi sebagai perekat alami saat dikompresi menjadi pelet.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 text-gray-400">Trade Volume</td>
+                                        <td class="py-3 font-bold text-white text-right">Thousands MT via Bulk Carrier</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- 5. FOOTER & CONTACT -->
-    <footer class="bg-brand-dark text-white border-t-8 border-brand-green">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-12 border-b border-gray-800 pb-12">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4">PT WAYGO SINERGI NUSANTARA</h2>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        <span class="lang-id">Mitra strategis Anda dalam transaksi jual-beli komoditas biomassa skala B2B. Kami menjamin transparansi, pembayaran lancar untuk penyuplai, dan kualitas SNI untuk pabrik.</span>
-                        <span class="lang-en hidden">Your strategic partner in B2B scale biomass commodity trading transactions. We guarantee transparency, smooth payments for suppliers, and SNI quality for factories.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://wa.me/6285641366030" class="bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#20bd5a] transition flex items-center gap-2">
-                            <i class="fab fa-whatsapp text-lg"></i> WA Sales & Purchasing
-                        </a>
-                        <a href="mailto:halo.waygo@gmail.com" class="border border-white/30 bg-white/5 px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-brand-dark transition flex items-center gap-2">
-                            <i class="fas fa-envelope text-lg"></i> halo.waygo@gmail.com
-                        </a>
+    <!-- ========================================== -->
+    <!-- LOGISTICS & PROCESSING ARCHITECTURE        -->
+    <!-- ========================================== -->
+    <section id="logistics" class="py-28 bg-gray-50 relative overflow-hidden border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <h4 class="text-accent-600 font-bold tracking-[0.25em] uppercase text-sm mb-4">Engineering The Supply Chain</h4>
+                <h2 class="text-4xl font-extrabold text-corporate-900 mb-6 tracking-tight">Infrastruktur Agregasi & Quality Assurance</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">Dari dapur restoran pinggir jalan hingga kapal tanker laut. Berikut adalah anatomi bagaimana PT Waygo Sinergi mengelola aliran cairan dan material padat tanpa mengorbankan integritas data dan spesifikasi.</p>
+            </div>
+
+            <!-- Complex Vertical Pipeline UI -->
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Vertical Track Line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1.5 bg-gray-200 transform -translate-x-1/2 rounded-full">
+                    <div class="h-1/3 bg-accent-500 w-full rounded-t-full"></div>
+                </div>
+
+                <div class="space-y-16 relative">
+                    <!-- Pipeline Node 1 -->
+                    <div class="md:flex items-center justify-between group">
+                        <div class="md:w-5/12 text-right pr-12 relative">
+                            <h3 class="text-2xl font-bold text-corporate-900 mb-3">01. Origin Micro-Collection</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">Ratusan armada kolektor yang terafiliasi dengan PT Waygo menyisir ribuan HORECA dan Gapoktan setiap hari. Sistem pencatatan digital diterapkan di titik ini untuk memastikan asal komoditas (Point of Origin) tercatat sah, krusial untuk pemenuhan klausul audit keberlanjutan (ISCC/RED II).</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 w-16 h-16 bg-white border-4 border-gray-200 text-gray-400 rounded-full items-center justify-center transform -translate-x-1/2 z-10 group-hover:border-accent-500 group-hover:text-accent-500 transition-all shadow-lg">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div class="md:w-5/12 pl-12 hidden md:block">
+                            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex items-center">
+                                <div class="w-2 h-12 bg-corporate-900 rounded-full mr-4"></div>
+                                <div>
+                                    <div class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Scale per node</div>
+                                    <div class="font-bold text-corporate-900">10 kg - 500 kg / day</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pipeline Node 2 -->
+                    <div class="md:flex items-center justify-between flex-row-reverse group">
+                        <div class="md:w-5/12 text-left pl-12 relative">
+                            <h3 class="text-2xl font-bold text-corporate-900 mb-3">02. Regional Primary Hubs</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">Komoditas yang terkumpul diturunkan ke gudang pengepul madya milik mitra regional kami. Di sini, perlakuan fisik pertama terjadi: penyaringan kasar sisa makanan pada jelantah, atau pemisahan sabut dari batok kelapa. Material kemudian ditransfer ke truk tangki/kargo berkapasitas 10-20 Ton.</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 w-16 h-16 bg-white border-4 border-gray-200 text-gray-400 rounded-full items-center justify-center transform -translate-x-1/2 z-10 group-hover:border-accent-500 group-hover:text-accent-500 transition-all shadow-lg">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        </div>
+                        <div class="md:w-5/12 pr-12 text-right hidden md:block">
+                            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex items-center justify-end">
+                                <div class="text-right">
+                                    <div class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Process executed</div>
+                                    <div class="font-bold text-corporate-900">Decanting & Primary Sieving</div>
+                                </div>
+                                <div class="w-2 h-12 bg-corporate-600 rounded-full ml-4"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Node 3 -->
+                    <div class="md:flex items-center justify-between group">
+                        <div class="md:w-5/12 text-right pr-12 relative">
+                            <h3 class="text-2xl font-bold text-corporate-900 mb-3">03. Waygo Central Processing</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">Fase paling kritis. Ratusan ton komoditas tiba di fasilitas utama kami. Tangki heating dihidupkan untuk memisahkan kandungan air pada UCO. Mesin hydraulic press memadatkan cocofiber. Sample lab diambil dari setiap lini produksi untuk memastikan spesifikasi (seperti limit FFA) sesuai dengan klausul kontrak L/C klien.</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 w-20 h-20 bg-accent-500 border-4 border-white text-corporate-900 rounded-full items-center justify-center transform -translate-x-1/2 z-20 shadow-2xl">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <div class="md:w-5/12 pl-12 hidden md:block">
+                            <div class="bg-corporate-900 p-6 rounded-xl shadow-2xl border border-accent-500 flex items-center">
+                                <div class="w-2 h-12 bg-accent-500 rounded-full mr-4"></div>
+                                <div>
+                                    <div class="text-xs text-accent-500 font-bold uppercase tracking-wider mb-1">Waygo Core Infrastructure</div>
+                                    <div class="font-bold text-white">Lab Testing & Standardization</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Node 4 -->
+                    <div class="md:flex items-center justify-between flex-row-reverse group">
+                        <div class="md:w-5/12 text-left pl-12 relative">
+                            <h3 class="text-2xl font-bold text-corporate-900 mb-3">04. Export & Industrial Dispatch</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">Komoditas yang telah tersertifikasi CoA (Certificate of Analysis) diinjeksi ke dalam Flexitank laut atau dimasukkan ke dalam High Cube Containersm. Armada PT Waygo mengurus dokumentasi kepabeanan penuh dan mengawal kontainer menuju Pelabuhan Utama (Tanjung Priok / Tanjung Emas) siap untuk FOB/CIF ke pembeli.</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 w-16 h-16 bg-corporate-900 border-4 border-white text-white rounded-full items-center justify-center transform -translate-x-1/2 z-10 shadow-lg">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="md:w-5/12 pr-12 text-right hidden md:block">
+                            <div class="bg-gray-100 p-6 rounded-xl shadow-md border border-gray-200 flex items-center justify-end">
+                                <div class="text-right">
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Status Final</div>
+                                    <div class="font-black text-corporate-900 tracking-wider">ON SPEC. EXPORT READY.</div>
+                                </div>
+                                <div class="w-2 h-12 bg-gray-400 rounded-full ml-4"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="text-sm text-gray-400 space-y-3">
-                    <p class="font-bold text-white mb-4 uppercase tracking-widest text-xs">Informasi Operasional</p>
-                    <p><i class="fas fa-map-marker-alt w-6"></i> Kantor Pusat: Kab. Brebes, Jawa Tengah, Indonesia</p>
-                    <p><i class="fas fa-shield-alt w-6"></i> Terdaftar Resmi NIB OSS & Kemenkumham RI</p>
-                    <p><i class="fas fa-file-contract w-6"></i> Melayani Kontrak Jangka Panjang (Domestik & Ekspor)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- MASSIVE FAQ: INDUSTRIAL ENERGY SPECIFIC    -->
+    <!-- ========================================== -->
+    <section class="py-28 bg-white border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h4 class="text-accent-600 font-bold tracking-[0.25em] uppercase text-sm mb-4">Technical Operations FAQ</h4>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-corporate-900 mb-6">Pengetahuan Basis Divisi Energi</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">Rincian parameter operasional khusus untuk komoditas Biomassa, UCO, dan tata niaga karbon internasional.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-corporate-900 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Berapa kapasitas tonase UCO (Used Cooking Oil) yang dapat disuplai per bulan?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Kapasitas suplai kami sangat eksponensial berdasarkan arsitektur regional hub yang terus berkembang. Kami dirancang untuk mengakomodasi kontrak pemesanan dari 100 MT hingga 1,000+ MT per bulan untuk kontrak jangka panjang (B2B Long-term Contract). Kapasitas real-time selalu berfluktuasi bergantung pada serapan pasar logistik dan seasonality (musim liburan F&B lokal), silakan ajukan LOI untuk alokasi terkini.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-corporate-900 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Bagaimana PT Waygo menurunkan tingkat FFA pada UCO sebelum diekspor?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Free Fatty Acid (FFA) naik akibat proses oksidasi dan hidrolisis jika dibiarkan bersama air sisa makanan. PT Waygo mempercepat transit time pengumpulan agar jelantah tidak mengendap lama. Setiba di hub, kami melakukan proses pemanasan (<em>heating</em>) ringan dan <em>decanting</em> untuk menguapkan moisture (air), sehingga laju kenaikan FFA terhenti. Material kemudian disegregasi dalam tangki berbeda berdasarkan grade FFA (misal: Tangki FFA < 5% dan Tangki FFA > 5%).
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-corporate-900 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Apakah pasokan biomassa PT Waygo telah mematuhi RED II (Eropa)?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Sepenuhnya. Industri Bio-refinery di EU mewajibkan kepatuhan terhadap <em>Renewable Energy Directive II</em> untuk membuktikan bahwa material limbah tidak mencemari lingkungan dan tidak melanggar hak asasi pekerja (sustainability). Kami mengadopsi standar pencatatan ISCC (International Sustainability and Carbon Certification) yang merinci jejak pengumpulan (chain of custody) dari restoran pertama (Point of Origin) hingga pelabuhan keberangkatan.
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-corporate-900 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Bagaimana sistem packaging pengiriman untuk Batok Kelapa (Coconut Shell)?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Batok kelapa kering biasanya dikemas dalam karung Polypropylene (PP Bags) ukuran 40kg - 50kg, lalu disusun padat (stuffing) ke dalam kontainer 40ft High Cube untuk memaksimalkan tonase per pengiriman laut (bisa mencapai 24-26 MT per kontainer tergantung limit port). Kami juga melayani loose bulk stuffing tanpa karung jika fasilitas unloading di pabrik Anda mendukung sistem curah dorong.
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-corporate-900 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Apakah PT Waygo menjual Briket Arang (Charcoal) atau murni Batok Mentah?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Fokus utama supply chain Divisi Biomassa adalah pada penyediaan <strong>Bahan Baku Mentah (Raw Material)</strong>. Oleh karena itu, output terbesar kami adalah Batok Kelapa kering (Sun-dried shell) yang ditujukan bagi pabrik besar yang memiliki fasilitas oven pembakaran (carbonization plant) sendiri di luar negeri. Meski demikian, kami dapat mengakomodasi pesanan Briket Arang (BBQ/Shisha) melalui fasilitas maklon jaringan mitra khusus kami.
+                    </div>
+                </details>
+
+                <!-- FAQ 6 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-corporate-900 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Bagaimana penanganan UCO agar terhindar dari pembekuan (freezing) selama kargo laut?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Jika ekspor ditujukan ke negara subtropis saat musim dingin (Eropa/Timur Jauh), UCO yang dikemas dalam Flexitank (berkapasitas ~21 MT) selalu kami lengkapi dengan instalasi <em>Heating Pad</em> (bantalan pemanas) di dasar kontainer. Setibanya di pelabuhan tujuan, buyer cukup mengalirkan uap panas (steam) atau air panas ke saluran heating pad tersebut untuk mencairkan minyak sebelum dipompa keluar.
+                    </div>
+                </details>
+
+                <!-- FAQ 7 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-corporate-900 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Siapa yang menerbitkan Certificate of Analysis (CoA) sebelum barang jalan?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Kami sangat ketat soal ini. Meskipun kami memiliki lab QC internal, <em>Certificate of Analysis (CoA) final</em> yang digunakan untuk negosiasi Letter of Credit (L/C) perbankan selalu dikeluarkan oleh lembaga inspektorat independen bertaraf internasional. Kami biasanya menggunakan jasa surveyor seperti <strong>SGS, Intertek, Bureau Veritas, atau Sucofindo</strong>. Mereka mengambil sample di pelabuhan saat kontainer dimuat (<em>loading</em>).
+                    </div>
+                </details>
+
+                <!-- FAQ 8 -->
+                <details class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm group">
+                    <summary class="font-bold text-corporate-900 text-lg cursor-pointer p-6 flex justify-between items-center hover:bg-gray-100 transition-colors outline-none">
+                        Dapatkah kami membeli suplai PKS (Palm Kernel Shell) untuk PLTU lokal/domestik?
+                        <span class="transform group-open:rotate-180 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200 mt-2">
+                        Tentu. Kami mendistribusikan Cangkang Sawit (PKS) dan Wood Chips/Sawdust tidak hanya untuk pasar ekspor Jepang/Korea, tetapi juga untuk Pembangkit Listrik Tenaga Uap (PLTU) domestik di wilayah Indonesia yang sedang mengeksekusi program dekarbonisasi via metode Co-firing (campuran batubara). Pengiriman domestik dilakukan menggunakan armada dump truck tronton bertonase tinggi secara rutin (kontrak tahunan).
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- RFQ PROCUREMENT FORM (B2B PORTAL)          -->
+    <!-- ========================================== -->
+    <section id="rfq" class="py-28 bg-corporate-950 relative border-t-8 border-accent-500">
+        <!-- Background element -->
+        <div class="absolute right-0 bottom-0 w-1/2 h-full bg-corporate-900 transform skew-x-12 translate-x-32 opacity-50 z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Info Panel -->
+                <div class="lg:col-span-5 text-white">
+                    <div class="w-16 h-16 bg-accent-500 text-corporate-900 rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-accent-500/20">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h2 class="text-4xl font-extrabold mb-6 tracking-tight">Biomass Procurement Desk</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed text-lg">
+                        Gunakan portal pengajuan ini secara spesifik untuk material Energi & Karbon. <em>Global Trade Desk</em> Waygo Sinergi Nusantara akan menganalisis parameter teknis (Spesifikasi Lab) dan menerbitkan <em>Full Corporate Offer (FCO)</em> untuk instansi Anda.
+                    </p>
+                    
+                    <div class="space-y-6 pt-8 border-t border-gray-800">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-accent-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-1">Standard Response Time</h4>
+                                <p class="text-gray-400 text-sm">24 - 48 Jam (Corporate Working Days).</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-accent-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-1">Audit Policy</h4>
+                                <p class="text-gray-400 text-sm">Permohonan <em>Factory Visit</em> akan disetujui setelah LOI perbankan tervalidasi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Form -->
+                <div class="lg:col-span-7 bg-corporate-900 border border-gray-800 p-8 md:p-10 rounded-2xl shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-8 border-b border-gray-800 pb-4">Request for Quotation (RFQ) Form</h3>
+                    
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Refining Plant / Buyer Name </label>
+                                <input type="text" class="w-full px-4 py-3 bg-corporate-950 border border-gray-700 rounded text-white focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors" placeholder="Legal Corp Name" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Destination Port / Factory </label>
+                                <input type="text" class="w-full px-4 py-3 bg-corporate-950 border border-gray-700 rounded text-white focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors" placeholder="e.g. Port of Rotterdam" required>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Energy Commodity </label>
+                                <select class="w-full px-4 py-3 bg-corporate-950 border border-gray-700 rounded text-white focus:outline-none focus:border-accent-500 cursor-pointer appearance-none" required>
+                                    <option value="" disabled selected>-- Select Material --</option>
+                                    <option value="uco">Used Cooking Oil (Biofuel Grade)</option>
+                                    <option value="batok">Coconut Shell / Carbon Raw</option>
+                                    <option value="fiber">Coconut Fiber (Pressed Bales)</option>
+                                    <option value="pks">Solid Biomass (PKS / Sawdust)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Required Volume (MT / Month) </label>
+                                <input type="number" class="w-full px-4 py-3 bg-corporate-950 border border-gray-700 rounded text-white focus:outline-none focus:border-accent-500 transition-colors" placeholder="Numeric format" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Strict Laboratory Specifications </label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-corporate-950 border border-gray-700 rounded text-white focus:outline-none focus:border-accent-500 transition-colors text-sm" placeholder="Tuliskan detail lab yang dicari. (Misal: UCO Max FFA 5%, M&I 2%. Atau Batok Max Moisture 12%, tanpa serat tebal). Sebutkan juga Term Logistik FOB atau CIF." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-accent-500 text-corporate-900 font-extrabold py-5 rounded hover:bg-yellow-400 transition-all text-sm uppercase tracking-widest shadow-xl flex items-center justify-center">
+                            Submit Official Inquiry
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="text-center text-xs text-gray-500">
-                &copy; <span id="year"></span> PT WAYGO SINERGI NUSANTARA PERORANGAN. All Rights Reserved.
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- COMPLIANCE & LEGAL ANNEX                   -->
+    <!-- ========================================== -->
+    <section class="py-16 bg-gray-100 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-xs font-bold text-gray-500 uppercase tracking-[0.3em] mb-6">Environmental & Legal Governance</h3>
+            <p class="text-xs text-gray-500 max-w-5xl mx-auto leading-relaxed font-medium text-justify md:text-center">
+                <strong>ISCC & Traceability Governance:</strong> Operasional Divisi Biomassa PT Waygo Sinergi Nusantara sangat menjunjung tinggi protokol pengadaan berkelanjutan (Sustainable Sourcing). Seluruh proses ekstraksi UCO dan material biomasa lainnya tunduk pada pedoman pencegahan kerusakan ekosistem dan sejalan dengan mandat <em>Renewable Energy Directive</em> (RED II) Uni Eropa. 
+                <br><br>
+                <strong>Legal Terms of Trade:</strong> Penawaran spesifikasi di dalam situs ini bersifat indikatif (<em>indicative parameters</em>). Komitmen pasokan, volume absolut, dan garansi parameter kimia hanya diikat secara final melalui Sales & Purchase Agreement (SPA) resmi dan dikonfirmasi melalui Certificate of Quality pra-pengiriman dari auditor surveyor berlisensi. Kami menolak aktivitas yang berafiliasi dengan entitas pencucian uang atau deforestasi ilegal.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- DIVISIONAL MEGA FOOTER                     -->
+    <!-- ========================================== -->
+    <footer class="bg-corporate-950 text-gray-400 pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Branding -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center font-black text-corporate-900 text-lg shadow-lg"><img src="logo.png" alt="Logo PT Waygo Sinergi Nusantara" class="h-12"></div>
+                        <span class="text-xl font-extrabold text-white tracking-tight leading-none">WAYGO <span class="text-accent-500">SINERGI NUSANTARA</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 font-medium text-gray-500">
+                        Divisi Energi Biomassa. Mengorkestrasi penanganan jutaan kilogram material mentah, menstandarkan kompleksitas limbah, dan mengamankan kalori industri untuk masa depan net-zero planet ini.
+                    </p>
+                    <a href="index.html" class="inline-flex items-center text-xs font-bold text-accent-500 uppercase tracking-widest hover:text-white transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        Return to Headquarter Page
+                    </a>
+                </div>
+
+                <!-- Division Specific Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Energy Operations</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#commodities" class="hover:text-accent-500 transition-colors">Biofuel Grade UCO</a></li>
+                        <li><a href="#commodities" class="hover:text-accent-500 transition-colors">Carbon Processing Shells</a></li>
+                        <li><a href="#commodities" class="hover:text-accent-500 transition-colors">Industrial Grade Cocofiber</a></li>
+                        <li><a href="#commodities" class="hover:text-accent-500 transition-colors">Solid Biomass Firing</a></li>
+                        <li><a href="#logistics" class="hover:text-accent-500 transition-colors">Logistics Infrastructure</a></li>
+                    </ul>
+                </div>
+
+                <!-- Trade Desk & Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Biomass Trade Desk</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li class="flex flex-col">
+                            <span class="text-gray-500 text-xs mb-1 uppercase tracking-widest">Email</span>
+                            <a href="mailto:halo.waygo@gmail.com" class="text-white hover:text-accent-500 transition-colors">halo.waygo@gmail.com</a>
+                        </li>
+                        <li class="flex flex-col pt-2 border-t border-gray-800">
+                            <span class="text-gray-500 text-xs mb-1 uppercase tracking-widest">Global Call</span>
+                            <span class="text-accent-500 font-mono">+62 8564 1366 030</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Strip -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-medium text-gray-500">
+                <p>&copy; 2026 PT Waygo Sinergi Nusantara - Energy Division. All mandates reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <span>Powering the Renewable Future</span>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- 6. JAVASCRIPT LOGIC -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        let currentLang = 'id';
-        const langToggleBtn = document.getElementById('langToggleBtn');
-        const labelId = document.getElementById('label-id');
-        const labelEn = document.getElementById('label-en');
-
-        langToggleBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'id' ? 'en' : 'id';
-            langToggleBtn.classList.toggle('en');
-            
-            if(currentLang === 'en') {
-                labelId.style.color = '#94a3b8'; 
-                labelEn.style.color = '#0f3d26'; 
-            } else {
-                labelId.style.color = '#0f3d26';
-                labelEn.style.color = '#94a3b8';
-            }
-
-            document.querySelectorAll('.lang-id').forEach(el => el.classList.toggle('hidden'));
-            document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden'));
-        });
-    </script>
 </body>
 </html>
